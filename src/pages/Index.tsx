@@ -1,12 +1,29 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Navbar } from "@/components/layout/Navbar";
+import { HeroSection } from "@/components/sections/HeroSection";
+import { SejarahSection } from "@/components/sections/SejarahSection";
+import { PengurusSection } from "@/components/sections/PengurusSection";
+import { KegiatanSection } from "@/components/sections/KegiatanSection";
+import { CariAnggotaSection } from "@/components/sections/CariAnggotaSection";
+import { FooterSection } from "@/components/sections/FooterSection";
+import { useEffect } from "react";
 
 const Index = () => {
+  useEffect(() => {
+    // Update page title
+    document.title = "IKS PI Kera Sakti - Pengurus Daerah Sumatera Selatan";
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <main>
+        <HeroSection />
+        <SejarahSection />
+        <PengurusSection />
+        <KegiatanSection />
+        <CariAnggotaSection />
+      </main>
+      <FooterSection />
     </div>
   );
 };
