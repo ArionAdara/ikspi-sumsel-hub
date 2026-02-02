@@ -6,6 +6,7 @@ import { CabangSection } from "@/components/sections/CabangSection";
 import { KegiatanSection } from "@/components/sections/KegiatanSection";
 import { CariAnggotaSection } from "@/components/sections/CariAnggotaSection";
 import { FooterSection } from "@/components/sections/FooterSection";
+import { MusicPrompt } from "@/components/MusicPrompt";
 import { useEffect } from "react";
 
 const Index = () => {
@@ -16,6 +17,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <MusicPrompt />
       <Navbar />
       <main>
         <HeroSection />
