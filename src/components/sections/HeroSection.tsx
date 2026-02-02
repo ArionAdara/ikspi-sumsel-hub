@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ChevronDown, MapPin, Users } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import logoIkspi from "@/assets/logo-ikspi.png";
 
 export function HeroSection() {
   return (
@@ -56,11 +57,25 @@ export function HeroSection() {
           </span>
         </motion.div>
 
+        {/* Logo */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mb-6"
+        >
+          <img 
+            src={logoIkspi} 
+            alt="Logo IKS PI Kera Sakti" 
+            className="w-28 h-28 md:w-36 md:h-36 mx-auto drop-shadow-2xl"
+          />
+        </motion.div>
+
         {/* Main Title */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
           className="mb-4"
         >
           <h2 className="font-heading text-xl md:text-2xl text-gold mb-2 tracking-widest">
@@ -71,7 +86,7 @@ export function HeroSection() {
         <motion.h1
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.4 }}
+          transition={{ duration: 1, delay: 0.5 }}
           className="font-heading font-bold text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-foreground mb-2 text-shadow-lg"
         >
           IKS PI{" "}

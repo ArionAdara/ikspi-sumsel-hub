@@ -167,7 +167,7 @@ export function SejarahSection() {
               </div>
               <span className="text-gold text-sm uppercase tracking-wider">Ketua Umum</span>
               <h4 className="font-heading text-xl font-bold text-foreground mt-2">
-                KP. Drs. H. Bambang Sunarja, M.A
+                Kanjeng Pangeran (KP) Drs. H. Bambang Sunarja, M.A
               </h4>
               <p className="text-muted-foreground text-sm mt-2">
                 Ketua Umum sejak 1997<br />
