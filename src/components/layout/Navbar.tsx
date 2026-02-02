@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Search, User } from "lucide-react";
+import { Menu, X, User } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import logoIkspi from "@/assets/logo-ikspi.png";
 
 const navLinks = [
   { name: "Beranda", href: "#beranda" },
@@ -41,9 +42,7 @@ export function Navbar() {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-3">
-              <div className="w-12 h-12 rounded-full bg-gradient-crimson flex items-center justify-center border-2 border-gold">
-                <span className="font-heading font-bold text-foreground text-lg">IKS</span>
-              </div>
+              <img src={logoIkspi} alt="Logo IKS PI Kera Sakti" className="w-12 h-12 object-contain" />
               <div className="hidden sm:block">
                 <h1 className="font-heading font-bold text-lg text-foreground leading-tight">
                   IKS PI <span className="text-gold">KERA SAKTI</span>

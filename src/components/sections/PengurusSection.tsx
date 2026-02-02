@@ -15,7 +15,7 @@ import fitria from "@/assets/pengurus/fitria.png";
 const pengurusList = [
   {
     name: "Muslimin",
-    position: "Ketua Pengda",
+    position: "Ketua Pengurus Daerah",
     image: muslimin,
     isLeader: true,
   },
