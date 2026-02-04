@@ -112,6 +112,7 @@ export function PengurusSection() {
                 src={pengurusList[0].image}
                 alt={pengurusList[0].name}
                 className="w-full h-full object-cover object-top"
+                loading="lazy"
               />
             </div>
             <span className="inline-block px-4 py-1 bg-gradient-crimson text-foreground text-sm font-semibold rounded-full mb-3">
@@ -138,6 +139,7 @@ export function PengurusSection() {
                   src={pengurus.image}
                   alt={pengurus.name}
                   className="w-full h-full object-cover object-top"
+                  loading="lazy"
                 />
               </div>
               <span className="text-gold text-xs uppercase tracking-wider">{pengurus.position}</span>

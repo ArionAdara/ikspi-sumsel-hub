@@ -93,6 +93,7 @@ export function KegiatanSection() {
                     src={activityImages[0].src}
                     alt={activityImages[0].alt}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-4">
@@ -120,6 +121,7 @@ export function KegiatanSection() {
                       src={image.src}
                       alt={image.alt}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-3">
