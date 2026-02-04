@@ -68,6 +68,7 @@ export function HeroSection() {
             src={logoIkspi} 
             alt="Logo IKS PI Kera Sakti" 
             className="w-28 h-28 md:w-36 md:h-36 mx-auto drop-shadow-2xl"
+            loading="eager"
           />
         </motion.div>
 

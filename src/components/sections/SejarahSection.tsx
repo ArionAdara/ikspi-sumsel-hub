@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 import { Calendar, MapPin, Users, Globe, Award } from "lucide-react";
 import guruBesarImg from "@/assets/guru-besar.jpg";
 import ketuaUmumImg from "@/assets/ketua-umum.jpg";
@@ -112,6 +113,7 @@ export function SejarahSection() {
                 src={padepokanImg}
                 alt="Padepokan IKS PI Kera Sakti"
                 className="w-full h-auto object-cover"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -138,42 +140,50 @@ export function SejarahSection() {
           
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* Guru Besar */}
-            <div className="member-card text-center">
-              <div className="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-gold/50 shadow-lg">
+            <Link to="/guru-besar" className="member-card text-center group cursor-pointer">
+              <div className="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-gold/50 shadow-lg group-hover:border-gold group-hover:shadow-gold/30 transition-all duration-300">
                 <img
                   src={guruBesarImg}
                   alt="H. R. Totong Kiemdarto"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  loading="lazy"
                 />
               </div>
               <span className="text-gold text-sm uppercase tracking-wider">Guru Besar</span>
-              <h4 className="font-heading text-xl font-bold text-foreground mt-2">
+              <h4 className="font-heading text-xl font-bold text-foreground mt-2 group-hover:text-gold transition-colors">
                 H. R. Totong Kiemdarto
               </h4>
               <p className="text-muted-foreground text-sm mt-2">
                 Pendiri IKS PI Kera Sakti<br />
                 20 Oktober 1953 - 1997
               </p>
-            </div>
+              <span className="text-gold/60 text-xs mt-3 block group-hover:text-gold transition-colors">
+                Klik untuk melihat profil lengkap →
+              </span>
+            </Link>
 
             {/* Ketua Umum */}
-            <div className="member-card text-center">
-              <div className="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-gold/50 shadow-lg">
+            <Link to="/ketua-umum" className="member-card text-center group cursor-pointer">
+              <div className="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-gold/50 shadow-lg group-hover:border-gold group-hover:shadow-gold/30 transition-all duration-300">
                 <img
                   src={ketuaUmumImg}
                   alt="KP. Drs. H. Bambang Sunarja, M.A"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  loading="lazy"
                 />
               </div>
               <span className="text-gold text-sm uppercase tracking-wider">Ketua Umum</span>
-              <h4 className="font-heading text-xl font-bold text-foreground mt-2">
+              <h4 className="font-heading text-xl font-bold text-foreground mt-2 group-hover:text-gold transition-colors">
                 Kanjeng Pangeran (KP) Drs. H. Bambang Sunarja, M.A
               </h4>
               <p className="text-muted-foreground text-sm mt-2">
                 Ketua Umum sejak 1997<br />
                 Kelahiran Madiun, 11 Mei 1966
               </p>
-            </div>
+              <span className="text-gold/60 text-xs mt-3 block group-hover:text-gold transition-colors">
+                Klik untuk melihat profil lengkap →
+              </span>
+            </Link>
           </div>
         </motion.div>
 
