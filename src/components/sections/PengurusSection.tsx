@@ -96,6 +96,17 @@ export function PengurusSection() {
             Struktur kepengurusan Pengda IKS PI Kera Sakti Sumatera Selatan yang bertugas 
             membina dan mengembangkan perguruan di wilayah Sumatera Selatan.
           </p>
+
+          {/* Visi Misi */}
+          <div className="mt-10 max-w-3xl mx-auto">
+            <div className="relative p-6 md:p-8 rounded-lg border border-gold/30 bg-card/80 backdrop-blur-sm">
+              <div className="absolute -top-1 left-0 right-0 h-1 bg-gradient-gold rounded-t-lg" />
+              <span className="text-gold text-xs uppercase tracking-widest mb-3 block">Visi & Misi</span>
+              <p className="font-heading text-lg md:text-xl font-bold text-foreground leading-relaxed tracking-wide">
+                "MEMBANGUN IKS PI KERA SAKTI SUMATERA SELATAN TERSTRUKTUR, TRANSPARAN, SISTEMATIS DAN TERTIB ADMINISTRASI"
+              </p>
+            </div>
+          </div>
         </motion.div>
 
         {/* Leader Card - Ketua Pengda */}
