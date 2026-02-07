@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import GuruBesar from "./pages/GuruBesar";
 import KetuaUmum from "./pages/KetuaUmum";
+import ProgramKerja from "./pages/ProgramKerja";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/login" element={<Login />} />
           <Route path="/guru-besar" element={<GuruBesar />} />
           <Route path="/ketua-umum" element={<KetuaUmum />} />
+          <Route path="/program-kerja" element={<ProgramKerja />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
