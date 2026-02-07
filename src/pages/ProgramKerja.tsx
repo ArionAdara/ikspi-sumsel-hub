@@ -234,7 +234,7 @@ export default function ProgramKerja() {
               className="flex gap-6 md:gap-10 mt-10"
             >
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-heading font-bold text-gold">{programKerja.length}</div>
+                <div className="text-3xl md:text-4xl font-heading font-bold text-gold">5</div>
                 <div className="text-xs text-muted-foreground uppercase tracking-wider mt-1">Tahun</div>
               </div>
               <div className="w-px bg-border" />
