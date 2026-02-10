@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import heroBg from "@/assets/hero-bg.jpg";
 
 export default function Login() {
@@ -20,14 +21,45 @@ export default function Login() {
     e.preventDefault();
     setIsLoading(true);
 
-    // Simulate login - in production this will use Supabase Auth
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
 
-    toast({
-      title: "Fitur dalam pengembangan",
-      description: "Sistem login admin akan segera tersedia.",
-      variant: "default",
-    });
+      if (error) {
+        toast({
+          title: "Login gagal",
+          description: error.message,
+          variant: "destructive",
+        });
+        setIsLoading(false);
+        return;
+      }
+
+      // Verify admin role via RPC
+      const { data: hasAdmin } = await supabase.rpc("has_role", {
+        _user_id: data.user.id,
+        _role: "admin",
+      });
+
+      if (hasAdmin) {
+        navigate("/admin");
+      } else {
+        await supabase.auth.signOut();
+        toast({
+          title: "Akses ditolak",
+          description: "Anda tidak memiliki akses admin.",
+          variant: "destructive",
+        });
+      }
+    } catch {
+      toast({
+        title: "Terjadi kesalahan",
+        description: "Silakan coba lagi nanti.",
+        variant: "destructive",
+      });
+    }
 
     setIsLoading(false);
   };
