@@ -52,7 +52,7 @@ export default function ProgramKerja() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <span className="text-gold text-sm uppercase tracking-widest mb-3 block">
-                Periode 2021 s/d 2026
+                Masa Bakti 2021 s/d 2026
               </span>
               <h1 className="font-heading text-2xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
                 Program Kerja{" "}

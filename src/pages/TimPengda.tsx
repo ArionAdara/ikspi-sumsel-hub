@@ -64,7 +64,7 @@ export default function TimPengda() {
               loading="lazy"
             />
             <span className="text-gold text-sm uppercase tracking-widest mb-4 block">
-              Periode 2021 s/d 2026
+              Masa Bakti 2021 s/d 2026
             </span>
             <h1 className="font-heading text-2xl md:text-4xl font-bold leading-tight">
               Anggota Tim Pengurus Daerah
