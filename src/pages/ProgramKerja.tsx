@@ -77,7 +77,7 @@ export default function ProgramKerja() {
               <div className="w-px bg-border" />
               <div className="text-center">
                 <div className="text-3xl md:text-4xl font-heading font-bold text-gold">{totalProgram}</div>
-                <div className="text-xs text-muted-foreground uppercase tracking-wider mt-1">Program Terlaksana</div>
+                <div className="text-xs text-muted-foreground uppercase tracking-wider mt-1">Kegiatan Terlaksana</div>
               </div>
             </motion.div>
           </div>
@@ -109,7 +109,7 @@ export default function ProgramKerja() {
                     {yearData.year}
                   </h2>
                   <span className="px-3 py-1 bg-gold/10 border border-gold/30 rounded-full text-xs text-gold font-medium">
-                    {yearData.items.length} program
+                    {yearData.items.length} kegiatan
                   </span>
                 </div>
 
