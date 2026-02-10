@@ -138,33 +138,27 @@ export default function TimPengda() {
               transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
               className="group text-center"
             >
-              <div className="relative mb-4 rounded-xl overflow-hidden border-2 border-border group-hover:border-gold/60 transition-all duration-500 shadow-lg group-hover:shadow-[0_0_30px_hsla(45,90%,50%,0.2)]">
+              <div className="relative rounded-xl overflow-hidden border-2 border-border group-hover:border-gold/60 transition-all duration-500 shadow-lg group-hover:shadow-[0_0_30px_hsla(45,90%,50%,0.2)]">
                 <div className="aspect-[3/4] overflow-hidden bg-card">
                   <img
                     src={anggota.foto}
                     alt={anggota.nama}
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700"
                     loading="lazy"
                     decoding="async"
                     width={300}
                     height={400}
                   />
                 </div>
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
-                {/* Name overlay at bottom */}
-                <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4">
-                  <div className="flex items-center justify-center gap-2">
-                    <div className="w-6 h-6 rounded-full bg-gradient-crimson border border-gold/40 flex items-center justify-center flex-shrink-0">
-                      <span className="font-heading font-bold text-foreground text-[10px]">
-                        {index + 1}
-                      </span>
-                    </div>
-                    <h3 className="font-heading text-xs md:text-sm font-semibold text-foreground leading-tight drop-shadow-lg">
-                      {anggota.nama}
-                    </h3>
-                  </div>
-                </div>
+                {/* Subtle bottom gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              </div>
+              {/* Name below photo */}
+              <div className="mt-3 md:mt-4">
+                <div className="w-8 h-0.5 mx-auto mb-2 bg-gradient-to-r from-transparent via-gold to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <h3 className="font-heading text-sm md:text-base font-semibold text-foreground group-hover:text-gold transition-colors duration-300 leading-tight">
+                  {anggota.nama}
+                </h3>
               </div>
             </motion.div>
           ))}
