@@ -10,6 +10,7 @@ import GuruBesar from "./pages/GuruBesar";
 import KetuaUmum from "./pages/KetuaUmum";
 import ProgramKerja from "./pages/ProgramKerja";
 import TimPengda from "./pages/TimPengda";
+import KontakPerson from "./pages/KontakPerson";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/ketua-umum" element={<KetuaUmum />} />
           <Route path="/program-kerja" element={<ProgramKerja />} />
           <Route path="/tim-pengda" element={<TimPengda />} />
+          <Route path="/kontak-person" element={<KontakPerson />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

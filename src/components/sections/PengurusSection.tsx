@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { FileText, ArrowRight, Users } from "lucide-react";
+import { FileText, ArrowRight, Users, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 
 // Import photos
@@ -94,6 +94,9 @@ export function PengurusSection() {
           <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground section-title">
             Pengurus Daerah Sumatera Selatan
           </h2>
+          <p className="text-gold font-heading text-lg md:text-xl font-semibold mt-3 uppercase tracking-wider">
+            Masa Bakti 2021 s/d 2026
+          </p>
           <p className="text-muted-foreground mt-8 max-w-2xl mx-auto">
             Struktur kepengurusan Pengda IKS PI Kera Sakti Sumatera Selatan yang bertugas 
             membina dan mengembangkan perguruan di wilayah Sumatera Selatan.
@@ -179,7 +182,7 @@ export function PengurusSection() {
                     <FileText className="w-5 h-5 text-foreground" />
                   </div>
                   <div>
-                    <span className="text-gold text-xs uppercase tracking-widest block mb-1">Periode 2021 s/d 2026</span>
+                    <span className="text-gold text-xs uppercase tracking-widest block mb-1">Masa Bakti 2021 s/d 2026</span>
                     <h3 className="font-heading text-base md:text-lg font-bold text-foreground leading-snug">
                       Program Kerja Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan
                     </h3>
@@ -207,9 +210,37 @@ export function PengurusSection() {
                     <Users className="w-5 h-5 text-foreground" />
                   </div>
                   <div>
-                    <span className="text-gold text-xs uppercase tracking-widest block mb-1">Periode 2021 s/d 2026</span>
+                    <span className="text-gold text-xs uppercase tracking-widest block mb-1">Masa Bakti 2021 s/d 2026</span>
                     <h3 className="font-heading text-base md:text-lg font-bold text-foreground leading-snug">
                       Anggota Tim Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan
+                    </h3>
+                  </div>
+                </div>
+                <ArrowRight className="w-5 h-5 text-gold group-hover:translate-x-1 transition-transform flex-shrink-0" />
+              </div>
+            </div>
+          </Link>
+        </motion.div>
+
+        {/* Kontak Person Banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.7 }}
+          className="max-w-4xl mx-auto mt-4"
+        >
+          <Link to="/kontak-person">
+            <div className="relative p-6 md:p-8 rounded-lg border border-gold/30 bg-card/80 hover:border-gold hover:shadow-[0_0_30px_hsla(45,90%,50%,0.15)] transition-all duration-500 group cursor-pointer">
+              <div className="absolute -top-1 left-0 right-0 h-1 bg-gradient-gold rounded-t-lg" />
+              <div className="flex items-center justify-between gap-4">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-crimson border border-gold/50 flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-5 h-5 text-foreground" />
+                  </div>
+                  <div>
+                    <span className="text-gold text-xs uppercase tracking-widest block mb-1">Masa Bakti 2021 s/d 2026</span>
+                    <h3 className="font-heading text-base md:text-lg font-bold text-foreground leading-snug">
+                      Kontak Person Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan
                     </h3>
                   </div>
                 </div>
