@@ -222,14 +222,14 @@ export function PengurusSection() {
           </Link>
         </motion.div>
 
-        {/* Kontak Person Banner */}
+        {/* Narahubung Banner */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.7 }}
           className="max-w-4xl mx-auto mt-4"
         >
-          <Link to="/kontak-person">
+          <Link to="/narahubung">
             <div className="relative p-6 md:p-8 rounded-lg border border-gold/30 bg-card/80 hover:border-gold hover:shadow-[0_0_30px_hsla(45,90%,50%,0.15)] transition-all duration-500 group cursor-pointer">
               <div className="absolute -top-1 left-0 right-0 h-1 bg-gradient-gold rounded-t-lg" />
               <div className="flex items-center justify-between gap-4">
@@ -240,7 +240,7 @@ export function PengurusSection() {
                   <div>
                     <span className="text-gold text-xs uppercase tracking-widest block mb-1">Masa Bakti 2021 s/d 2026</span>
                     <h3 className="font-heading text-base md:text-lg font-bold text-foreground leading-snug">
-                      Kontak Person Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan
+                      Narahubung Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan
                     </h3>
                   </div>
                 </div>

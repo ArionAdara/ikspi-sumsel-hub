@@ -27,7 +27,7 @@ function formatDisplayNomor(nomor: string) {
 
 export default function KontakPerson() {
   useEffect(() => {
-    document.title = "Kontak Person - Pengda IKS PI Kera Sakti Sumatera Selatan";
+    document.title = "Narahubung - Pengda IKS PI Kera Sakti Sumatera Selatan";
     window.scrollTo(0, 0);
   }, []);
 
@@ -71,7 +71,7 @@ export default function KontakPerson() {
               Masa Bakti 2021 s/d 2026
             </span>
             <h1 className="font-heading text-2xl md:text-4xl font-bold leading-tight">
-              Kontak Person Pengurus Daerah
+              Narahubung Pengurus Daerah
             </h1>
             <h2 className="font-heading text-lg md:text-2xl font-bold text-gold mt-2">
               IKS PI Kera Sakti Sumatera Selatan

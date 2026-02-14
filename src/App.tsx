@@ -11,6 +11,7 @@ import KetuaUmum from "./pages/KetuaUmum";
 import ProgramKerja from "./pages/ProgramKerja";
 import TimPengda from "./pages/TimPengda";
 import KontakPerson from "./pages/KontakPerson";
+import GaleriKegiatan from "./pages/GaleriKegiatan";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,8 @@ const App = () => (
           <Route path="/program-kerja" element={<ProgramKerja />} />
           <Route path="/tim-pengda" element={<TimPengda />} />
           <Route path="/kontak-person" element={<KontakPerson />} />
+          <Route path="/narahubung" element={<KontakPerson />} />
+          <Route path="/galeri-kegiatan" element={<GaleriKegiatan />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
