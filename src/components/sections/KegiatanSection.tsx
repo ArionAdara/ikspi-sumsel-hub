@@ -1,7 +1,8 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Instagram, ExternalLink } from "lucide-react";
+import { Instagram, ExternalLink, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 // Import activity images
 import postingan140 from "@/assets/kegiatan/postingan-140.png";
@@ -135,23 +136,31 @@ export function KegiatanSection() {
             </div>
           </motion.div>
 
-          {/* Instagram CTA */}
+          {/* Lihat Selanjutnya */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="mt-8 text-center"
+            className="mt-8 text-center space-y-4"
           >
-            <a
-              href={`https://instagram.com/${instagramUsername}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 hover:opacity-90">
-                <Instagram className="w-4 h-4 mr-2" />
-                Lihat Semua di Instagram
-              </Button>
-            </a>
+            <Link to="/galeri-kegiatan">
+              <span className="inline-flex items-center gap-2 text-gold hover:text-gold/80 transition-colors font-heading text-base md:text-lg font-semibold cursor-pointer group">
+                Lihat Selanjutnya..
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </span>
+            </Link>
+            <div>
+              <a
+                href={`https://instagram.com/${instagramUsername}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 hover:opacity-90">
+                  <Instagram className="w-4 h-4 mr-2" />
+                  Lihat Semua di Instagram
+                </Button>
+              </a>
+            </div>
           </motion.div>
         </motion.div>
       </div>
