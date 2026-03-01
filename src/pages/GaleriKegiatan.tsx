@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import logoIkspi from "@/assets/logo-ikspi.png";
 import { useEffect } from "react";
 
-// Import all kegiatan images in order
+// Import all kegiatan images
 import postingan1 from "@/assets/kegiatan/postingan-1.png";
 import postingan2 from "@/assets/kegiatan/postingan-2.png";
 import postingan3 from "@/assets/kegiatan/postingan-3.png";
@@ -15,26 +15,47 @@ import postingan7 from "@/assets/kegiatan/postingan-7.png";
 import postingan8 from "@/assets/kegiatan/postingan-8.png";
 import postingan9 from "@/assets/kegiatan/postingan-9.png";
 import postingan10 from "@/assets/kegiatan/postingan-10.png";
+import postingan11 from "@/assets/kegiatan/postingan-11.png";
+import postingan12 from "@/assets/kegiatan/postingan-12.png";
+import postingan13 from "@/assets/kegiatan/postingan-13.png";
+import postingan14 from "@/assets/kegiatan/postingan-14.png";
+import postingan15 from "@/assets/kegiatan/postingan-15.png";
+import postingan16 from "@/assets/kegiatan/postingan-16.png";
+import postingan17 from "@/assets/kegiatan/postingan-17.png";
+import postingan18 from "@/assets/kegiatan/postingan-18.png";
+import postingan19 from "@/assets/kegiatan/postingan-19.png";
+import postingan20 from "@/assets/kegiatan/postingan-20.png";
 import postingan140 from "@/assets/kegiatan/postingan-140.png";
 import postingan141 from "@/assets/kegiatan/postingan-141.png";
 import postingan142 from "@/assets/kegiatan/postingan-142.png";
 import postingan143 from "@/assets/kegiatan/postingan-143.png";
 
+// Ordered from highest number (top) to lowest (bottom)
 const allKegiatan = [
-  { src: postingan140, alt: "Rapat Terbatas Pengurus Cabang Lubuk Linggau" },
-  { src: postingan141, alt: "Sarasehan Ketua Pengda Se Indonesia" },
-  { src: postingan142, alt: "Rapat Kerja Pusat Tahun 2026" },
   { src: postingan143, alt: "Penyerahan Sertifikat Tanah Sekretariat" },
-  { src: postingan1, alt: "Melaksanakan Tupoksi, Pengda IKS PI Kera Sakti Sumsel Membantu Menyelesaikan Berbagai Masalah" },
-  { src: postingan2, alt: "Pengda IKS Sumsel Memberikan Bimbingan Kepada Pengcab Musi Banyuasin" },
-  { src: postingan3, alt: "Pengda Melaksanakan Acara Buka Puasa dan Silaturahmi Bersama Cabang Terdekat" },
-  { src: postingan4, alt: "Dewan Penasihat Pusat Mendukung Penuh Kegiatan Pengda Sumsel" },
-  { src: postingan5, alt: "Pengda Melakukan Mediasi Antara Dua Kelompok Warga di Cabang Ogan Ilir" },
-  { src: postingan6, alt: "Melupakan Segala Permasalahan dan Saling Memaafkan untuk Bersatu" },
-  { src: postingan7, alt: "Pengda IKS Sumsel Melakukan Registrasi Ulang ke IPSI Provinsi Sumsel" },
-  { src: postingan8, alt: "Dewan Teknik Pengda IKS Sumsel Memberikan Bimbingan kepada Para Atlet" },
-  { src: postingan9, alt: "Menghadiri Undangan UKT Angkatan 133/119 di Beberapa Cabang di Sumsel" },
+  { src: postingan142, alt: "Rapat Kerja Pusat Tahun 2026" },
+  { src: postingan141, alt: "Sarasehan Ketua Pengda Se Indonesia" },
+  { src: postingan140, alt: "Rapat Terbatas Pengurus Cabang Lubuk Linggau" },
+  { src: postingan20, alt: "Pengda IKS Sumsel Peduli Kepada Senior yang Sedang Sakit atau pun Tertimpa Musibah" },
+  { src: postingan19, alt: "Ketua Pengda Memberikan Buku AD ART dan PP IKS PI Kera Sakti Terbaru Tahun 2022" },
+  { src: postingan18, alt: "Pengda dan Pengcab IKS PI Kera Sakti Sumsel Melaksanakan Rapat Konsolidasi Merujuk Kegiatan di Pusat" },
+  { src: postingan17, alt: "Bersama Pengurus Pusat Meninjau Lokasi Pemindahan Makam Guru Besar dari TPU Sobrah Menuju Padepokan IKS" },
+  { src: postingan16, alt: "Pengda IKS Sumsel Menyerahkan Hasil Rakerda Sumsel Th.2022 ke Ketua Umum Pada Saat Konsolidasi di Madiun" },
+  { src: postingan15, alt: "Dirgahayu Republik Indonesia - Merdeka Dalam Perjuangan Mengendalikan Diri di Dalam Beladiri" },
+  { src: postingan14, alt: "Pengda IKS Sumsel Memberikan Uang Pembinaan (Reward) Kepada Pelatih Atlet yang Berprestasi" },
+  { src: postingan13, alt: "Ketua Pengda IKS Sumsel Memberikan Uang Pembinaan (Reward) Kepada Atlet Berprestasi Qurrotul A'yuni" },
+  { src: postingan12, alt: "Ketua Pengda IKS Sumsel Menerima Surat Keputusan Penetapan Perguruan IKS PI Kera Sakti Sebagai Anggota IPSI Sumsel" },
+  { src: postingan11, alt: "Pengda IKS Sumsel dan Perwakilan Pengpus Membantu Pelaksanaan Musyawarah Cabang (Muscab) di OKU Selatan" },
   { src: postingan10, alt: "Kunjungan ke Cabang-Cabang di Wilayah Sumsel" },
+  { src: postingan9, alt: "Menghadiri Undangan UKT Angkatan 133/119 di Beberapa Cabang di Sumsel" },
+  { src: postingan8, alt: "Dewan Teknik Pengda IKS Sumsel Memberikan Bimbingan kepada Para Atlet" },
+  { src: postingan7, alt: "Pengda IKS Sumsel Melakukan Registrasi Ulang ke IPSI Provinsi Sumsel" },
+  { src: postingan6, alt: "Melupakan Segala Permasalahan dan Saling Memaafkan untuk Bersatu" },
+  { src: postingan5, alt: "Pengda Melakukan Mediasi Antara Dua Kelompok Warga di Cabang Ogan Ilir" },
+  { src: postingan4, alt: "Dewan Penasihat Pusat Mendukung Penuh Kegiatan Pengda Sumsel" },
+  { src: postingan3, alt: "Pengda Melaksanakan Acara Buka Puasa dan Silaturahmi Bersama Cabang Terdekat" },
+  { src: postingan2, alt: "Pengda IKS Sumsel Memberikan Bimbingan Kepada Pengcab Musi Banyuasin" },
+  { src: postingan1, alt: "Melaksanakan Tupoksi, Pengda IKS PI Kera Sakti Sumsel Membantu Menyelesaikan Berbagai Masalah" },
 ];
 
 export default function GaleriKegiatan() {
