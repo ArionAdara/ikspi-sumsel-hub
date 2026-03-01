@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ChevronDown, MapPin, Users } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/padepokan01.png";
 import logoIkspi from "@/assets/logo-ikspi.png";
 
 export function HeroSection() {
