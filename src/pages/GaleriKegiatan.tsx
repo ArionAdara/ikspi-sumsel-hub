@@ -25,6 +25,16 @@ import postingan17 from "@/assets/kegiatan/postingan-17.png";
 import postingan18 from "@/assets/kegiatan/postingan-18.png";
 import postingan19 from "@/assets/kegiatan/postingan-19.png";
 import postingan20 from "@/assets/kegiatan/postingan-20.png";
+import postingan21 from "@/assets/kegiatan/postingan-21.png";
+import postingan22 from "@/assets/kegiatan/postingan-22.png";
+import postingan23 from "@/assets/kegiatan/postingan-23.png";
+import postingan24 from "@/assets/kegiatan/postingan-24.png";
+import postingan25 from "@/assets/kegiatan/postingan-25.png";
+import postingan26 from "@/assets/kegiatan/postingan-26.png";
+import postingan27 from "@/assets/kegiatan/postingan-27.png";
+import postingan28 from "@/assets/kegiatan/postingan-28.png";
+import postingan29 from "@/assets/kegiatan/postingan-29.png";
+import postingan30 from "@/assets/kegiatan/postingan-30.png";
 import postingan140 from "@/assets/kegiatan/postingan-140.png";
 import postingan141 from "@/assets/kegiatan/postingan-141.png";
 import postingan142 from "@/assets/kegiatan/postingan-142.png";
@@ -36,6 +46,16 @@ const allKegiatan = [
   { src: postingan142, alt: "Rapat Kerja Pusat Tahun 2026" },
   { src: postingan141, alt: "Sarasehan Ketua Pengda Se Indonesia" },
   { src: postingan140, alt: "Rapat Terbatas Pengurus Cabang Lubuk Linggau" },
+  { src: postingan30, alt: "Jarak Bukanlah Penghalang Untuk Pengda dan Pengcab IKS PI Kera Sakti Sumsel Melaksanakan Rakorda Merujuk Kegiatan Rakerpus" },
+  { src: postingan29, alt: "Ketua Pengda IKS Sumsel Menyerahkan Laporan Pertanggung Jawaban (LPJ) ke Pengurus Pusat IKS PI Kera Sakti" },
+  { src: postingan28, alt: "Ketua Pengda IKS Sumsel Menghadiri Perayaan Ulang Tahun (Haul) Perguruan IKS PI Kera Sakti ke 43 di Padepokan Pusat Madiun" },
+  { src: postingan27, alt: "Ketua Umum dan Jajaran Bersama Para Peserta Penyegaran Wasit dan Juri Berziarah ke Makam Guru Besar di Astana Luhur" },
+  { src: postingan26, alt: "Utusan Pengda IKS Sumsel Antusias Mengikuti Penyegaran Wasit dan Juri IKS PI Kera Sakti oleh Pengurus Pusat" },
+  { src: postingan25, alt: "Cabang Palembang Berhasil Menjadi Juara Umum I Pada Kejuaraan Daerah IKS PI Kera Sakti Cup Sumatera Selatan" },
+  { src: postingan24, alt: "Pengurus Daerah IKS PI Kera Sakti Sumsel Perdana dan Sukses Menyelenggarakan Kejuaraan Daerah IKS PI Kera Sakti Cup" },
+  { src: postingan23, alt: "Pengda IKS Sumsel Bersama Ketua Cabang Muara Enim Memberikan Penjelasan dan Pembinaan Tentang AD ART dan PP Th.2022" },
+  { src: postingan22, alt: "Ramah Tamah Para Ketua Pengda Dari Berbagai Provinsi Sharing Perkembangan IKS PI Kera Sakti Sebelum Pemindahan Makam" },
+  { src: postingan21, alt: "Ketua Pengda IKS Sumsel Bersama Ketua Pengda Jatim, Jateng, Banten, Kalsel dan Kalteng Mengangkat Peti Jenazah Guru Besar" },
   { src: postingan20, alt: "Pengda IKS Sumsel Peduli Kepada Senior yang Sedang Sakit atau pun Tertimpa Musibah" },
   { src: postingan19, alt: "Ketua Pengda Memberikan Buku AD ART dan PP IKS PI Kera Sakti Terbaru Tahun 2022" },
   { src: postingan18, alt: "Pengda dan Pengcab IKS PI Kera Sakti Sumsel Melaksanakan Rapat Konsolidasi Merujuk Kegiatan di Pusat" },
