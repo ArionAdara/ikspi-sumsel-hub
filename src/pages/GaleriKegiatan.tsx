@@ -35,6 +35,16 @@ import postingan27 from "@/assets/kegiatan/postingan-27.png";
 import postingan28 from "@/assets/kegiatan/postingan-28.png";
 import postingan29 from "@/assets/kegiatan/postingan-29.png";
 import postingan30 from "@/assets/kegiatan/postingan-30.png";
+import postingan31 from "@/assets/kegiatan/postingan-31.png";
+import postingan32 from "@/assets/kegiatan/postingan-32.png";
+import postingan33 from "@/assets/kegiatan/postingan-33.png";
+import postingan34 from "@/assets/kegiatan/postingan-34.png";
+import postingan35 from "@/assets/kegiatan/postingan-35.png";
+import postingan36 from "@/assets/kegiatan/postingan-36.png";
+import postingan37 from "@/assets/kegiatan/postingan-37.png";
+import postingan38 from "@/assets/kegiatan/postingan-38.png";
+import postingan39 from "@/assets/kegiatan/postingan-39.png";
+import postingan40 from "@/assets/kegiatan/postingan-40.png";
 import postingan140 from "@/assets/kegiatan/postingan-140.png";
 import postingan141 from "@/assets/kegiatan/postingan-141.png";
 import postingan142 from "@/assets/kegiatan/postingan-142.png";
@@ -46,6 +56,16 @@ const allKegiatan = [
   { src: postingan142, alt: "Rapat Kerja Pusat Tahun 2026" },
   { src: postingan141, alt: "Sarasehan Ketua Pengda Se Indonesia" },
   { src: postingan140, alt: "Rapat Terbatas Pengurus Cabang Lubuk Linggau" },
+  { src: postingan40, alt: "28 Atlet IKS PI Kera Sakti Pengda Sumatera Selatan Full Team Mengisi Semua 36 Kategori Tanding Dan Seni Pada Kejurnas IKS PI Kera Sakti Cup Pusat" },
+  { src: postingan39, alt: "Siang Dan Malam Para Pelatih Mengawal Atlet Untuk Meningkatkan Fisik Dan Mengasah Teknik Secara Berkala Dan Terjadwal" },
+  { src: postingan38, alt: "Pengda IKS Sumsel Konsisten Latihan Bersama Atlet Persiapan Menghadapi Kejuaraan Nasional IKS PI Kera Sakti Cup Di Pusat Madiun - Jawa Timur" },
+  { src: postingan37, alt: "Pengda IKS Sumsel Dan Penasihat Pusat Berbuka Puasa Dan Melaksanakan Konsolidasi Bersama Cabang OKU, OKU Timur, OKU Selatan Dan Muara Enim" },
+  { src: postingan36, alt: "Kegiatan Ini Di Ikuti Para Atlet Dari Berbagai Daerah Di Sumatera Selatan Yang Lolos Seleksi Pada Kejurda IKS PI Kera Sakti Cup Sumatera Selatan Th.2022" },
+  { src: postingan35, alt: "Pengda IKS Sumsel Melaksanakan Pemusatan Latihan Daerah (Pelatda) Di Palembang Untuk Persiapan Kejurnas IKS PI Kera Sakti Cup IV Di Madiun" },
+  { src: postingan34, alt: "Pengda IKS Sumsel Mendukung Semua Atlet Kejurprov Sumatera Selatan Tahun 2023. Ketua Pengda: Semua Kegiatan Yang Positif Wajib Kita Support" },
+  { src: postingan33, alt: "Ketua Pengda IKS Sumsel Mengikuti Tasyakuran Pengesahan Angkatan 135/121 Cabang Palembang Bersama Penasihat Pusat Dan Penasihat Pengda" },
+  { src: postingan32, alt: "Ketua Pengda IKS Sumsel Bersama Penasihat Pusat Melakukan Kunjungan Dan Sosialisasi Ke Daerah Perairan Cabang Banyuasin, Sumatera Selatan" },
+  { src: postingan31, alt: "Pengda IKS Sumsel Mengirimkan Wasit & Juri Untuk Mengikuti Kegiatan Training Of Trainer Peraturan IPSI Tahun 2022 Yang Di Selenggarakan Oleh IPSI Sumsel" },
   { src: postingan30, alt: "Jarak Bukanlah Penghalang Untuk Pengda dan Pengcab IKS PI Kera Sakti Sumsel Melaksanakan Rakorda Merujuk Kegiatan Rakerpus" },
   { src: postingan29, alt: "Ketua Pengda IKS Sumsel Menyerahkan Laporan Pertanggung Jawaban (LPJ) ke Pengurus Pusat IKS PI Kera Sakti" },
   { src: postingan28, alt: "Ketua Pengda IKS Sumsel Menghadiri Perayaan Ulang Tahun (Haul) Perguruan IKS PI Kera Sakti ke 43 di Padepokan Pusat Madiun" },
