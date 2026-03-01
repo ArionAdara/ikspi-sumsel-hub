@@ -81,7 +81,7 @@ export function SejarahSection() {
                 berfokus pada penggabungan seni beladiri kungfu/kuntauw Tiongkok dengan teknik pencak silat Indonesia.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Perguruan ini mengajarkan <span className="text-gold">Nan Pie Ho Jien</span>, yaitu aliran 
+                Perguruan ini mengajarkan <span className="text-gold">Nan Pei Ho Jien</span>, yaitu aliran 
                 kungfu kera yang mengkombinasikan gaya Selatan (Hokkian - permainan tangan) dan Utara 
                 (Shantung - tendangan tinggi dan meloncat).
               </p>
