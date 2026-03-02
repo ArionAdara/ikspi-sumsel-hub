@@ -45,6 +45,16 @@ import postingan37 from "@/assets/kegiatan/postingan-37.png";
 import postingan38 from "@/assets/kegiatan/postingan-38.png";
 import postingan39 from "@/assets/kegiatan/postingan-39.png";
 import postingan40 from "@/assets/kegiatan/postingan-40.png";
+import postingan41 from "@/assets/kegiatan/postingan-41.png";
+import postingan42 from "@/assets/kegiatan/postingan-42.png";
+import postingan43 from "@/assets/kegiatan/postingan-43.png";
+import postingan44 from "@/assets/kegiatan/postingan-44.png";
+import postingan45 from "@/assets/kegiatan/postingan-45.png";
+import postingan46 from "@/assets/kegiatan/postingan-46.png";
+import postingan47 from "@/assets/kegiatan/postingan-47.png";
+import postingan48 from "@/assets/kegiatan/postingan-48.png";
+import postingan49 from "@/assets/kegiatan/postingan-49.png";
+import postingan50 from "@/assets/kegiatan/postingan-50.png";
 import postingan140 from "@/assets/kegiatan/postingan-140.png";
 import postingan141 from "@/assets/kegiatan/postingan-141.png";
 import postingan142 from "@/assets/kegiatan/postingan-142.png";
@@ -56,6 +66,16 @@ const allKegiatan = [
   { src: postingan142, alt: "Rapat Kerja Pusat Tahun 2026" },
   { src: postingan141, alt: "Sarasehan Ketua Pengda Se Indonesia" },
   { src: postingan140, alt: "Rapat Terbatas Pengurus Cabang Lubuk Linggau" },
+  { src: postingan50, alt: "Ketua Pengda IKS Sumsel Bersama Perwakilan Pengurus Pusat Meninjau Dan Menghadiri Syukuran Pembangunan Sekretariat IKS PI Cabang Palembang" },
+  { src: postingan49, alt: "Ketua Pengda IKS Sumsel Bersama Ketua Cabang IKS Banyuasin Menghadiri Ujian Kenaikan Tingkat Di Ranting Pulau Rimau Cabang Banyuasin" },
+  { src: postingan48, alt: "Ketua Pengda IKS Sumsel Support Atlet Asal IKS PI Kera Sakti Yang Mengikuti Pekan Olahraga Provinsi Sumatera Selatan Tahun 2023 Di Kabupaten Lahat" },
+  { src: postingan47, alt: "Support Kegiatan Positif Ketua Pengda IKS PI Kera Sakti Sumsel Menghadiri Kegiatan Lomba Agustusan Yang Diselenggarakan Cabang Ogan Ilir" },
+  { src: postingan46, alt: "Menjalankan Tupoksi, Pengda IKS PI Kera Sakti Sumsel Membantu Menyelesaikan Masalah Yang Tidak Dapat Diselesaikan Oleh Cabang Secara Mandiri" },
+  { src: postingan45, alt: "Tasyakuran Wujud Rasa Syukur Atas Juara Umum Kontingen IKS PI Kera Sakti Sumatera Selatan Pada Kejurnas IKS PI Kera Sakti Cup IV Pusat Di Madiun" },
+  { src: postingan44, alt: "Penataran Wasit Juri Tingkat Provinsi Di Ikuti Perwakilan IKS PI Kera Sakti Sebanyak 3 Orang Di Rekomendasi Oleh Pengda IKS PI Kera Sakti Sumsel" },
+  { src: postingan43, alt: "Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Memberikan Reward Kepada Atlet, Pelatih Dan Cabang Yang Anggotanya (Atlet) Mendapatkan Medali" },
+  { src: postingan42, alt: "Kontingen Asal Pengda IKS PI Kera Sakti Sumsel (Tim Oncak Bumi Sriwijaya) Berhasil Menjadi Juara Umum Pada Kejurnas IKS PI Kera Sakti Cup IV" },
+  { src: postingan41, alt: "Atlet Binaan Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Tim Oncak Bumi Sriwijaya" },
   { src: postingan40, alt: "28 Atlet IKS PI Kera Sakti Pengda Sumatera Selatan Full Team Mengisi Semua 36 Kategori Tanding Dan Seni Pada Kejurnas IKS PI Kera Sakti Cup Pusat" },
   { src: postingan39, alt: "Siang Dan Malam Para Pelatih Mengawal Atlet Untuk Meningkatkan Fisik Dan Mengasah Teknik Secara Berkala Dan Terjadwal" },
   { src: postingan38, alt: "Pengda IKS Sumsel Konsisten Latihan Bersama Atlet Persiapan Menghadapi Kejuaraan Nasional IKS PI Kera Sakti Cup Di Pusat Madiun - Jawa Timur" },
