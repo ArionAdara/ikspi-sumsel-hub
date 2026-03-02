@@ -75,6 +75,16 @@ import postingan67 from "@/assets/kegiatan/postingan-67.png";
 import postingan68 from "@/assets/kegiatan/postingan-68.png";
 import postingan69 from "@/assets/kegiatan/postingan-69.png";
 import postingan70 from "@/assets/kegiatan/postingan-70.png";
+import postingan71 from "@/assets/kegiatan/postingan-71.png";
+import postingan72 from "@/assets/kegiatan/postingan-72.png";
+import postingan73 from "@/assets/kegiatan/postingan-73.png";
+import postingan74 from "@/assets/kegiatan/postingan-74.png";
+import postingan75 from "@/assets/kegiatan/postingan-75.png";
+import postingan76 from "@/assets/kegiatan/postingan-76.png";
+import postingan77 from "@/assets/kegiatan/postingan-77.png";
+import postingan78 from "@/assets/kegiatan/postingan-78.png";
+import postingan79 from "@/assets/kegiatan/postingan-79.png";
+import postingan80 from "@/assets/kegiatan/postingan-80.png";
 import postingan140 from "@/assets/kegiatan/postingan-140.png";
 import postingan141 from "@/assets/kegiatan/postingan-141.png";
 import postingan142 from "@/assets/kegiatan/postingan-142.png";
@@ -86,6 +96,16 @@ const allKegiatan = [
   { src: postingan142, alt: "Rapat Kerja Pusat Tahun 2026" },
   { src: postingan141, alt: "Sarasehan Ketua Pengda Se Indonesia" },
   { src: postingan140, alt: "Rapat Terbatas Pengurus Cabang Lubuk Linggau" },
+  { src: postingan80, alt: "Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Menghadiri Undangan Cabang Palembang Memperingati Tahun Baru Islam 1 Muharram 1446 H" },
+  { src: postingan79, alt: "Menghormati Dan Turut Berbahagia Ketua Pengda Sumsel Menghadiri Secara Langsung Undangan Pernikahan Putri Pertama Ketua Umum IKS PI Kera Sakti" },
+  { src: postingan78, alt: "Ketua Pengda Sumsel Dan Ketua Cabang Palembang Mengikuti Pelaksanaan Kegiatan Pengesahan Jarak Jauh Angkatan 139/125 Melalui Zoom Meeting" },
+  { src: postingan77, alt: "Ketua Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Bersama Dewan Teknik Meninjau Langsung Kegiatan UKT 139/125 Di Cabang Ogan Ilir" },
+  { src: postingan76, alt: "Dukung Atlet IKS PI Kera Sakti Sumatera Selatan, Ketua Pengda IKS Sumsel Nobar Bersama Sekretaris IPSI Provinsi Sumatera Selatan Bpk. Sidi Darlis" },
+  { src: postingan75, alt: "Ketua Pengda Sumsel Bersama Penasihat Pusat Meninjau Pembangunan Sekaligus Menyerahkan Bantuan Dari Pusat Untuk Sekretariat Cabang Palembang" },
+  { src: postingan74, alt: "Membesuk Atlet Kejurnas IKS PI Kera Sakti Ke IV Asal Sumatera Selatan Yang Sedang Sakit, Ketua Pengda IKS Sumsel Berikan Dukungan Secara Moril" },
+  { src: postingan73, alt: "Mempererat Tali Silaturahmi Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Melaksanakan Buka Puasa Bersama Cabang Terdekat" },
+  { src: postingan72, alt: "Dewan Teknik Bersama Tim Pengda IKS Sumsel Menjalankan Tupoksi Dengan Melaksanakan Kegiatan UKT Tingkat II Di Cabang IKS PI Kera Sakti Ogan Ilir" },
+  { src: postingan71, alt: "Pengda IKS Sumsel Hadiri Tasyakuran Pengesahan Warga & Pendekar Cabang Palembang Angkatan 138/124 Perdana Di Sekretariat Cabang Yang Baru" },
   { src: postingan70, alt: "Ketua Pengda IKS Sumsel Melantik Sdr. Slamet Wahyudi Sebagai Ketua Cabang Ogan Komering Ilir Kembali Untuk Periode 2023 - 2028" },
   { src: postingan69, alt: "Pengda IKS Sumsel Bersama Pengurus Cabang OKU Melaksanakan Latihan Bersama Perkenalkan Jurus Tunggal IPSI Ke Anggota IKS PI Kera Sakti" },
   { src: postingan68, alt: "Ketua Pengda Bersama Dewan Penasihat Pusat Meresmikan Gedung Sekretariat Dan Memperingati HUT Perguruan IKS PI Kera Sakti Ke 44 Tahun Di OKU Timur" },
