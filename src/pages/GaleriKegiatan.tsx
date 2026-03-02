@@ -55,6 +55,16 @@ import postingan47 from "@/assets/kegiatan/postingan-47.png";
 import postingan48 from "@/assets/kegiatan/postingan-48.png";
 import postingan49 from "@/assets/kegiatan/postingan-49.png";
 import postingan50 from "@/assets/kegiatan/postingan-50.png";
+import postingan51 from "@/assets/kegiatan/postingan-51.png";
+import postingan52 from "@/assets/kegiatan/postingan-52.png";
+import postingan53 from "@/assets/kegiatan/postingan-53.png";
+import postingan54 from "@/assets/kegiatan/postingan-54.png";
+import postingan55 from "@/assets/kegiatan/postingan-55.png";
+import postingan56 from "@/assets/kegiatan/postingan-56.png";
+import postingan57 from "@/assets/kegiatan/postingan-57.png";
+import postingan58 from "@/assets/kegiatan/postingan-58.png";
+import postingan59 from "@/assets/kegiatan/postingan-59.png";
+import postingan60 from "@/assets/kegiatan/postingan-60.png";
 import postingan140 from "@/assets/kegiatan/postingan-140.png";
 import postingan141 from "@/assets/kegiatan/postingan-141.png";
 import postingan142 from "@/assets/kegiatan/postingan-142.png";
@@ -66,6 +76,16 @@ const allKegiatan = [
   { src: postingan142, alt: "Rapat Kerja Pusat Tahun 2026" },
   { src: postingan141, alt: "Sarasehan Ketua Pengda Se Indonesia" },
   { src: postingan140, alt: "Rapat Terbatas Pengurus Cabang Lubuk Linggau" },
+  { src: postingan60, alt: "Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Hadir Langsung Untuk Mendukung Para Atlet Cabang Muara Enim Yang Sedang Bertanding" },
+  { src: postingan59, alt: "Menjalankan Tupoksi Pengda IKS Sumsel Membantu Menyelesaikan Berbagai Masalah Yang Tidak Dapat Diselesaikan Oleh Cabang Secara Mandiri" },
+  { src: postingan58, alt: "Mewakil Pengda IKS Sumsel Sdr. Yung Chen (Dewan Teknik) Menghadiri Selamatan Pengesahan IKS PI Kera Sakti Cabang Muara Enim" },
+  { src: postingan57, alt: "Takziah Di Kediaman Ibu Mertua Ketua Cabang Palembang Yang Juga Merupakan Penasihat Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan" },
+  { src: postingan56, alt: "Mewakili Pengda IKS Sumsel Hj. Rita Suryani (Penasihat) Menghadiri Rapat Kordinasi Cabang Musi Rawas, Lubuk Linggau Dan Muratara" },
+  { src: postingan55, alt: "IKS PI Kera Sakti Sumatera Selatan Meraih Juara Umum III Kategori Dewasa Pada Kejuaraan Pencak Silat Open Tournament Musi Bergelora Tahun 2023" },
+  { src: postingan54, alt: "Ketua Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Menghadiri Undangan Direktorat Intelkam Polda Sumsel Pada Kegiatan Forum Konsultasi Publik (FKP)" },
+  { src: postingan53, alt: "Ketua Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Beraudiensi Dengan Pengurus Cabang, Ranting Dan Warga IKS PI Kera Sakti Cabang Lahat" },
+  { src: postingan52, alt: "Ketua Pengda IKS Sumsel Bersama Dewan Penasihat Pusat Menghadiri Pelaksanaan Musyawarah Cabang IKS PI Kera Sakti Ogan Ilir" },
+  { src: postingan51, alt: "Pengda IKS Sumsel Bersama Pengcab Dan Ranting Cabang OKU Melaksanakan Rapat Terbatas Penunjukan Ketua Plt. IKS PI Kera Sakti Cabang OKU" },
   { src: postingan50, alt: "Ketua Pengda IKS Sumsel Bersama Perwakilan Pengurus Pusat Meninjau Dan Menghadiri Syukuran Pembangunan Sekretariat IKS PI Cabang Palembang" },
   { src: postingan49, alt: "Ketua Pengda IKS Sumsel Bersama Ketua Cabang IKS Banyuasin Menghadiri Ujian Kenaikan Tingkat Di Ranting Pulau Rimau Cabang Banyuasin" },
   { src: postingan48, alt: "Ketua Pengda IKS Sumsel Support Atlet Asal IKS PI Kera Sakti Yang Mengikuti Pekan Olahraga Provinsi Sumatera Selatan Tahun 2023 Di Kabupaten Lahat" },
