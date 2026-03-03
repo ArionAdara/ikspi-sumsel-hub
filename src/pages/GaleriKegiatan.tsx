@@ -85,16 +85,6 @@ import postingan77 from "@/assets/kegiatan/postingan-77.png";
 import postingan78 from "@/assets/kegiatan/postingan-78.png";
 import postingan79 from "@/assets/kegiatan/postingan-79.png";
 import postingan80 from "@/assets/kegiatan/postingan-80.png";
-import postingan91 from "@/assets/kegiatan/postingan-91.png";
-import postingan92 from "@/assets/kegiatan/postingan-92.png";
-import postingan93 from "@/assets/kegiatan/postingan-93.png";
-import postingan94 from "@/assets/kegiatan/postingan-94.png";
-import postingan95 from "@/assets/kegiatan/postingan-95.png";
-import postingan96 from "@/assets/kegiatan/postingan-96.png";
-import postingan97 from "@/assets/kegiatan/postingan-97.png";
-import postingan98 from "@/assets/kegiatan/postingan-98.png";
-import postingan99 from "@/assets/kegiatan/postingan-99.png";
-import postingan100 from "@/assets/kegiatan/postingan-100.png";
 import postingan81 from "@/assets/kegiatan/postingan-81.png";
 import postingan82 from "@/assets/kegiatan/postingan-82.png";
 import postingan83 from "@/assets/kegiatan/postingan-83.png";
@@ -105,6 +95,26 @@ import postingan87 from "@/assets/kegiatan/postingan-87.png";
 import postingan88 from "@/assets/kegiatan/postingan-88.png";
 import postingan89 from "@/assets/kegiatan/postingan-89.png";
 import postingan90 from "@/assets/kegiatan/postingan-90.png";
+import postingan91 from "@/assets/kegiatan/postingan-91.png";
+import postingan92 from "@/assets/kegiatan/postingan-92.png";
+import postingan93 from "@/assets/kegiatan/postingan-93.png";
+import postingan94 from "@/assets/kegiatan/postingan-94.png";
+import postingan95 from "@/assets/kegiatan/postingan-95.png";
+import postingan96 from "@/assets/kegiatan/postingan-96.png";
+import postingan97 from "@/assets/kegiatan/postingan-97.png";
+import postingan98 from "@/assets/kegiatan/postingan-98.png";
+import postingan99 from "@/assets/kegiatan/postingan-99.png";
+import postingan100 from "@/assets/kegiatan/postingan-100.png";
+import postingan101 from "@/assets/kegiatan/postingan-101.png";
+import postingan102 from "@/assets/kegiatan/postingan-102.png";
+import postingan103 from "@/assets/kegiatan/postingan-103.png";
+import postingan104 from "@/assets/kegiatan/postingan-104.png";
+import postingan105 from "@/assets/kegiatan/postingan-105.png";
+import postingan106 from "@/assets/kegiatan/postingan-106.png";
+import postingan107 from "@/assets/kegiatan/postingan-107.png";
+import postingan108 from "@/assets/kegiatan/postingan-108.png";
+import postingan109 from "@/assets/kegiatan/postingan-109.png";
+import postingan110 from "@/assets/kegiatan/postingan-110.png";
 import postingan140 from "@/assets/kegiatan/postingan-140.png";
 import postingan141 from "@/assets/kegiatan/postingan-141.png";
 import postingan142 from "@/assets/kegiatan/postingan-142.png";
@@ -116,7 +126,16 @@ const allKegiatan = [
   { src: postingan142, alt: "Rapat Kerja Pusat Tahun 2026" },
   { src: postingan141, alt: "Sarasehan Ketua Pengda Se Indonesia" },
   { src: postingan140, alt: "Rapat Terbatas Pengurus Cabang Lubuk Linggau" },
-  { src: postingan100, alt: "Menghadiri Undangan IKS PI Cabang Palembang Dalam Rangka Memperingati Haul Guru Besar IKS PI Kera Sakti H. R. Totong Kiemdarto" },
+  { src: postingan110, alt: "Ketua Pengda Berkunjung Ke Cabang OKU Timur Mendorong Sikap Saling Menghormati Dan Memperkuat Persatuan Dalam Keberagamaan Sesama Anggota" },
+  { src: postingan109, alt: "Pengda IKS Sumsel Apresiasi Atlet, Pelatih Dan Wasit Juri Asal IKS PI Kera Sakti Yang Turut Berpartisipasi Di Kejuaraan Nasional IPSI Cup Sumsel II" },
+  { src: postingan108, alt: "Penasihat Pengda IKS Sumsel Bapak Langgeng Suprapto Hadiri Undangan Selamatan Pengesahan IKS PI Kera Sakti Cabang Banyuasin 141/127" },
+  { src: postingan107, alt: "Pengesahan Jarak Jauh Angkatan 141 Cabang Ogan Ilir Dan Ranting Lalan (Muba) Dilaksanakan Melalui Virtual Dipimpin Langsung Oleh Ketua Umum" },
+  { src: postingan106, alt: "Ketua Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Bersama Ketua Cabang Muara Enim Membuka Kegiatan IKS PI Kera Sakti Cup Cabang Muara Enim" },
+  { src: postingan105, alt: "Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Menghadiri Kegiatan HUT IKS PI Kera Sakti Ke 45 Tahun Dan Cabang Palembang Ke 33 Tahun" },
+  { src: postingan104, alt: "Pengda IKS Sumsel Menerima Perwakilan Pengurus Cabang Muara Enim Untuk Berkonsultasi Membahas Persiapan IKS PI Kera Sakti Cup Cabang Muara Enim" },
+  { src: postingan103, alt: "Dewan Teknik Pengda IKS Sumsel Menerima Kue Dari Ketua Cabang Musi Rawas Memperingati HUT IKS PI Kera Sakti Ke 45 Tahun Di Cabang Musi Rawas" },
+  { src: postingan102, alt: "Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Menghadiri Kegiatan Memperingati HUT IKS PI Kera Sakti Ke 45 Tahun Di Cabang Lubuk Linggau" },
+  { src: postingan101, alt: "Pengurus Daerah IKS PI Kera Sakti Bersama 2 Ketua Cabang Asal Sumatera Selatan Menghadiri Rakerpus & HUT IKS PI Kera Sakti Ke 45 Tahun" },
   { src: postingan99, alt: "Kunjungan Dewan Teknik Pengda IKS Sumsel Ke Cabang Musi Rawas Utara Menyampaikan Rencana Program Kerja Pusat Bersama Pengda IKS Sumsel" },
   { src: postingan98, alt: "Ketua Pengda Bersama Dewan Penasihat Pusat Menghadiri Acara Tasyakuran Pengesahan Angkatan 140 / 126 Sekaligus Melantik Pengcab Banyuasin Yang Baru" },
   { src: postingan97, alt: "Diwakili Dewan Teknik, Pengda IKS Sumsel Menghadiri Undangan Acara Tasyakuran Pengesahan Angkatan 140 / 126 IKS PI Kera Sakti Cabang Ogan Ilir" },
