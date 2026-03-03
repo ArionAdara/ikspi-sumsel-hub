@@ -85,6 +85,16 @@ import postingan77 from "@/assets/kegiatan/postingan-77.png";
 import postingan78 from "@/assets/kegiatan/postingan-78.png";
 import postingan79 from "@/assets/kegiatan/postingan-79.png";
 import postingan80 from "@/assets/kegiatan/postingan-80.png";
+import postingan81 from "@/assets/kegiatan/postingan-81.png";
+import postingan82 from "@/assets/kegiatan/postingan-82.png";
+import postingan83 from "@/assets/kegiatan/postingan-83.png";
+import postingan84 from "@/assets/kegiatan/postingan-84.png";
+import postingan85 from "@/assets/kegiatan/postingan-85.png";
+import postingan86 from "@/assets/kegiatan/postingan-86.png";
+import postingan87 from "@/assets/kegiatan/postingan-87.png";
+import postingan88 from "@/assets/kegiatan/postingan-88.png";
+import postingan89 from "@/assets/kegiatan/postingan-89.png";
+import postingan90 from "@/assets/kegiatan/postingan-90.png";
 import postingan140 from "@/assets/kegiatan/postingan-140.png";
 import postingan141 from "@/assets/kegiatan/postingan-141.png";
 import postingan142 from "@/assets/kegiatan/postingan-142.png";
@@ -96,6 +106,16 @@ const allKegiatan = [
   { src: postingan142, alt: "Rapat Kerja Pusat Tahun 2026" },
   { src: postingan141, alt: "Sarasehan Ketua Pengda Se Indonesia" },
   { src: postingan140, alt: "Rapat Terbatas Pengurus Cabang Lubuk Linggau" },
+  { src: postingan90, alt: "Pengda IKS Sumsel Support Atlet IKS PI Kera Sakti Dari Berbagai Daerah Di Sumsel Yang Mengikuti Kejuaraan Pencak Silat IPSI Ogan Ilir Open 2024" },
+  { src: postingan89, alt: "Pengda IKS PI Kera Sakti Sumsel Memberikan Ucapan Selamat Kepada Anggota IKS PI Kera Sakti Yang Dilantik Sebagai Anggota DPRD Kab/Prov" },
+  { src: postingan88, alt: "Menyambut Dan Menerima Audiensi Anggota Dari Musi Banyuasin Membahas Dan Mencari Solusi Masalah Internal Cabang Yang Sedang Terjadi" },
+  { src: postingan87, alt: "Rapat Kordinasi Setelah Pengesahan Selalu Rutin Dilaksanakan Pengurus Pusat Bersama Ketua-Ketua Pengda Membahas Perkembangan Wilayah Masing-Masing" },
+  { src: postingan86, alt: "Menghadiri Undangan Dari Sekretaris IPSI Sumatera Selatan Dalam Kegiatan Gabungan Barisan Advokat Dan Jawara Sriwijaya (Bung Baja)" },
+  { src: postingan85, alt: "Dewan Teknik Pengda IKS Sumsel Melaksanakan Ujian Kenaikan Tingkat Tk. II Dari Sabuk Biru Ke Sabuk Merah Angkatan 125 Di Cabang Ogan Ilir" },
+  { src: postingan84, alt: "Ketua Pengda IKS Sumsel Membesuk Ketua Cabang Palembang Yang Juga Penasihat Pengda IKS Sumsel Yang Sedang Sakit" },
+  { src: postingan83, alt: "Dewan Teknik Pengda IKS Sumsel Bersama Dewan Teknik Cabang Ogan Ilir Memberikan Nasihat Dan Motivasi Untuk Warga Angkatan 139 Yang Baru Disahkan" },
+  { src: postingan82, alt: "Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Berduka Cita Atas Wafatnya Orang Tua Dari Sdr. M. Aulia Dzikri (Bendahara Pengda IKS Sumsel)" },
+  { src: postingan81, alt: "Support Atlet Ke Jenjang Internasional Sayyidah Aisyah Erika Mendapatkan Medali Perunggu Pada Event Pencak Silat Indonesian Championship 2024" },
   { src: postingan80, alt: "Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Menghadiri Undangan Cabang Palembang Memperingati Tahun Baru Islam 1 Muharram 1446 H" },
   { src: postingan79, alt: "Menghormati Dan Turut Berbahagia Ketua Pengda Sumsel Menghadiri Secara Langsung Undangan Pernikahan Putri Pertama Ketua Umum IKS PI Kera Sakti" },
   { src: postingan78, alt: "Ketua Pengda Sumsel Dan Ketua Cabang Palembang Mengikuti Pelaksanaan Kegiatan Pengesahan Jarak Jauh Angkatan 139/125 Melalui Zoom Meeting" },
