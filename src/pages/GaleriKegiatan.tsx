@@ -85,6 +85,16 @@ import postingan77 from "@/assets/kegiatan/postingan-77.png";
 import postingan78 from "@/assets/kegiatan/postingan-78.png";
 import postingan79 from "@/assets/kegiatan/postingan-79.png";
 import postingan80 from "@/assets/kegiatan/postingan-80.png";
+import postingan91 from "@/assets/kegiatan/postingan-91.png";
+import postingan92 from "@/assets/kegiatan/postingan-92.png";
+import postingan93 from "@/assets/kegiatan/postingan-93.png";
+import postingan94 from "@/assets/kegiatan/postingan-94.png";
+import postingan95 from "@/assets/kegiatan/postingan-95.png";
+import postingan96 from "@/assets/kegiatan/postingan-96.png";
+import postingan97 from "@/assets/kegiatan/postingan-97.png";
+import postingan98 from "@/assets/kegiatan/postingan-98.png";
+import postingan99 from "@/assets/kegiatan/postingan-99.png";
+import postingan100 from "@/assets/kegiatan/postingan-100.png";
 import postingan81 from "@/assets/kegiatan/postingan-81.png";
 import postingan82 from "@/assets/kegiatan/postingan-82.png";
 import postingan83 from "@/assets/kegiatan/postingan-83.png";
@@ -106,6 +116,16 @@ const allKegiatan = [
   { src: postingan142, alt: "Rapat Kerja Pusat Tahun 2026" },
   { src: postingan141, alt: "Sarasehan Ketua Pengda Se Indonesia" },
   { src: postingan140, alt: "Rapat Terbatas Pengurus Cabang Lubuk Linggau" },
+  { src: postingan100, alt: "Menghadiri Undangan IKS PI Cabang Palembang Dalam Rangka Memperingati Haul Guru Besar IKS PI Kera Sakti H. R. Totong Kiemdarto" },
+  { src: postingan99, alt: "Kunjungan Dewan Teknik Pengda IKS Sumsel Ke Cabang Musi Rawas Utara Menyampaikan Rencana Program Kerja Pusat Bersama Pengda IKS Sumsel" },
+  { src: postingan98, alt: "Ketua Pengda Bersama Dewan Penasihat Pusat Menghadiri Acara Tasyakuran Pengesahan Angkatan 140 / 126 Sekaligus Melantik Pengcab Banyuasin Yang Baru" },
+  { src: postingan97, alt: "Diwakili Dewan Teknik, Pengda IKS Sumsel Menghadiri Undangan Acara Tasyakuran Pengesahan Angkatan 140 / 126 IKS PI Kera Sakti Cabang Ogan Ilir" },
+  { src: postingan96, alt: "Ketua Pengda IKS Sumsel Hadir Langsung Untuk Memberikan Dukungan Atlet Yang Sedang Bertanding Pada Kejuaraan Nasional Rektor Cup Unsri 2024" },
+  { src: postingan95, alt: "Menjaga Tali Silaturahmi Sekaligus Berkonsolidasi, Ketua Pengda IKS Sumsel Bersama Dewan Penasihat Pusat Mengunjungi IKS Cabang Prabumulih" },
+  { src: postingan94, alt: "Ketua Pengda IKS Sumsel Menghadiri Pelaksanaan Musyawarah Cabang (Muscab) Banyuasin Untuk Menentukan Ketua Cabang Periode Selanjutnya" },
+  { src: postingan93, alt: "Dewan Teknik Pengda IKS Sumsel Melaksanakan Ujian Kenaikan Tingkat Tk. II Angkatan 126 Dari Sabuk Biru Ke Sabuk Merah Di Cabang Palembang" },
+  { src: postingan92, alt: "Ketua Pengda IKS Sumsel Menghadiri Undangan Ketua IPSI Sumatera Selatan Membahas Konsolidasi Untuk Menyelesaikan Permasalahan IPSI OKU" },
+  { src: postingan91, alt: "Ketua Pengda IKS Sumsel Beserta Jajaran Menghadiri Undangan UKT 140/126 Sekaligus Melantik Pengurus Cabang OKU Timur Periode 2024 - 2029" },
   { src: postingan90, alt: "Pengda IKS Sumsel Support Atlet IKS PI Kera Sakti Dari Berbagai Daerah Di Sumsel Yang Mengikuti Kejuaraan Pencak Silat IPSI Ogan Ilir Open 2024" },
   { src: postingan89, alt: "Pengda IKS PI Kera Sakti Sumsel Memberikan Ucapan Selamat Kepada Anggota IKS PI Kera Sakti Yang Dilantik Sebagai Anggota DPRD Kab/Prov" },
   { src: postingan88, alt: "Menyambut Dan Menerima Audiensi Anggota Dari Musi Banyuasin Membahas Dan Mencari Solusi Masalah Internal Cabang Yang Sedang Terjadi" },
