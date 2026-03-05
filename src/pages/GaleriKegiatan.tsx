@@ -125,6 +125,16 @@ import postingan117 from "@/assets/kegiatan/postingan-117.png";
 import postingan118 from "@/assets/kegiatan/postingan-118.png";
 import postingan119 from "@/assets/kegiatan/postingan-119.png";
 import postingan120 from "@/assets/kegiatan/postingan-120.png";
+import postingan121 from "@/assets/kegiatan/postingan-121.png";
+import postingan122 from "@/assets/kegiatan/postingan-122.png";
+import postingan123 from "@/assets/kegiatan/postingan-123.png";
+import postingan124 from "@/assets/kegiatan/postingan-124.png";
+import postingan125 from "@/assets/kegiatan/postingan-125.png";
+import postingan126 from "@/assets/kegiatan/postingan-126.png";
+import postingan127 from "@/assets/kegiatan/postingan-127.png";
+import postingan128 from "@/assets/kegiatan/postingan-128.png";
+import postingan129 from "@/assets/kegiatan/postingan-129.png";
+import postingan130 from "@/assets/kegiatan/postingan-130.png";
 import postingan140 from "@/assets/kegiatan/postingan-140.png";
 import postingan141 from "@/assets/kegiatan/postingan-141.png";
 import postingan142 from "@/assets/kegiatan/postingan-142.png";
@@ -143,6 +153,16 @@ const allKegiatan = [
   { src: postingan142, alt: "Rapat Kerja Pusat Tahun 2026" },
   { src: postingan141, alt: "Sarasehan Ketua Pengda Se Indonesia" },
   { src: postingan140, alt: "Rapat Terbatas Pengurus Cabang Lubuk Linggau" },
+  { src: postingan130, alt: "Ketua Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Membuka Acara Kegiatan Kejuaraan Cabang IKS PI Kera Sakti Cup OKU Timur Tahun 2025" },
+  { src: postingan129, alt: "Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Berduka Cita Atas Wafatnya Orang Tua Dari Sdri. Fitria (Tim Advokasi Pengda IKS Sumsel)" },
+  { src: postingan128, alt: "23 Peserta Asal Cabang Di Sumatera Selatan Ikuti Pelatihan Dewan Teknik & Seni Prestasi Di Padepokan IKS PI Kera Sakti Pusat - Madiun" },
+  { src: postingan127, alt: "Pasca Pengesahan, Pengurus Pusat IKS PI Kera Sakti Bahas Persiapan Pelatihan Dewan Teknik & Seni Prestasi Se Indonesia Melalui Zoom Meeting" },
+  { src: postingan126, alt: "Ketua IKS PI Kera Sakti Cabang Muara Enim Beserta Jajaran Temui Pengurus Daerah Sumatera Selatan Bahas Reshuffle Kepengurusan Muara Enim" },
+  { src: postingan125, alt: "Tasyakuran Warga Baru IKS PI Kera Sakti Di Ogan Ilir, Ketua Pengda Serukan Kesiapan Sambut Kejuaraan Daerah IKS PI Kera Sakti Cup II Sumatera Selatan" },
+  { src: postingan124, alt: "Ketua Pengda IKS Sumsel Hadiri Upacara Pembukaan Latihan Kader Pelatih Pencak Silat Militer (PSM) Tersebar Tahun 2025 Korem 004/Gapo" },
+  { src: postingan123, alt: "Ketua Cabang Sudarmaji Tuai Pujian Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Soroti Pertumbuhan Peserta Pengesahan Di Banyuasin" },
+  { src: postingan122, alt: "Jalin Silaturahmi, Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Hadiri Undangan Talkshow Tentara Dan Modernitas Di Jasdam II Sriwijaya" },
+  { src: postingan121, alt: "Fungsikan Lahan Sekretariat Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Dukung Kegiatan UKT 142/128 Cabang Ogan Ilir" },
   { src: postingan120, alt: "Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Hadiri UKT 142/128 Dan Tinjau Lahan Sekretariat Baru Cabang Musi Banyuasin" },
   { src: postingan119, alt: "Transparan Dan Terstruktur Pengda IKS Sumsel Sampaikan LPJ Dan Rencana Program 2025 Ke Seluruh Cabang Melalui Virtual Zoom Meeting" },
   { src: postingan118, alt: "Tegas!! Ketua Pengda IKS Sumsel Instruksikan Anggota Jaga Marwah Perguruan, Siap Turunkan Tim Advokasi Untuk OKU Timur Bila Diperlukan" },
