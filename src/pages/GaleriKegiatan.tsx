@@ -119,9 +119,16 @@ import postingan140 from "@/assets/kegiatan/postingan-140.png";
 import postingan141 from "@/assets/kegiatan/postingan-141.png";
 import postingan142 from "@/assets/kegiatan/postingan-142.png";
 import postingan143 from "@/assets/kegiatan/postingan-143.png";
+import postingan144 from "@/assets/kegiatan/postingan-144.png";
+import postingan145 from "@/assets/kegiatan/postingan-145.png";
+import postingan146 from "@/assets/kegiatan/postingan-146.png";
+import postingan100v2 from "@/assets/kegiatan/postingan-100-2.png";
 
 // Ordered from highest number (top) to lowest (bottom)
 const allKegiatan = [
+  { src: postingan146, alt: "Ketua Pengda IKS Sumsel Apresiasi Kegiatan Pembagian Takjil Dan Buka Puasa Bersama Warga Dan Pendekar IKS PI Kera Sakti Cabang Ogan Ilir" },
+  { src: postingan145, alt: "Jalankan Tugas Pokok Dan Fungsi Pengda IKS PI Kera Sakti Sumatera Selatan Bantu Mediasi Penyelesaian Masalah Cabang Ogan Komering Ilir" },
+  { src: postingan144, alt: "Kunjungan Ketua Pengda IKS Sumsel Ke Cabang Lahat Disambut Antusias Oleh Ketua Cabang Beserta Jajaran, Bahas Perkembangan Dan Persiapan Muscab" },
   { src: postingan143, alt: "Penyerahan Sertifikat Tanah Sekretariat" },
   { src: postingan142, alt: "Rapat Kerja Pusat Tahun 2026" },
   { src: postingan141, alt: "Sarasehan Ketua Pengda Se Indonesia" },

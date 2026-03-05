@@ -12,6 +12,7 @@ import ProgramKerja from "./pages/ProgramKerja";
 import TimPengda from "./pages/TimPengda";
 import KontakPerson from "./pages/KontakPerson";
 import GaleriKegiatan from "./pages/GaleriKegiatan";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/login" element={<Login />} />
