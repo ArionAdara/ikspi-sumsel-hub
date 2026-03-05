@@ -119,9 +119,16 @@ import postingan140 from "@/assets/kegiatan/postingan-140.png";
 import postingan141 from "@/assets/kegiatan/postingan-141.png";
 import postingan142 from "@/assets/kegiatan/postingan-142.png";
 import postingan143 from "@/assets/kegiatan/postingan-143.png";
+import postingan144 from "@/assets/kegiatan/postingan-144.png";
+import postingan145 from "@/assets/kegiatan/postingan-145.png";
+import postingan146 from "@/assets/kegiatan/postingan-146.png";
+import postingan100v2 from "@/assets/kegiatan/postingan-100-2.png";
 
 // Ordered from highest number (top) to lowest (bottom)
 const allKegiatan = [
+  { src: postingan146, alt: "Ketua Pengda IKS Sumsel Apresiasi Kegiatan Pembagian Takjil Dan Buka Puasa Bersama Warga Dan Pendekar IKS PI Kera Sakti Cabang Ogan Ilir" },
+  { src: postingan145, alt: "Jalankan Tugas Pokok Dan Fungsi Pengda IKS PI Kera Sakti Sumatera Selatan Bantu Mediasi Penyelesaian Masalah Cabang Ogan Komering Ilir" },
+  { src: postingan144, alt: "Kunjungan Ketua Pengda IKS Sumsel Ke Cabang Lahat Disambut Antusias Oleh Ketua Cabang Beserta Jajaran, Bahas Perkembangan Dan Persiapan Muscab" },
   { src: postingan143, alt: "Penyerahan Sertifikat Tanah Sekretariat" },
   { src: postingan142, alt: "Rapat Kerja Pusat Tahun 2026" },
   { src: postingan141, alt: "Sarasehan Ketua Pengda Se Indonesia" },
@@ -136,6 +143,7 @@ const allKegiatan = [
   { src: postingan103, alt: "Dewan Teknik Pengda IKS Sumsel Menerima Kue Dari Ketua Cabang Musi Rawas Memperingati HUT IKS PI Kera Sakti Ke 45 Tahun Di Cabang Musi Rawas" },
   { src: postingan102, alt: "Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Menghadiri Kegiatan Memperingati HUT IKS PI Kera Sakti Ke 45 Tahun Di Cabang Lubuk Linggau" },
   { src: postingan101, alt: "Pengurus Daerah IKS PI Kera Sakti Bersama 2 Ketua Cabang Asal Sumatera Selatan Menghadiri Rakerpus & HUT IKS PI Kera Sakti Ke 45 Tahun" },
+  { src: postingan100v2, alt: "Menghadiri Undangan IKS PI Cabang Palembang Dalam Rangka Memperingati Haul Guru Besar IKS PI Kera Sakti H. R. Totong Kiemdarto (2)" },
   { src: postingan99, alt: "Kunjungan Dewan Teknik Pengda IKS Sumsel Ke Cabang Musi Rawas Utara Menyampaikan Rencana Program Kerja Pusat Bersama Pengda IKS Sumsel" },
   { src: postingan98, alt: "Ketua Pengda Bersama Dewan Penasihat Pusat Menghadiri Acara Tasyakuran Pengesahan Angkatan 140 / 126 Sekaligus Melantik Pengcab Banyuasin Yang Baru" },
   { src: postingan97, alt: "Diwakili Dewan Teknik, Pengda IKS Sumsel Menghadiri Undangan Acara Tasyakuran Pengesahan Angkatan 140 / 126 IKS PI Kera Sakti Cabang Ogan Ilir" },
