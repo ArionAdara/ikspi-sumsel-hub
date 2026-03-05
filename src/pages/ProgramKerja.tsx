@@ -81,7 +81,7 @@ export default function ProgramKerja() {
               </div>
               <div className="w-px bg-border" />
               <Link to="/galeri-kegiatan" className="text-center group cursor-pointer">
-                <div className="text-3xl md:text-4xl font-heading font-bold text-gold group-hover:text-gold-light transition-colors">118</div>
+                <div className="text-3xl md:text-4xl font-heading font-bold text-gold group-hover:text-gold-light transition-colors">128</div>
                 <div className="text-xs text-muted-foreground uppercase tracking-wider mt-1 group-hover:text-gold transition-colors">Total Dokumentasi</div>
               </Link>
             </motion.div>
