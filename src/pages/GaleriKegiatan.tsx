@@ -115,6 +115,16 @@ import postingan107 from "@/assets/kegiatan/postingan-107.png";
 import postingan108 from "@/assets/kegiatan/postingan-108.png";
 import postingan109 from "@/assets/kegiatan/postingan-109.png";
 import postingan110 from "@/assets/kegiatan/postingan-110.png";
+import postingan111 from "@/assets/kegiatan/postingan-111.png";
+import postingan112 from "@/assets/kegiatan/postingan-112.png";
+import postingan113 from "@/assets/kegiatan/postingan-113.png";
+import postingan114 from "@/assets/kegiatan/postingan-114.png";
+import postingan115 from "@/assets/kegiatan/postingan-115.png";
+import postingan116 from "@/assets/kegiatan/postingan-116.png";
+import postingan117 from "@/assets/kegiatan/postingan-117.png";
+import postingan118 from "@/assets/kegiatan/postingan-118.png";
+import postingan119 from "@/assets/kegiatan/postingan-119.png";
+import postingan120 from "@/assets/kegiatan/postingan-120.png";
 import postingan140 from "@/assets/kegiatan/postingan-140.png";
 import postingan141 from "@/assets/kegiatan/postingan-141.png";
 import postingan142 from "@/assets/kegiatan/postingan-142.png";
@@ -133,6 +143,16 @@ const allKegiatan = [
   { src: postingan142, alt: "Rapat Kerja Pusat Tahun 2026" },
   { src: postingan141, alt: "Sarasehan Ketua Pengda Se Indonesia" },
   { src: postingan140, alt: "Rapat Terbatas Pengurus Cabang Lubuk Linggau" },
+  { src: postingan120, alt: "Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Hadiri UKT 142/128 Dan Tinjau Lahan Sekretariat Baru Cabang Musi Banyuasin" },
+  { src: postingan119, alt: "Transparan Dan Terstruktur Pengda IKS Sumsel Sampaikan LPJ Dan Rencana Program 2025 Ke Seluruh Cabang Melalui Virtual Zoom Meeting" },
+  { src: postingan118, alt: "Tegas!! Ketua Pengda IKS Sumsel Instruksikan Anggota Jaga Marwah Perguruan, Siap Turunkan Tim Advokasi Untuk OKU Timur Bila Diperlukan" },
+  { src: postingan117, alt: "Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Hadiri Pengesahan Angkatan 141/127 Di Padepokan Pusat 15.275 Anggota Baru Disahkan" },
+  { src: postingan116, alt: "Di Hari Yang Sama, Ketua Pengda IKS Sumsel Bersama Bunda Rita Tanam Pohon Duku Dan Hadiri Pengesahan Tingkat 2 Di Padepokan IKS PI Kera Sakti Pusat" },
+  { src: postingan115, alt: "Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Menghadiri Undangan Musprop Dan Pengukuhan Persinas ASAD Sumatera Selatan" },
+  { src: postingan114, alt: "Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Bersama Tim Pengda Rancang Agenda Program Kerja Tahun 2025 Dalam Momen Halal Bi Halal" },
+  { src: postingan113, alt: "Bergerak Cepat Penuh Loyalitas Ketua Pengda IKS Sumsel Ke Madiun Proses Sertifikat Hak Milik Sekretariat Sumsel Dengan Restu Ketua Umum" },
+  { src: postingan112, alt: "Wujudkan Fasilitas Organisasi Ketua Pengda IKS PI Kera Sakti Sumsel Membeli Sebidang Tanah Untuk Gedung Administrasi Dan Kegiatan Perguruan" },
+  { src: postingan111, alt: "Jalin Silaturahmi Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Buka Puasa Bersama Tim Pengda Dan Keluarga Dilanjutkan Rapat Pengurus Terbatas" },
   { src: postingan110, alt: "Ketua Pengda Berkunjung Ke Cabang OKU Timur Mendorong Sikap Saling Menghormati Dan Memperkuat Persatuan Dalam Keberagamaan Sesama Anggota" },
   { src: postingan109, alt: "Pengda IKS Sumsel Apresiasi Atlet, Pelatih Dan Wasit Juri Asal IKS PI Kera Sakti Yang Turut Berpartisipasi Di Kejuaraan Nasional IPSI Cup Sumsel II" },
   { src: postingan108, alt: "Penasihat Pengda IKS Sumsel Bapak Langgeng Suprapto Hadiri Undangan Selamatan Pengesahan IKS PI Kera Sakti Cabang Banyuasin 141/127" },
