@@ -4,7 +4,13 @@ import { Link } from "react-router-dom";
 import ketuaUmumImg from "@/assets/ketua-umum.jpg";
 import logoIkspi from "@/assets/logo-ikspi.png";
 
+import { useEffect } from "react";
+
 export default function KetuaUmum() {
+  useEffect(() => {
+    document.title = "Ketua Umum - IKS PI Kera Sakti Sumatera Selatan";
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}

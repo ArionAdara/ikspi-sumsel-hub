@@ -4,7 +4,13 @@ import { Link } from "react-router-dom";
 import guruBesarImg from "@/assets/guru-besar.jpg";
 import logoIkspi from "@/assets/logo-ikspi.png";
 
+import { useEffect } from "react";
+
 export default function GuruBesar() {
+  useEffect(() => {
+    document.title = "Guru Besar - IKS PI Kera Sakti Sumatera Selatan";
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
