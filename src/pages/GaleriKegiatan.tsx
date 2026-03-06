@@ -135,6 +135,15 @@ import postingan127 from "@/assets/kegiatan/postingan-127.png";
 import postingan128 from "@/assets/kegiatan/postingan-128.png";
 import postingan129 from "@/assets/kegiatan/postingan-129.png";
 import postingan130 from "@/assets/kegiatan/postingan-130.png";
+import postingan131 from "@/assets/kegiatan/postingan-131.png";
+import postingan132 from "@/assets/kegiatan/postingan-132.png";
+import postingan133 from "@/assets/kegiatan/postingan-133.png";
+import postingan134 from "@/assets/kegiatan/postingan-134.png";
+import postingan135 from "@/assets/kegiatan/postingan-135.png";
+import postingan136 from "@/assets/kegiatan/postingan-136.png";
+import postingan137 from "@/assets/kegiatan/postingan-137.png";
+import postingan138 from "@/assets/kegiatan/postingan-138.png";
+import postingan139 from "@/assets/kegiatan/postingan-139.png";
 import postingan140 from "@/assets/kegiatan/postingan-140.png";
 import postingan141 from "@/assets/kegiatan/postingan-141.png";
 import postingan142 from "@/assets/kegiatan/postingan-142.png";
@@ -153,6 +162,15 @@ const allKegiatan = [
   { src: postingan142, alt: "Rapat Kerja Pusat Tahun 2026" },
   { src: postingan141, alt: "Sarasehan Ketua Pengda Se Indonesia" },
   { src: postingan140, alt: "Rapat Terbatas Pengurus Cabang Lubuk Linggau" },
+  { src: postingan139, alt: "Sahkan Ratusan Anggota Baru Pada Pengesahan Dan Pemutihan Jarak Dekat Angkatan 143/129, Ketua Umum Optimistis Sumatera Selatan Semakin Maju" },
+  { src: postingan138, alt: "Palembang Pertahankan Gelar Juara Kejurda IKS PI Kera Sakti Cup II Sumatera Selatan, Ogan Ilir Raih Juara Umum Piala Ketua Umum IKS PI Kera Sakti" },
+  { src: postingan137, alt: "Laksanakan Jukrah Ketua Umum Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Gelar UKT Tingkat II Angkatan 129 Se-Sumsel Di Ogan Ilir" },
+  { src: postingan136, alt: "Ketua Umum Gunakan Pakaian Busana Adat Aesan Gede (Busana Kebesaran) Dalam Pembukaan Silaturahmi Akbar III IKS PI Kera Sakti Se Sumatera Selatan" },
+  { src: postingan135, alt: "Dorong Profesionalisme Organisasi Pengda IKS Sumsel Hadirkan Pemateri Pusat Untuk Tingkatkan Kualitas Sekretaris, Humas, Dan Litbang Cabang" },
+  { src: postingan134, alt: "Resmikan Gedung Sekretariat IKS PI Kera Sakti Cabang Palembang, Ketua Umum Ajak Cabang Di Wilayah Sumatera Selatan Terus Berkembang" },
+  { src: postingan133, alt: "Perkuat Infrastruktur Dan Prestasi Ketua Umum IKS PI Kera Sakti Hadiri Dan Resmikan Kejuaraan Cabang IKS PI Kera Sakti Cup II Ogan Ilir" },
+  { src: postingan132, alt: "Tinjau Tanah Sekretariat IKS PI Kera Sakti Sumatera Selatan Di Ogan Ilir Ketua Umum Dorong Pengda IKS Sumsel Segera Bangun Gedung Sekretariat" },
+  { src: postingan131, alt: "Ketua Umum Awali Kunjungan Ke Sumatera Selatan Dengan Peletakkan Batu Pertama Gedung Sekretariat IKS PI Kera Sakti Cabang Musi Banyuasin" },
   { src: postingan130, alt: "Ketua Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Membuka Acara Kegiatan Kejuaraan Cabang IKS PI Kera Sakti Cup OKU Timur Tahun 2025" },
   { src: postingan129, alt: "Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Berduka Cita Atas Wafatnya Orang Tua Dari Sdri. Fitria (Tim Advokasi Pengda IKS Sumsel)" },
   { src: postingan128, alt: "23 Peserta Asal Cabang Di Sumatera Selatan Ikuti Pelatihan Dewan Teknik & Seni Prestasi Di Padepokan IKS PI Kera Sakti Pusat - Madiun" },
