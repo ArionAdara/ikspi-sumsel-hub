@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-import { ArrowLeft, Camera } from "lucide-react";
+import { ArrowLeft, Camera, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import logoIkspi from "@/assets/logo-ikspi.png";
-import { useEffect } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 // Import all kegiatan images
 import postingan1 from "@/assets/kegiatan/postingan-1.png";
