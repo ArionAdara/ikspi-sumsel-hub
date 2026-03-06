@@ -303,11 +303,22 @@ const allKegiatan = [
   { src: postingan1, alt: "Melaksanakan Tupoksi, Pengda IKS PI Kera Sakti Sumsel Membantu Menyelesaikan Berbagai Masalah" },
 ];
 
+const ITEMS_PER_PAGE = 18;
+
 export default function GaleriKegiatan() {
+  const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
+
   useEffect(() => {
     document.title = "Galeri Kegiatan - IKS PI Kera Sakti Sumatera Selatan";
     window.scrollTo(0, 0);
   }, []);
+
+  const loadMore = useCallback(() => {
+    setVisibleCount((prev) => Math.min(prev + ITEMS_PER_PAGE, allKegiatan.length));
+  }, []);
+
+  const visibleItems = allKegiatan.slice(0, visibleCount);
+  const hasMore = visibleCount < allKegiatan.length;
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -385,16 +396,16 @@ export default function GaleriKegiatan() {
           </h2>
         </motion.div>
 
-        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {allKegiatan.map((item, index) => (
+        <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
+          {visibleItems.map((item, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 + index * 0.05 }}
+              transition={{ duration: 0.3, delay: Math.min(index % ITEMS_PER_PAGE, 8) * 0.03 }}
               className="group"
             >
-              <div className="relative rounded-xl overflow-hidden border-2 border-border group-hover:border-gold/60 transition-all duration-500 shadow-lg group-hover:shadow-[0_0_30px_hsla(45,90%,50%,0.2)]">
+              <div className="relative rounded-lg md:rounded-xl overflow-hidden border border-border md:border-2 group-hover:border-gold/60 transition-all duration-500 shadow-md group-hover:shadow-[0_0_30px_hsla(45,90%,50%,0.2)]">
                 <div className="aspect-square overflow-hidden bg-card">
                   <img
                     src={item.src}
@@ -402,11 +413,12 @@ export default function GaleriKegiatan() {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     loading="lazy"
                     decoding="async"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                  <p className="font-heading text-sm text-foreground leading-snug line-clamp-3">
+                <div className="absolute bottom-0 left-0 right-0 p-2 md:p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                  <p className="font-heading text-xs md:text-sm text-foreground leading-snug line-clamp-3">
                     {item.alt}
                   </p>
                 </div>
@@ -414,6 +426,24 @@ export default function GaleriKegiatan() {
             </motion.div>
           ))}
         </div>
+
+        {hasMore && (
+          <div className="flex justify-center mt-10">
+            <button
+              onClick={loadMore}
+              className="inline-flex items-center gap-2 px-8 py-3 font-heading font-semibold text-sm uppercase tracking-widest border-2 border-gold text-gold rounded-lg hover:bg-gold hover:text-accent-foreground transition-all duration-300 hover:shadow-[0_0_20px_hsla(45,90%,50%,0.3)]"
+            >
+              Muat Lebih Banyak
+              <ChevronDown className="w-4 h-4" />
+            </button>
+          </div>
+        )}
+
+        {!hasMore && visibleCount > ITEMS_PER_PAGE && (
+          <p className="text-center text-muted-foreground text-sm mt-10 uppercase tracking-wider">
+            Semua {allKegiatan.length} dokumentasi telah ditampilkan
+          </p>
+        )}
       </div>
     </div>
   );
