@@ -303,7 +303,7 @@ const allKegiatan = [
   { src: postingan1, alt: "Melaksanakan Tupoksi, Pengda IKS PI Kera Sakti Sumsel Membantu Menyelesaikan Berbagai Masalah" },
 ];
 
-const ITEMS_PER_PAGE = 18;
+const ITEMS_PER_PAGE = 12;
 
 export default function GaleriKegiatan() {
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
