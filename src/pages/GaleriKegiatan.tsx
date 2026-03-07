@@ -303,7 +303,7 @@ const allKegiatan = [
   { src: postingan1, alt: "Melaksanakan Tupoksi, Pengda IKS PI Kera Sakti Sumsel Membantu Menyelesaikan Berbagai Masalah" },
 ];
 
-const ITEMS_PER_PAGE = 18;
+const ITEMS_PER_PAGE = 12;
 
 export default function GaleriKegiatan() {
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
@@ -396,35 +396,39 @@ export default function GaleriKegiatan() {
           </h2>
         </motion.div>
 
-        <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
-          {visibleItems.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: Math.min(index % ITEMS_PER_PAGE, 8) * 0.03 }}
-              className="group"
-            >
-              <div className="relative rounded-lg md:rounded-xl overflow-hidden border border-border md:border-2 group-hover:border-gold/60 transition-all duration-500 shadow-md group-hover:shadow-[0_0_30px_hsla(45,90%,50%,0.2)]">
-                <div className="aspect-square overflow-hidden bg-card">
-                  <img
-                    src={item.src}
-                    alt={item.alt}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    loading="lazy"
-                    decoding="async"
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 33vw"
-                  />
+        <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6">
+          {visibleItems.map((item, index) => {
+            const isNewBatch = index >= visibleCount - ITEMS_PER_PAGE;
+            return (
+              <motion.div
+                key={index}
+                initial={isNewBatch ? { opacity: 0, y: 15 } : false}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.25, delay: isNewBatch ? Math.min(index % ITEMS_PER_PAGE, 5) * 0.02 : 0 }}
+                className="group"
+              >
+                <div className="relative rounded-lg md:rounded-xl overflow-hidden border border-border md:border-2 group-hover:border-gold/60 transition-all duration-300 shadow-sm md:shadow-md group-hover:shadow-[0_0_20px_hsla(45,90%,50%,0.15)]">
+                  <div className="aspect-square overflow-hidden bg-card">
+                    <img
+                      src={item.src}
+                      alt={item.alt}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                      decoding="async"
+                      fetchPriority={index < 4 ? "high" : "low"}
+                      sizes="(max-width: 640px) 45vw, (max-width: 1024px) 45vw, 30vw"
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden md:block" />
+                  <div className="absolute bottom-0 left-0 right-0 p-2 md:p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 hidden md:block">
+                    <p className="font-heading text-xs md:text-sm text-foreground leading-snug line-clamp-3">
+                      {item.alt}
+                    </p>
+                  </div>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute bottom-0 left-0 right-0 p-2 md:p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                  <p className="font-heading text-xs md:text-sm text-foreground leading-snug line-clamp-3">
-                    {item.alt}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
 
         {hasMore && (

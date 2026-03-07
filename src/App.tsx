@@ -13,6 +13,7 @@ import TimPengda from "./pages/TimPengda";
 import KontakPerson from "./pages/KontakPerson";
 import GaleriKegiatan from "./pages/GaleriKegiatan";
 import ScrollToTop from "./components/ScrollToTop";
+import { MusicPrompt } from "./components/MusicPrompt";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
+        <MusicPrompt />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/login" element={<Login />} />
