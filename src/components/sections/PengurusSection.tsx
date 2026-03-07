@@ -157,6 +157,7 @@ export function PengurusSection() {
                   alt={pengurus.name}
                   className="w-full h-full object-cover object-top"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <span className="text-gold text-xs uppercase tracking-wider">{pengurus.position}</span>

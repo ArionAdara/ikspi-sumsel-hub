@@ -172,6 +172,7 @@ export function SejarahSection() {
                   alt="KP. Drs. H. Bambang Sunarja, M.A"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <span className="text-gold text-sm uppercase tracking-wider">Ketua Umum</span>
