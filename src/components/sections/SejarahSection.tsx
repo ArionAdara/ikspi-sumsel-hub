@@ -114,6 +114,7 @@ export function SejarahSection() {
                 alt="Padepokan IKS PI Kera Sakti"
                 className="w-full h-auto object-cover"
                 loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6">
