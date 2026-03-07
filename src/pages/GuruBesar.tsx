@@ -70,6 +70,7 @@ export default function GuruBesar() {
                       alt="H. R. Totong Kiemdarto"
                       className="w-full h-full object-cover"
                       loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <div className="absolute -top-3 -right-3 w-12 h-12 border-t-2 border-r-2 border-gold" />

@@ -114,6 +114,7 @@ export function SejarahSection() {
                 alt="Padepokan IKS PI Kera Sakti"
                 className="w-full h-auto object-cover"
                 loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -147,6 +148,7 @@ export function SejarahSection() {
                   alt="H. R. Totong Kiemdarto"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <span className="text-gold text-sm uppercase tracking-wider">Guru Besar</span>
@@ -170,6 +172,7 @@ export function SejarahSection() {
                   alt="KP. Drs. H. Bambang Sunarja, M.A"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <span className="text-gold text-sm uppercase tracking-wider">Ketua Umum</span>

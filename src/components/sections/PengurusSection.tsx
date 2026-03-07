@@ -129,6 +129,7 @@ export function PengurusSection() {
                 alt={pengurusList[0].name}
                 className="w-full h-full object-cover object-top"
                 loading="lazy"
+                decoding="async"
               />
             </div>
             <span className="inline-block px-4 py-1 bg-gradient-crimson text-foreground text-sm font-semibold rounded-full mb-3">
@@ -156,6 +157,7 @@ export function PengurusSection() {
                   alt={pengurus.name}
                   className="w-full h-full object-cover object-top"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <span className="text-gold text-xs uppercase tracking-wider">{pengurus.position}</span>
