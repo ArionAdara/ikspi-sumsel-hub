@@ -163,6 +163,8 @@ export const programKerja = [
       "Mengikuti Rapat Kerja Pusat (Rakerpus) Tahun 2026 dan Peringatan HUT IKS PI Kera Sakti ke 46 tahun di Padepokan IKS PI Kera Sakti Pusat, Madiun - Jawa Timur.",
       "Menyerahkan Sertifikat Tanah Sekretariat Sumatera Selatan ke Ketua Umum IKS PI Kera Sakti.",
       "Kunjungan ke cabang Lahat tinjau persiapan Musyawarah Cabang (Muscab).",
+      "Membantu penyelesaian permasalahan internal cabang Ogan Komering Ilir (OKI).",
+      "Menghadiri undangan bagi takjil dan buka puasa bersama sekaligus selamatan pengesahan warga angkatan 144.",
     ],
   },
 ];
