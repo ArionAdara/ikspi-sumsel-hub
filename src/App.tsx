@@ -14,6 +14,8 @@ import KontakPerson from "./pages/KontakPerson";
 import GaleriKegiatan from "./pages/GaleriKegiatan";
 import ScrollToTop from "./components/ScrollToTop";
 import { MusicPrompt } from "./components/MusicPrompt";
+import Admin from "./pages/Admin";
+import { ProtectedRoute } from "./components/ProtectedRoute";
 
 const queryClient = new QueryClient();
 
