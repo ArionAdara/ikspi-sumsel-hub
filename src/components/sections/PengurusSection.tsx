@@ -155,7 +155,7 @@ export function PengurusSection() {
 
         {/* Other Members Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-          {pengurusList.slice(1).map((pengurus, index) => (
+          {pengurusWithStorage.slice(1).map((pengurus, index) => (
             <motion.div
               key={pengurus.name}
               initial={{ opacity: 0, y: 40 }}
