@@ -5,14 +5,14 @@ import logoIkspi from "@/assets/logo-ikspi.png";
 import { useEffect } from "react";
 
 const kontakList = [
-  { jabatan: "Ketua Pengurus Daerah", nama: "Muslimin", nomor: "085380461528" },
+  { jabatan: "Ketua Pengurus Daerah", nama: "Muslimin, S.Kom", nomor: "085380461528" },
   { jabatan: "Sekretaris", nama: "Muhammad Ali", nomor: "081315083338" },
-  { jabatan: "Bendahara", nama: "M. Aulia Dzikri", nomor: "082124045959" },
-  { jabatan: "Litbang", nama: "Daru Kusumo", nomor: "081210002165" },
+  { jabatan: "Bendahara", nama: "M. Aulia Dzikri, S.Kom", nomor: "082124045959" },
+  { jabatan: "Litbang", nama: "H. Daru Kusumo, S.T", nomor: "081210002165" },
   { jabatan: "Dewan Teknik", nama: "Yung Chen", nomor: "081279844460" },
-  { jabatan: "Dewan Kerohanian", nama: "Yanuarman", nomor: "089531377914" },
+  { jabatan: "Dewan Kerohanian", nama: "Ust. Yanuarman", nomor: "089531377914" },
   { jabatan: "Dewan Seni dan Prestasi", nama: "Royli Davidson", nomor: "082278403685" },
-  { jabatan: "Humas", nama: "Octaviansyah", nomor: "082179006239" },
+  { jabatan: "Humas", nama: "Octaviansyah, M.Pd", nomor: "082179006239" },
   { jabatan: "Advokasi", nama: "Fitria", nomor: "085377747676" },
 ];
 
