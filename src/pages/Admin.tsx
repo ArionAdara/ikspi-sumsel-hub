@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { AdminSidebar, type AdminSection } from "@/components/admin/AdminSidebar";
 import { DashboardView } from "@/components/admin/DashboardView";
-import { SectionEditor } from "@/components/admin/SectionEditor";
+import { SectionEditor, type SectionField } from "@/components/admin/SectionEditor";
 
-const sectionConfigs: Record<string, { title: string; description: string; fields: { section: string; key: string; label: string; type?: "text" | "textarea" | "json" }[] }> = {
+const sectionConfigs: Record<string, { title: string; description: string; fields: SectionField[] }> = {
   sejarah: {
     title: "Kelola Sejarah",
     description: "Edit konten halaman sejarah organisasi.",
@@ -16,16 +16,18 @@ const sectionConfigs: Record<string, { title: string; description: string; field
   },
   pengurus: {
     title: "Kelola Pengurus",
-    description: "Edit data pengurus pusat organisasi.",
+    description: "Edit data dan foto pengurus pusat organisasi.",
     fields: [
       { section: "pengurus", key: "daftar", label: "Daftar Pengurus (JSON)", type: "json" },
+      { section: "pengurus", key: "pengurus", label: "Foto Pengurus", type: "gallery" },
     ],
   },
   kegiatan: {
     title: "Kelola Kegiatan",
-    description: "Edit informasi kegiatan dan dokumentasi.",
+    description: "Edit informasi dan dokumentasi foto kegiatan.",
     fields: [
       { section: "kegiatan", key: "daftar", label: "Daftar Kegiatan (JSON)", type: "json" },
+      { section: "kegiatan", key: "kegiatan", label: "Galeri Foto Kegiatan", type: "gallery" },
     ],
   },
   "program-kerja": {
@@ -37,9 +39,10 @@ const sectionConfigs: Record<string, { title: string; description: string; field
   },
   "tim-pengda": {
     title: "Kelola Tim Pengda",
-    description: "Edit data tim pengurus daerah.",
+    description: "Edit data dan foto tim pengurus daerah.",
     fields: [
       { section: "tim-pengda", key: "daftar", label: "Daftar Tim Pengda (JSON)", type: "json" },
+      { section: "tim-pengda", key: "tim-pengda", label: "Foto Tim Pengda", type: "gallery" },
     ],
   },
 };

@@ -1,15 +1,18 @@
 import { ContentEditor } from "./ContentEditor";
+import { ImageGalleryManager } from "./ImageUploader";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+export interface SectionField {
+  section: string;
+  key: string;
+  label: string;
+  type?: "text" | "textarea" | "json" | "gallery";
+}
 
 interface SectionEditorProps {
   title: string;
   description: string;
-  fields: {
-    section: string;
-    key: string;
-    label: string;
-    type?: "text" | "textarea" | "json";
-  }[];
+  fields: SectionField[];
 }
 
 export function SectionEditor({ title, description, fields }: SectionEditorProps) {
@@ -25,12 +28,16 @@ export function SectionEditor({ title, description, fields }: SectionEditorProps
               <CardTitle className="text-base font-heading">{field.label}</CardTitle>
             </CardHeader>
             <CardContent>
-              <ContentEditor
-                section={field.section}
-                contentKey={field.key}
-                label=""
-                type={field.type}
-              />
+              {field.type === "gallery" ? (
+                <ImageGalleryManager folder={field.key} />
+              ) : (
+                <ContentEditor
+                  section={field.section}
+                  contentKey={field.key}
+                  label=""
+                  type={field.type}
+                />
+              )}
             </CardContent>
           </Card>
         ))}
