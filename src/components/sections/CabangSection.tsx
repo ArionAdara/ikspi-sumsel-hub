@@ -1,8 +1,14 @@
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { MapPin } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
-const cabangList = [
+interface Cabang {
+  wilayah: string;
+  ketua: string;
+}
+
+const defaultCabangList: Cabang[] = [
   { wilayah: "Banyuasin", ketua: "Sudarmaji" },
   { wilayah: "Empat Lawang", ketua: "Ervansyah" },
   { wilayah: "Lahat", ketua: "Nur Cahyo" },
@@ -25,14 +31,28 @@ const cabangList = [
 export function CabangSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [cabangList, setCabangList] = useState<Cabang[]>(defaultCabangList);
+
+  useEffect(() => {
+    const load = async () => {
+      const { data } = await supabase
+        .from("site_content")
+        .select("value")
+        .eq("section", "cabang")
+        .eq("key", "daftar")
+        .single();
+      if (data?.value && Array.isArray(data.value)) {
+        setCabangList(data.value as unknown as Cabang[]);
+      }
+    };
+    load();
+  }, []);
 
   return (
     <section id="cabang" className="relative py-24 overflow-hidden">
-      {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-card/50 via-background to-card/30" />
 
       <div ref={ref} className="relative container mx-auto px-4">
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -51,7 +71,6 @@ export function CabangSection() {
           </p>
         </motion.div>
 
-        {/* Cabang Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 max-w-7xl mx-auto">
           {cabangList.map((cabang, index) => (
             <motion.div

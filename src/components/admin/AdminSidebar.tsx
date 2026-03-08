@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { LayoutDashboard, FileText, Users, Image, Briefcase, UserCheck, LogOut, Menu, X } from "lucide-react";
+import { LayoutDashboard, FileText, Users, Image, Briefcase, UserCheck, MapPin, LogOut, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
-export type AdminSection = "dashboard" | "sejarah" | "pengurus" | "kegiatan" | "program-kerja" | "tim-pengda";
+export type AdminSection = "dashboard" | "sejarah" | "pengurus" | "kegiatan" | "program-kerja" | "tim-pengda" | "cabang";
 
 interface AdminSidebarProps {
   active: AdminSection;
@@ -20,6 +20,7 @@ const menuItems: { id: AdminSection; label: string; icon: React.ElementType }[] 
   { id: "kegiatan", label: "Kegiatan", icon: Image },
   { id: "program-kerja", label: "Program Kerja", icon: Briefcase },
   { id: "tim-pengda", label: "Tim Pengda", icon: UserCheck },
+  { id: "cabang", label: "Cabang", icon: MapPin },
 ];
 
 function SidebarContent({ active, onSelect, onLogout, username }: AdminSidebarProps) {

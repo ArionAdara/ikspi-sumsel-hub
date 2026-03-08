@@ -1,4 +1,4 @@
-import { FileText, Users, Image, Briefcase, UserCheck } from "lucide-react";
+import { FileText, Users, Image, Briefcase, UserCheck, MapPin } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import type { AdminSection } from "./AdminSidebar";
 
@@ -12,6 +12,7 @@ const cards = [
   { id: "kegiatan" as AdminSection, label: "Kegiatan", desc: "Kelola galeri & dokumentasi kegiatan", icon: Image },
   { id: "program-kerja" as AdminSection, label: "Program Kerja", desc: "Kelola program kerja organisasi", icon: Briefcase },
   { id: "tim-pengda" as AdminSection, label: "Tim Pengda", desc: "Kelola data tim pengurus daerah", icon: UserCheck },
+  { id: "cabang" as AdminSection, label: "Cabang", desc: "Kelola data ketua cabang se-Sumsel", icon: MapPin },
 ];
 
 export function DashboardView({ onNavigate }: DashboardViewProps) {
