@@ -145,7 +145,7 @@ export function PengurusSection() {
               />
             </div>
             <span className="inline-block px-4 py-1 bg-gradient-crimson text-foreground text-sm font-semibold rounded-full mb-3">
-              {pengurusList[0].position}
+              {pengurusWithStorage[0].position}
             </span>
             <h3 className="font-heading text-2xl font-bold text-foreground">
               {pengurusList[0].name}
