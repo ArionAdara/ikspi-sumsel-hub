@@ -123,6 +123,7 @@ export function ImageGalleryManager({ folder }: ImageGalleryManagerProps) {
   const [images, setImages] = useState<{ name: string; url: string }[]>([]);
   const [loading, setLoading] = useState(true);
   const [deleting, setDeleting] = useState<string | null>(null);
+  const [copied, setCopied] = useState<string | null>(null);
   const { toast } = useToast();
 
   const loadImages = useCallback(async () => {
