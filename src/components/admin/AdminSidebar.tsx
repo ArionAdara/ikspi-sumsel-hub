@@ -1,6 +1,8 @@
-import { LayoutDashboard, FileText, Users, Image, Briefcase, UserCheck, LogOut } from "lucide-react";
+import { useState } from "react";
+import { LayoutDashboard, FileText, Users, Image, Briefcase, UserCheck, LogOut, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 export type AdminSection = "dashboard" | "sejarah" | "pengurus" | "kegiatan" | "program-kerja" | "tim-pengda";
 
@@ -20,12 +22,12 @@ const menuItems: { id: AdminSection; label: string; icon: React.ElementType }[] 
   { id: "tim-pengda", label: "Tim Pengda", icon: UserCheck },
 ];
 
-export function AdminSidebar({ active, onSelect, onLogout, username }: AdminSidebarProps) {
+function SidebarContent({ active, onSelect, onLogout, username }: AdminSidebarProps) {
   return (
-    <aside className="w-64 min-h-screen bg-card border-r border-border flex flex-col">
+    <div className="flex flex-col h-full">
       <div className="p-5 border-b border-border">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-sm font-bold text-primary-foreground">
+          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-sm font-bold text-primary-foreground shrink-0">
             {username?.charAt(0)?.toUpperCase() || "A"}
           </div>
           <div className="min-w-0">
@@ -64,6 +66,45 @@ export function AdminSidebar({ active, onSelect, onLogout, username }: AdminSide
           Keluar
         </Button>
       </div>
-    </aside>
+    </div>
+  );
+}
+
+export function AdminSidebar(props: AdminSidebarProps) {
+  const [open, setOpen] = useState(false);
+  const { active, onSelect } = props;
+
+  const handleSelect = (section: AdminSection) => {
+    onSelect(section);
+    setOpen(false);
+  };
+
+  return (
+    <>
+      {/* Desktop sidebar */}
+      <aside className="hidden md:flex w-64 min-h-screen bg-card border-r border-border flex-col">
+        <SidebarContent {...props} />
+      </aside>
+
+      {/* Mobile header + sheet */}
+      <div className="md:hidden fixed top-0 left-0 right-0 z-50 bg-card border-b border-border px-4 py-3 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-xs font-bold text-primary-foreground">
+            {props.username?.charAt(0)?.toUpperCase() || "A"}
+          </div>
+          <span className="font-heading font-semibold text-foreground text-sm">Panel Admin</span>
+        </div>
+        <Sheet open={open} onOpenChange={setOpen}>
+          <SheetTrigger asChild>
+            <Button variant="ghost" size="icon" className="text-foreground">
+              <Menu className="w-5 h-5" />
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="left" className="p-0 w-64 bg-card border-border">
+            <SidebarContent {...props} onSelect={handleSelect} />
+          </SheetContent>
+        </Sheet>
+      </div>
+    </>
   );
 }
