@@ -21,6 +21,13 @@ const staticImages = [
 export function KegiatanSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { images: storageImages } = useStorageImages("kegiatan");
+
+  // Merge: storage images first (newest uploads), then static fallbacks
+  const storageEntries = storageImages.map((img) => ({ src: img.url, alt: img.name }));
+  const activityImages = storageEntries.length > 0
+    ? [...storageEntries.slice(0, 4)]
+    : staticImages;
 
   const instagramUsername = "humas.ikspi.sumsel";
 
