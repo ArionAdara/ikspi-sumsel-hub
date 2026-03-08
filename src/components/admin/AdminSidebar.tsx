@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { LayoutDashboard, FileText, Users, Image, Briefcase, UserCheck, LogOut, Menu, X } from "lucide-react";
+import { LayoutDashboard, FileText, Users, Image, Briefcase, UserCheck, MapPin, LogOut, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
