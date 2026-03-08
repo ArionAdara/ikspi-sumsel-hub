@@ -307,18 +307,23 @@ const ITEMS_PER_PAGE = 12;
 
 export default function GaleriKegiatan() {
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
+  const { images: storageImages } = useStorageImages("kegiatan");
 
   useEffect(() => {
     document.title = "Galeri Kegiatan - IKS PI Kera Sakti Sumatera Selatan";
     window.scrollTo(0, 0);
   }, []);
 
-  const loadMore = useCallback(() => {
-    setVisibleCount((prev) => Math.min(prev + ITEMS_PER_PAGE, allKegiatan.length));
-  }, []);
+  // Merge storage images (newest first) with static images
+  const storageEntries = storageImages.map((img) => ({ src: img.url, alt: img.name.replace(/\.\w+$/, "").replace(/[-_]/g, " ") }));
+  const combinedKegiatan = [...storageEntries, ...allKegiatan];
 
-  const visibleItems = allKegiatan.slice(0, visibleCount);
-  const hasMore = visibleCount < allKegiatan.length;
+  const loadMore = useCallback(() => {
+    setVisibleCount((prev) => Math.min(prev + ITEMS_PER_PAGE, combinedKegiatan.length));
+  }, [combinedKegiatan.length]);
+
+  const visibleItems = combinedKegiatan.slice(0, visibleCount);
+  const hasMore = visibleCount < combinedKegiatan.length;
 
   return (
     <div className="min-h-screen bg-background text-foreground">
