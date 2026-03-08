@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { Instagram, ExternalLink, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useStorageImages } from "@/hooks/useStorageImages";
 
 // Import activity images - 4 terbaru (nomor terbesar)
 import postingan146 from "@/assets/kegiatan/postingan-146.png";
@@ -10,7 +11,7 @@ import postingan145 from "@/assets/kegiatan/postingan-145.png";
 import postingan144 from "@/assets/kegiatan/postingan-144.png";
 import postingan143 from "@/assets/kegiatan/postingan-143.png";
 
-const activityImages = [
+const staticImages = [
   { src: postingan146, alt: "Ketua Pengda IKS Sumsel Apresiasi Kegiatan Pembagian Takjil Dan Buka Puasa Bersama Warga Dan Pendekar IKS PI Kera Sakti Cabang Ogan Ilir" },
   { src: postingan145, alt: "Jalankan Tugas Pokok Dan Fungsi Pengda IKS PI Kera Sakti Sumatera Selatan Bantu Mediasi Penyelesaian Masalah Cabang Ogan Komering Ilir" },
   { src: postingan144, alt: "Kunjungan Ketua Pengda IKS Sumsel Ke Cabang Lahat Disambut Antusias Oleh Ketua Cabang Beserta Jajaran, Bahas Perkembangan Dan Persiapan Muscab" },
@@ -20,6 +21,13 @@ const activityImages = [
 export function KegiatanSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { images: storageImages } = useStorageImages("kegiatan");
+
+  // Merge: storage images first (newest uploads), then static fallbacks
+  const storageEntries = storageImages.map((img) => ({ src: img.url, alt: img.name }));
+  const activityImages = storageEntries.length > 0
+    ? [...storageEntries.slice(0, 4)]
+    : staticImages;
 
   const instagramUsername = "humas.ikspi.sumsel";
 

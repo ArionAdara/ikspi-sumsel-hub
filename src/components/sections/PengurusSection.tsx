@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { FileText, ArrowRight, Users, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useStorageImages } from "@/hooks/useStorageImages";
 
 // Import photos
 import muslimin from "@/assets/pengurus/muslimin.png";
@@ -66,6 +67,17 @@ const pengurusList = [
 export function PengurusSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { images: storageImages } = useStorageImages("pengurus");
+
+  // Override pengurus images with storage versions if names match (e.g. "muslimin.png")
+  const pengurusWithStorage = pengurusList.map((p) => {
+    const match = storageImages.find((img) => {
+      const baseName = img.name.toLowerCase();
+      return p.name.toLowerCase().replace(/\s+/g, "-").includes(baseName.split(".")[0]) ||
+             baseName.includes(p.name.toLowerCase().replace(/\s+/g, "-"));
+    });
+    return match ? { ...p, image: match.url } : p;
+  });
 
   return (
     <section id="pengurus" className="relative py-24 bg-card/50">
@@ -125,25 +137,25 @@ export function PengurusSection() {
             <div className="absolute -top-1 left-0 right-0 h-1 bg-gradient-gold" />
             <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-gold shadow-lg shadow-gold/20">
               <img
-                src={pengurusList[0].image}
-                alt={pengurusList[0].name}
+                src={pengurusWithStorage[0].image}
+                alt={pengurusWithStorage[0].name}
                 className="w-full h-full object-cover object-top"
                 loading="lazy"
                 decoding="async"
               />
             </div>
             <span className="inline-block px-4 py-1 bg-gradient-crimson text-foreground text-sm font-semibold rounded-full mb-3">
-              {pengurusList[0].position}
+              {pengurusWithStorage[0].position}
             </span>
             <h3 className="font-heading text-2xl font-bold text-foreground">
-              {pengurusList[0].name}
+              {pengurusWithStorage[0].name}
             </h3>
           </div>
         </motion.div>
 
         {/* Other Members Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-          {pengurusList.slice(1).map((pengurus, index) => (
+          {pengurusWithStorage.slice(1).map((pengurus, index) => (
             <motion.div
               key={pengurus.name}
               initial={{ opacity: 0, y: 40 }}

@@ -3,6 +3,7 @@ import { ArrowLeft, Camera, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import logoIkspi from "@/assets/logo-ikspi.png";
 import { useEffect, useState, useCallback } from "react";
+import { useStorageImages } from "@/hooks/useStorageImages";
 
 // Import all kegiatan images
 import postingan1 from "@/assets/kegiatan/postingan-1.png";
@@ -307,18 +308,23 @@ const ITEMS_PER_PAGE = 12;
 
 export default function GaleriKegiatan() {
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
+  const { images: storageImages } = useStorageImages("kegiatan");
 
   useEffect(() => {
     document.title = "Galeri Kegiatan - IKS PI Kera Sakti Sumatera Selatan";
     window.scrollTo(0, 0);
   }, []);
 
-  const loadMore = useCallback(() => {
-    setVisibleCount((prev) => Math.min(prev + ITEMS_PER_PAGE, allKegiatan.length));
-  }, []);
+  // Merge storage images (newest first) with static images
+  const storageEntries = storageImages.map((img) => ({ src: img.url, alt: img.name.replace(/\.\w+$/, "").replace(/[-_]/g, " ") }));
+  const combinedKegiatan = [...storageEntries, ...allKegiatan];
 
-  const visibleItems = allKegiatan.slice(0, visibleCount);
-  const hasMore = visibleCount < allKegiatan.length;
+  const loadMore = useCallback(() => {
+    setVisibleCount((prev) => Math.min(prev + ITEMS_PER_PAGE, combinedKegiatan.length));
+  }, [combinedKegiatan.length]);
+
+  const visibleItems = combinedKegiatan.slice(0, visibleCount);
+  const hasMore = visibleCount < combinedKegiatan.length;
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -375,7 +381,7 @@ export default function GaleriKegiatan() {
             className="flex justify-center gap-8 mt-8"
           >
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-heading font-bold text-gold">{allKegiatan.length}</div>
+              <div className="text-3xl md:text-4xl font-heading font-bold text-gold">{combinedKegiatan.length}</div>
               <div className="text-xs text-muted-foreground uppercase tracking-wider mt-1">Total Dokumentasi</div>
             </div>
           </motion.div>
