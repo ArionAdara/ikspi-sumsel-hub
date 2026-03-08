@@ -37,6 +37,11 @@ const App = () => (
           <Route path="/kontak-person" element={<KontakPerson />} />
           <Route path="/narahubung" element={<KontakPerson />} />
           <Route path="/galeri-kegiatan" element={<GaleriKegiatan />} />
+          <Route path="/admin" element={
+            <ProtectedRoute requireAdmin>
+              <Admin />
+            </ProtectedRoute>
+          } />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
