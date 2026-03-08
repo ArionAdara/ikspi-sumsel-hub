@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { FileText, ArrowRight, Users, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useStorageImages } from "@/hooks/useStorageImages";
 
 // Import photos
 import muslimin from "@/assets/pengurus/muslimin.png";
