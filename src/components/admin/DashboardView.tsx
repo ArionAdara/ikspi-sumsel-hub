@@ -1,4 +1,4 @@
-import { FileText, Users, Image, Briefcase, UserCheck } from "lucide-react";
+import { FileText, Users, Image, Briefcase, UserCheck, MapPin } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import type { AdminSection } from "./AdminSidebar";
 
