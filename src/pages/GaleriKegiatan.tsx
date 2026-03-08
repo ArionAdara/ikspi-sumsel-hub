@@ -381,7 +381,7 @@ export default function GaleriKegiatan() {
             className="flex justify-center gap-8 mt-8"
           >
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-heading font-bold text-gold">{allKegiatan.length}</div>
+              <div className="text-3xl md:text-4xl font-heading font-bold text-gold">{combinedKegiatan.length}</div>
               <div className="text-xs text-muted-foreground uppercase tracking-wider mt-1">Total Dokumentasi</div>
             </div>
           </motion.div>
