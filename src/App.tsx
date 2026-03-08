@@ -14,6 +14,8 @@ import KontakPerson from "./pages/KontakPerson";
 import GaleriKegiatan from "./pages/GaleriKegiatan";
 import ScrollToTop from "./components/ScrollToTop";
 import { MusicPrompt } from "./components/MusicPrompt";
+import Admin from "./pages/Admin";
+import { ProtectedRoute } from "./components/ProtectedRoute";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +37,11 @@ const App = () => (
           <Route path="/kontak-person" element={<KontakPerson />} />
           <Route path="/narahubung" element={<KontakPerson />} />
           <Route path="/galeri-kegiatan" element={<GaleriKegiatan />} />
+          <Route path="/admin" element={
+            <ProtectedRoute requireAdmin>
+              <Admin />
+            </ProtectedRoute>
+          } />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
