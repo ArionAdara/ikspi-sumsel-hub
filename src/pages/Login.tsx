@@ -30,7 +30,7 @@ export default function Login() {
       if (error) {
         toast({
           title: "Login gagal",
-          description: error.message,
+          description: "Email atau password tidak valid.",
           variant: "destructive",
         });
         setIsLoading(false);
