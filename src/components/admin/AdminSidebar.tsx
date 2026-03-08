@@ -20,6 +20,7 @@ const menuItems: { id: AdminSection; label: string; icon: React.ElementType }[] 
   { id: "kegiatan", label: "Kegiatan", icon: Image },
   { id: "program-kerja", label: "Program Kerja", icon: Briefcase },
   { id: "tim-pengda", label: "Tim Pengda", icon: UserCheck },
+  { id: "cabang", label: "Cabang", icon: MapPin },
 ];
 
 function SidebarContent({ active, onSelect, onLogout, username }: AdminSidebarProps) {

@@ -45,6 +45,13 @@ const sectionConfigs: Record<string, { title: string; description: string; field
       { section: "tim-pengda", key: "tim-pengda", label: "Foto Tim Pengda", type: "gallery" },
     ],
   },
+  cabang: {
+    title: "Kelola Cabang",
+    description: "Edit data Ketua Cabang se-Sumatera Selatan. Format JSON: [{\"wilayah\": \"...\", \"ketua\": \"...\"}]",
+    fields: [
+      { section: "cabang", key: "daftar", label: "Daftar Cabang (JSON)", type: "json" },
+    ],
+  },
 };
 
 export default function Admin() {
