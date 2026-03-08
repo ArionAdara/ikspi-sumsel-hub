@@ -53,11 +53,11 @@ export function MusicPrompt() {
     playerRef.current = new window.YT.Player("youtube-player", {
       height: "0",
       width: "0",
-      videoId: "bT9pQJCdX1w",
+      videoId: "DrWDU0Rrpvk",
       playerVars: {
         autoplay: 1,
         loop: 1,
-        playlist: "bT9pQJCdX1w",
+        playlist: "DrWDU0Rrpvk",
         controls: 0,
         showinfo: 0,
         modestbranding: 1,
