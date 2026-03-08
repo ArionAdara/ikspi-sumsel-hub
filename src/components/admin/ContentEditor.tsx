@@ -47,9 +47,27 @@ export function ContentEditor({ section, contentKey, label, type = "textarea" }:
       try {
         jsonValue = JSON.parse(value);
       } catch {
-        toast({ title: "Format JSON tidak valid", variant: "destructive" });
+        toast({ title: "Format JSON tidak valid", description: "Pastikan format JSON benar (kurung, koma, tanda kutip).", variant: "destructive" });
         setSaving(false);
         return;
+      }
+
+      // Structural validation for array-of-objects JSON (cabang, pengurus, etc.)
+      if (Array.isArray(jsonValue)) {
+        for (let i = 0; i < jsonValue.length; i++) {
+          const item = jsonValue[i];
+          if (typeof item !== "object" || item === null || Array.isArray(item)) {
+            toast({ title: "Format salah", description: `Item ke-${i + 1} harus berupa objek {}.`, variant: "destructive" });
+            setSaving(false);
+            return;
+          }
+          // Check common required fields for cabang
+          if (section === "cabang" && (!item.wilayah || !item.ketua)) {
+            toast({ title: "Data cabang tidak lengkap", description: `Item ke-${i + 1} harus memiliki "wilayah" dan "ketua".`, variant: "destructive" });
+            setSaving(false);
+            return;
+          }
+        }
       }
     } else {
       jsonValue = value;
