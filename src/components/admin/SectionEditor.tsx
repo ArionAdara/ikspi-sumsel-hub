@@ -1,12 +1,13 @@
 import { ContentEditor } from "./ContentEditor";
 import { ImageGalleryManager } from "./ImageUploader";
+import { CabangEditor } from "./CabangEditor";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export interface SectionField {
   section: string;
   key: string;
   label: string;
-  type?: "text" | "textarea" | "json" | "gallery";
+  type?: "text" | "textarea" | "json" | "gallery" | "cabang";
 }
 
 interface SectionEditorProps {
