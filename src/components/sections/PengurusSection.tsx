@@ -137,8 +137,8 @@ export function PengurusSection() {
             <div className="absolute -top-1 left-0 right-0 h-1 bg-gradient-gold" />
             <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-gold shadow-lg shadow-gold/20">
               <img
-                src={pengurusList[0].image}
-                alt={pengurusList[0].name}
+                src={pengurusWithStorage[0].image}
+                alt={pengurusWithStorage[0].name}
                 className="w-full h-full object-cover object-top"
                 loading="lazy"
                 decoding="async"
