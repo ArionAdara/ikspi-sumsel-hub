@@ -148,7 +148,7 @@ export function PengurusSection() {
               {pengurusWithStorage[0].position}
             </span>
             <h3 className="font-heading text-2xl font-bold text-foreground">
-              {pengurusList[0].name}
+              {pengurusWithStorage[0].name}
             </h3>
           </div>
         </motion.div>
