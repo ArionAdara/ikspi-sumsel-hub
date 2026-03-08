@@ -5,17 +5,97 @@ import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { Save, Loader2, Plus, Trash2, GripVertical } from "lucide-react";
 import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
+  DndContext,
+  closestCenter,
+  KeyboardSensor,
+  PointerSensor,
+  useSensor,
+  useSensors,
+  type DragEndEvent,
+} from "@dnd-kit/core";
+import {
+  arrayMove,
+  SortableContext,
+  sortableKeyboardCoordinates,
+  useSortable,
+  verticalListSortingStrategy,
+} from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
 
 interface CabangItem {
   wilayah: string;
   ketua: string;
+}
+
+interface SortableRowProps {
+  id: string;
+  index: number;
+  item: CabangItem;
+  onChange: (index: number, field: keyof CabangItem, value: string) => void;
+  onRemove: (index: number) => void;
+}
+
+function SortableRow({ id, index, item, onChange, onRemove }: SortableRowProps) {
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+    isDragging,
+  } = useSortable({ id });
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+    opacity: isDragging ? 0.5 : 1,
+  };
+
+  return (
+    <tr ref={setNodeRef} style={style} className="border-b transition-colors hover:bg-muted/50">
+      <td className="p-2 text-center">
+        <button
+          {...attributes}
+          {...listeners}
+          className="cursor-grab active:cursor-grabbing p-1 rounded hover:bg-muted text-muted-foreground"
+          type="button"
+        >
+          <GripVertical className="w-4 h-4" />
+        </button>
+      </td>
+      <td className="p-2 text-center text-muted-foreground font-mono text-xs">
+        {index + 1}
+      </td>
+      <td className="p-2">
+        <Input
+          value={item.wilayah}
+          onChange={(e) => onChange(index, "wilayah", e.target.value)}
+          placeholder="Nama wilayah..."
+          className="bg-background border-border h-9"
+          maxLength={100}
+        />
+      </td>
+      <td className="p-2">
+        <Input
+          value={item.ketua}
+          onChange={(e) => onChange(index, "ketua", e.target.value)}
+          placeholder="Nama ketua cabang..."
+          className="bg-background border-border h-9"
+          maxLength={100}
+        />
+      </td>
+      <td className="p-2 text-center">
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={() => onRemove(index)}
+          className="h-8 w-8 text-muted-foreground hover:text-destructive"
+        >
+          <Trash2 className="w-4 h-4" />
+        </Button>
+      </td>
+    </tr>
+  );
 }
 
 export function CabangEditor() {
@@ -23,6 +103,16 @@ export function CabangEditor() {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const { toast } = useToast();
+
+  // Generate stable IDs for sortable
+  const [ids, setIds] = useState<string[]>([]);
+  let nextId = 0;
+  const generateId = () => `cabang-${Date.now()}-${nextId++}`;
+
+  const sensors = useSensors(
+    useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
+    useSensor(KeyboardSensor, { coordinateGetter: sortableKeyboardCoordinates })
+  );
 
   useEffect(() => {
     const load = async () => {
@@ -35,7 +125,9 @@ export function CabangEditor() {
         .single();
 
       if (data?.value && Array.isArray(data.value)) {
-        setItems(data.value as unknown as CabangItem[]);
+        const loaded = data.value as unknown as CabangItem[];
+        setItems(loaded);
+        setIds(loaded.map((_, i) => `cabang-init-${i}`));
       }
       setLoading(false);
     };
@@ -44,10 +136,12 @@ export function CabangEditor() {
 
   const handleAdd = () => {
     setItems([...items, { wilayah: "", ketua: "" }]);
+    setIds([...ids, generateId()]);
   };
 
   const handleRemove = (index: number) => {
     setItems(items.filter((_, i) => i !== index));
+    setIds(ids.filter((_, i) => i !== index));
   };
 
   const handleChange = (index: number, field: keyof CabangItem, value: string) => {
@@ -56,8 +150,17 @@ export function CabangEditor() {
     setItems(updated);
   };
 
+  const handleDragEnd = (event: DragEndEvent) => {
+    const { active, over } = event;
+    if (over && active.id !== over.id) {
+      const oldIndex = ids.indexOf(active.id as string);
+      const newIndex = ids.indexOf(over.id as string);
+      setItems(arrayMove(items, oldIndex, newIndex));
+      setIds(arrayMove(ids, oldIndex, newIndex));
+    }
+  };
+
   const handleSave = async () => {
-    // Validate
     for (let i = 0; i < items.length; i++) {
       if (!items[i].wilayah.trim() || !items[i].ketua.trim()) {
         toast({
@@ -98,62 +201,45 @@ export function CabangEditor() {
 
   return (
     <div className="space-y-4">
+      <p className="text-xs text-muted-foreground">
+        Seret ikon <GripVertical className="w-3 h-3 inline" /> untuk mengubah urutan cabang.
+      </p>
       <div className="rounded-md border border-border overflow-hidden">
-        <Table>
-          <TableHeader>
-            <TableRow className="bg-muted/50">
-              <TableHead className="w-12 text-center">#</TableHead>
-              <TableHead>Wilayah</TableHead>
-              <TableHead>Ketua Cabang</TableHead>
-              <TableHead className="w-16 text-center">Aksi</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
+        <table className="w-full caption-bottom text-sm">
+          <thead>
+            <tr className="border-b bg-muted/50">
+              <th className="h-10 w-10 px-2 text-center text-muted-foreground font-medium" />
+              <th className="h-10 w-10 px-2 text-center text-muted-foreground font-medium">#</th>
+              <th className="h-10 px-2 text-left text-muted-foreground font-medium">Wilayah</th>
+              <th className="h-10 px-2 text-left text-muted-foreground font-medium">Ketua Cabang</th>
+              <th className="h-10 w-14 px-2 text-center text-muted-foreground font-medium">Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
             {items.length === 0 ? (
-              <TableRow>
-                <TableCell colSpan={4} className="text-center text-muted-foreground py-8">
+              <tr>
+                <td colSpan={5} className="text-center text-muted-foreground py-8">
                   Belum ada data cabang. Klik "Tambah Cabang" untuk memulai.
-                </TableCell>
-              </TableRow>
+                </td>
+              </tr>
             ) : (
-              items.map((item, index) => (
-                <TableRow key={index}>
-                  <TableCell className="text-center text-muted-foreground font-mono text-xs">
-                    {index + 1}
-                  </TableCell>
-                  <TableCell>
-                    <Input
-                      value={item.wilayah}
-                      onChange={(e) => handleChange(index, "wilayah", e.target.value)}
-                      placeholder="Nama wilayah..."
-                      className="bg-background border-border h-9"
-                      maxLength={100}
+              <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
+                <SortableContext items={ids} strategy={verticalListSortingStrategy}>
+                  {items.map((item, index) => (
+                    <SortableRow
+                      key={ids[index]}
+                      id={ids[index]}
+                      index={index}
+                      item={item}
+                      onChange={handleChange}
+                      onRemove={handleRemove}
                     />
-                  </TableCell>
-                  <TableCell>
-                    <Input
-                      value={item.ketua}
-                      onChange={(e) => handleChange(index, "ketua", e.target.value)}
-                      placeholder="Nama ketua cabang..."
-                      className="bg-background border-border h-9"
-                      maxLength={100}
-                    />
-                  </TableCell>
-                  <TableCell className="text-center">
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      onClick={() => handleRemove(index)}
-                      className="h-8 w-8 text-muted-foreground hover:text-destructive"
-                    >
-                      <Trash2 className="w-4 h-4" />
-                    </Button>
-                  </TableCell>
-                </TableRow>
-              ))
+                  ))}
+                </SortableContext>
+              </DndContext>
             )}
-          </TableBody>
-        </Table>
+          </tbody>
+        </table>
       </div>
 
       <div className="flex items-center gap-3">
