@@ -3,6 +3,7 @@ import { ArrowLeft, Camera, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import logoIkspi from "@/assets/logo-ikspi.png";
 import { useEffect, useState, useCallback } from "react";
+import { useStorageImages } from "@/hooks/useStorageImages";
 
 // Import all kegiatan images
 import postingan1 from "@/assets/kegiatan/postingan-1.png";
