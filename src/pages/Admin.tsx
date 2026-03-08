@@ -88,7 +88,7 @@ export default function Admin() {
         onLogout={handleLogout}
         username={username}
       />
-      <main className="flex-1 p-8 overflow-auto">
+      <main className="flex-1 p-4 md:p-8 overflow-auto pt-20 md:pt-8">
         {renderContent()}
       </main>
     </div>
