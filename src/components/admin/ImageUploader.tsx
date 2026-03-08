@@ -201,7 +201,25 @@ export function ImageGalleryManager({ folder }: ImageGalleryManagerProps) {
                   className="w-full aspect-square object-cover"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-background/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <div className="absolute inset-0 bg-background/70 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-2">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="border-accent text-accent hover:bg-accent/20"
+                    onClick={() => {
+                      navigator.clipboard.writeText(img.url);
+                      setCopied(img.name);
+                      toast({ title: "URL disalin ke clipboard" });
+                      setTimeout(() => setCopied(null), 2000);
+                    }}
+                  >
+                    {copied === img.name ? (
+                      <Check className="w-4 h-4 mr-1" />
+                    ) : (
+                      <Copy className="w-4 h-4 mr-1" />
+                    )}
+                    Copy URL
+                  </Button>
                   <Button
                     variant="destructive"
                     size="sm"
