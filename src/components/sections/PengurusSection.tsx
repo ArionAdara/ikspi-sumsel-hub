@@ -67,6 +67,17 @@ const pengurusList = [
 export function PengurusSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { images: storageImages } = useStorageImages("pengurus");
+
+  // Override pengurus images with storage versions if names match (e.g. "muslimin.png")
+  const pengurusWithStorage = pengurusList.map((p) => {
+    const match = storageImages.find((img) => {
+      const baseName = img.name.toLowerCase();
+      return p.name.toLowerCase().replace(/\s+/g, "-").includes(baseName.split(".")[0]) ||
+             baseName.includes(p.name.toLowerCase().replace(/\s+/g, "-"));
+    });
+    return match ? { ...p, image: match.url } : p;
+  });
 
   return (
     <section id="pengurus" className="relative py-24 bg-card/50">
