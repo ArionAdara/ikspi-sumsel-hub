@@ -29,7 +29,9 @@ export function SectionEditor({ title, description, fields }: SectionEditorProps
               <CardTitle className="text-base font-heading">{field.label}</CardTitle>
             </CardHeader>
             <CardContent>
-              {field.type === "gallery" ? (
+              {field.type === "cabang" ? (
+                <CabangEditor />
+              ) : field.type === "gallery" ? (
                 <ImageGalleryManager folder={field.key} />
               ) : (
                 <ContentEditor

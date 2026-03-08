@@ -47,9 +47,9 @@ const sectionConfigs: Record<string, { title: string; description: string; field
   },
   cabang: {
     title: "Kelola Cabang",
-    description: "Edit data Ketua Cabang se-Sumatera Selatan. Format JSON: [{\"wilayah\": \"...\", \"ketua\": \"...\"}]",
+    description: "Tambah, edit, atau hapus data Ketua Cabang se-Sumatera Selatan.",
     fields: [
-      { section: "cabang", key: "daftar", label: "Daftar Cabang (JSON)", type: "json" },
+      { section: "cabang", key: "daftar", label: "Daftar Cabang", type: "cabang" },
     ],
   },
 };
