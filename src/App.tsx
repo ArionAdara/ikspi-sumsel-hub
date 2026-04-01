@@ -38,6 +38,7 @@ const App = () => (
           <Route path="/kontak-person" element={<KontakPerson />} />
           <Route path="/narahubung" element={<KontakPerson />} />
           <Route path="/galeri-kegiatan" element={<GaleriKegiatan />} />
+          <Route path="/sejarah" element={<SejarahLengkap />} />
           <Route path="/admin" element={
             <ProtectedRoute requireAdmin>
               <Admin />
