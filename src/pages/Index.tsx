@@ -2,6 +2,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { SejarahSection } from "@/components/sections/SejarahSection";
 import { PengurusSection } from "@/components/sections/PengurusSection";
+import { PenasihatSection } from "@/components/sections/PenasihatSection";
 import { CabangSection } from "@/components/sections/CabangSection";
 import { KegiatanSection } from "@/components/sections/KegiatanSection";
 import { CariAnggotaSection } from "@/components/sections/CariAnggotaSection";
@@ -23,6 +24,7 @@ const Index = () => {
         <HeroSection />
         <SejarahSection />
         <PengurusSection />
+        <PenasihatSection />
         <CabangSection />
         <KegiatanSection />
         <CariAnggotaSection />
