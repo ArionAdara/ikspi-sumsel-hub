@@ -98,6 +98,13 @@ export function SejarahSection() {
                 </p>
                 <span className="text-gold text-sm">— Falsafah IKS PI Kera Sakti</span>
               </div>
+
+              <Link
+                to="/sejarah"
+                className="inline-flex items-center gap-2 text-gold hover:text-gold/80 transition-colors font-semibold mt-4"
+              >
+                Selengkapnya...
+              </Link>
             </div>
           </motion.div>
 

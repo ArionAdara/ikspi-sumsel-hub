@@ -12,6 +12,7 @@ import ProgramKerja from "./pages/ProgramKerja";
 import TimPengda from "./pages/TimPengda";
 import KontakPerson from "./pages/KontakPerson";
 import GaleriKegiatan from "./pages/GaleriKegiatan";
+import SejarahLengkap from "./pages/SejarahLengkap";
 import ScrollToTop from "./components/ScrollToTop";
 import { MusicPrompt } from "./components/MusicPrompt";
 import Admin from "./pages/Admin";
@@ -37,6 +38,7 @@ const App = () => (
           <Route path="/kontak-person" element={<KontakPerson />} />
           <Route path="/narahubung" element={<KontakPerson />} />
           <Route path="/galeri-kegiatan" element={<GaleriKegiatan />} />
+          <Route path="/sejarah" element={<SejarahLengkap />} />
           <Route path="/admin" element={
             <ProtectedRoute requireAdmin>
               <Admin />
