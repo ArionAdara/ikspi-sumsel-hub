@@ -8,10 +8,12 @@ import { SectionEditor, type SectionField } from "@/components/admin/SectionEdit
 const sectionConfigs: Record<string, { title: string; description: string; fields: SectionField[] }> = {
   sejarah: {
     title: "Kelola Sejarah",
-    description: "Edit konten halaman sejarah organisasi.",
+    description: "Edit konten halaman sejarah organisasi. Perubahan akan langsung tampil di website.",
     fields: [
-      { section: "sejarah", key: "judul", label: "Judul", type: "text" },
-      { section: "sejarah", key: "konten", label: "Konten Sejarah", type: "textarea" },
+      { section: "sejarah", key: "judul", label: "Judul (Beranda)", type: "text" },
+      { section: "sejarah", key: "konten", label: "Konten Sejarah (Beranda)", type: "textarea" },
+      { section: "sejarah", key: "sejarah_lengkap_judul", label: "Judul Halaman Sejarah Lengkap", type: "text" },
+      { section: "sejarah", key: "sejarah_lengkap_konten", label: "Isi Halaman Sejarah Lengkap (pisahkan paragraf dengan baris kosong)", type: "textarea" },
     ],
   },
   pengurus: {
