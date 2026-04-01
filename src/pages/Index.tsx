@@ -24,6 +24,7 @@ const Index = () => {
         <HeroSection />
         <SejarahSection />
         <PengurusSection />
+        <PenasihatSection />
         <CabangSection />
         <KegiatanSection />
         <CariAnggotaSection />
