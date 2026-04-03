@@ -16,7 +16,7 @@ const timelineEvents = [
     icon: Calendar,
   },
   {
-    year: "1997",
+    year: "1998",
     title: "Era Kepemimpinan Baru",
     description: "KP. Drs. H. Bambang Sunarja, M.A melanjutkan kepemimpinan perguruan",
     icon: Award,
@@ -187,7 +187,7 @@ export function SejarahSection() {
                 Kanjeng Pangeran (KP) Drs. H. Bambang Sunarja, M.A
               </h4>
               <p className="text-muted-foreground text-sm mt-2">
-                Ketua Umum sejak 1997<br />
+                Ketua Umum sejak 1998<br />
                 Kelahiran Madiun, 11 Mei 1966
               </p>
               <span className="text-gold/60 text-xs mt-3 block group-hover:text-gold transition-colors">

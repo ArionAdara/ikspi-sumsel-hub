@@ -45,7 +45,7 @@ export default function KetuaUmum() {
               KP. Drs. H. Bambang Sunarja, M.A
             </h1>
             <p className="text-muted-foreground">
-              Ketua Umum IKS PI Kera Sakti sejak 1997
+              Ketua Umum IKS PI Kera Sakti sejak 1998
             </p>
           </motion.div>
         </div>
@@ -88,7 +88,7 @@ export default function KetuaUmum() {
                   </div>
                   <div className="flex items-center gap-3 text-muted-foreground">
                     <Award className="w-5 h-5 text-gold" />
-                    <span>Ketua Umum sejak 1997</span>
+                    <span>Ketua Umum sejak 1998</span>
                   </div>
                   <div className="flex items-center gap-3 text-muted-foreground">
                     <Users className="w-5 h-5 text-gold" />
@@ -111,7 +111,7 @@ export default function KetuaUmum() {
                 <div className="prose prose-invert max-w-none">
                   <p className="text-lg text-foreground/90 leading-relaxed mb-6">
                     <span className="text-gold font-semibold">Kanjeng Pangeran (KP) Drs. H. Bambang 
-                    Sunarja, M.A</span> adalah Ketua Umum IKS PI Kera Sakti sejak tahun 1997 sampai 
+                    Sunarja, M.A</span> adalah Ketua Umum IKS PI Kera Sakti sejak tahun 1998 sampai 
                     dengan sekarang. Pria kelahiran Madiun 11 Mei 1966 ini melanjutkan kepemimpinan 
                     Perguruan IKS PI Kera Sakti setelah meninggalnya Guru Besar H. Raden Totong Kiemdarto.
                   </p>
@@ -145,7 +145,7 @@ export default function KetuaUmum() {
                       <p className="text-muted-foreground text-sm mt-1">Negara</p>
                     </div>
                     <div className="bg-card/50 border border-gold/20 rounded-lg p-4 text-center">
-                      <span className="font-heading text-3xl font-bold text-gold">1997</span>
+                      <span className="font-heading text-3xl font-bold text-gold">1998</span>
                       <p className="text-muted-foreground text-sm mt-1">Menjabat Ketua Umum</p>
                     </div>
                   </div>
