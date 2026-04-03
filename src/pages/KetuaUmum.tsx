@@ -88,7 +88,7 @@ export default function KetuaUmum() {
                   </div>
                   <div className="flex items-center gap-3 text-muted-foreground">
                     <Award className="w-5 h-5 text-gold" />
-                    <span>Ketua Umum sejak 1997</span>
+                    <span>Ketua Umum sejak 1998</span>
                   </div>
                   <div className="flex items-center gap-3 text-muted-foreground">
                     <Users className="w-5 h-5 text-gold" />
