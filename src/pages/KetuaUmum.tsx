@@ -45,7 +45,7 @@ export default function KetuaUmum() {
               KP. Drs. H. Bambang Sunarja, M.A
             </h1>
             <p className="text-muted-foreground">
-              Ketua Umum IKS PI Kera Sakti sejak 1997
+              Ketua Umum IKS PI Kera Sakti sejak 1998
             </p>
           </motion.div>
         </div>
