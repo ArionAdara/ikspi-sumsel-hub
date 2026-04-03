@@ -111,7 +111,7 @@ export default function KetuaUmum() {
                 <div className="prose prose-invert max-w-none">
                   <p className="text-lg text-foreground/90 leading-relaxed mb-6">
                     <span className="text-gold font-semibold">Kanjeng Pangeran (KP) Drs. H. Bambang 
-                    Sunarja, M.A</span> adalah Ketua Umum IKS PI Kera Sakti sejak tahun 1997 sampai 
+                    Sunarja, M.A</span> adalah Ketua Umum IKS PI Kera Sakti sejak tahun 1998 sampai 
                     dengan sekarang. Pria kelahiran Madiun 11 Mei 1966 ini melanjutkan kepemimpinan 
                     Perguruan IKS PI Kera Sakti setelah meninggalnya Guru Besar H. Raden Totong Kiemdarto.
                   </p>
