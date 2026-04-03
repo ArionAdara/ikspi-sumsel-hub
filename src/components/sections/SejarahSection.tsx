@@ -16,7 +16,7 @@ const timelineEvents = [
     icon: Calendar,
   },
   {
-    year: "1997",
+    year: "1998",
     title: "Era Kepemimpinan Baru",
     description: "KP. Drs. H. Bambang Sunarja, M.A melanjutkan kepemimpinan perguruan",
     icon: Award,
