@@ -187,7 +187,7 @@ export function SejarahSection() {
                 Kanjeng Pangeran (KP) Drs. H. Bambang Sunarja, M.A
               </h4>
               <p className="text-muted-foreground text-sm mt-2">
-                Ketua Umum sejak 1997<br />
+                Ketua Umum sejak 1998<br />
                 Kelahiran Madiun, 11 Mei 1966
               </p>
               <span className="text-gold/60 text-xs mt-3 block group-hover:text-gold transition-colors">

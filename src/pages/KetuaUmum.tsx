@@ -145,7 +145,7 @@ export default function KetuaUmum() {
                       <p className="text-muted-foreground text-sm mt-1">Negara</p>
                     </div>
                     <div className="bg-card/50 border border-gold/20 rounded-lg p-4 text-center">
-                      <span className="font-heading text-3xl font-bold text-gold">1997</span>
+                      <span className="font-heading text-3xl font-bold text-gold">1998</span>
                       <p className="text-muted-foreground text-sm mt-1">Menjabat Ketua Umum</p>
                     </div>
                   </div>
