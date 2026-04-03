@@ -7,8 +7,8 @@ import ritaImg from "@/assets/penasihat/rita-suryani.png";
 import langgengImg from "@/assets/penasihat/langgeng-suprapto.png";
 
 const penasihatList = [
-  { name: "H. Fahlevi Maizano, S.H., M.H.", image: fahleviImg },
-  { name: "Hj. Dra. Rita Suryani, M.H.", image: ritaImg },
+  { name: "H. Fahlvei Maizano", image: fahleviImg },
+  { name: "Hj. Rita Suryani", image: ritaImg },
   { name: "Langgeng Suprapto", image: langgengImg },
 ];
 
