@@ -165,6 +165,7 @@ export const programKerja = [
       "Kunjungan ke cabang Lahat tinjau persiapan Musyawarah Cabang (Muscab).",
       "Membantu penyelesaian permasalahan internal cabang Ogan Komering Ilir (OKI).",
       "Menghadiri undangan bagi takjil dan buka puasa bersama sekaligus selamatan pengesahan warga angkatan 144.",
+      "Melaksanakan Ujian Kenaikan Tingkat II IKS PI Kera Sakti Se Sumatera Selatan secara serentak di lapangan sekretariat Pengda IKS PI Kera Sakti Sumatera Selatan.",
     ],
   },
 ];
