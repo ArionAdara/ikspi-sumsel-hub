@@ -153,10 +153,12 @@ import postingan144 from "@/assets/kegiatan/postingan-144.png";
 import postingan145 from "@/assets/kegiatan/postingan-145.png";
 import postingan146 from "@/assets/kegiatan/postingan-146.png";
 import postingan147 from "@/assets/kegiatan/postingan-147.png";
+import postingan148 from "@/assets/kegiatan/postingan-148.png";
 import postingan100v2 from "@/assets/kegiatan/postingan-100-2.png";
 
 // Ordered from highest number (top) to lowest (bottom)
 const allKegiatan = [
+  { src: postingan148, alt: "Rapat Terbatas Sekaligus Silaturahmi Pengda IKS PI Kera Sakti Sumsel Bersama Cabang Palembang Bahas Persiapan Muscab Palembang Tahun 2026" },
   { src: postingan147, alt: "Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Gelar Ujian Kenaikan Tingkat II Angkatan 131 Di Lapangan Sekretariat Sumatera Selatan" },
   { src: postingan146, alt: "Ketua Pengda IKS Sumsel Apresiasi Kegiatan Pembagian Takjil Dan Buka Puasa Bersama Warga Dan Pendekar IKS PI Kera Sakti Cabang Ogan Ilir" },
   { src: postingan145, alt: "Jalankan Tugas Pokok Dan Fungsi Pengda IKS PI Kera Sakti Sumatera Selatan Bantu Mediasi Penyelesaian Masalah Cabang Ogan Komering Ilir" },
