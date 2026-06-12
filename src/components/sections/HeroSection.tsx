@@ -79,9 +79,9 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="mb-4"
         >
-          <h2 className="font-heading text-xl md:text-2xl text-gold mb-2 tracking-widest">
+          <p className="font-heading text-xl md:text-2xl text-gold mb-2 tracking-widest">
             PERGURUAN
-          </h2>
+          </p>
         </motion.div>
 
         <motion.h1
@@ -92,6 +92,7 @@ export function HeroSection() {
         >
           IKS PI{" "}
           <span className="gradient-text-gold">KERA SAKTI</span>
+          {" "}— Pengurus Daerah Sumatera Selatan
         </motion.h1>
 
         {/* Decorative line */}

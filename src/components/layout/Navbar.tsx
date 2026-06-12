@@ -44,9 +44,9 @@ export function Navbar() {
             <Link to="/" className="flex items-center space-x-3">
               <img src={logoIkspi} alt="Logo IKS PI Kera Sakti" className="w-12 h-12 object-contain" />
               <div className="hidden sm:block">
-                <h1 className="font-heading font-bold text-lg text-foreground leading-tight">
+                <span className="block font-heading font-bold text-lg text-foreground leading-tight">
                   IKS PI <span className="text-gold">KERA SAKTI</span>
-                </h1>
+                </span>
                 <p className="text-xs text-muted-foreground">Sumatera Selatan</p>
               </div>
             </Link>
@@ -81,6 +81,8 @@ export function Navbar() {
               {/* Mobile Menu Toggle */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                aria-label={isMobileMenuOpen ? "Tutup menu" : "Buka menu"}
+                aria-expanded={isMobileMenuOpen}
                 className="lg:hidden p-2 text-foreground hover:text-gold transition-colors"
               >
                 {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

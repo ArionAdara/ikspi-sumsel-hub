@@ -1,0 +1,14 @@
+# IKS PI Kera Sakti — Pengurus Daerah Sumatera Selatan
+
+> Website resmi Pengurus Daerah (Pengda) IKS PI Kera Sakti Sumatera Selatan, perguruan pencak silat perpaduan kungfu yang berdiri sejak 1980.
+
+## Pages
+
+- [Beranda](/): Profil singkat, slogan, dan ringkasan kegiatan Pengda Sumsel.
+- [Sejarah](/sejarah): Sejarah lengkap perguruan IKS PI Kera Sakti.
+- [Guru Besar](/guru-besar): Profil Guru Besar perguruan.
+- [Ketua Umum](/ketua-umum): Profil Ketua Umum perguruan.
+- [Program Kerja](/program-kerja): Timeline program kerja dan dokumentasi kegiatan terlaksana.
+- [Tim Pengda](/tim-pengda): Susunan inti tim Pengda Sumsel.
+- [Narahubung](/narahubung): Kontak pengurus dan sekretariat.
+- [Galeri Kegiatan](/galeri-kegiatan): Dokumentasi foto kegiatan dan berita.
