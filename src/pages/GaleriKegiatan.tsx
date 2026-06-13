@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import { ArrowLeft, Camera, ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowLeft, Camera, ChevronDown, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import logoIkspi from "@/assets/logo-ikspi.png";
 import { useEffect, useState, useCallback } from "react";
