@@ -312,6 +312,7 @@ const ITEMS_PER_PAGE = 12;
 
 export default function GaleriKegiatan() {
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const { images: storageImages } = useStorageImages("kegiatan");
 
   useEffect(() => {
@@ -329,6 +330,33 @@ export default function GaleriKegiatan() {
 
   const visibleItems = combinedKegiatan.slice(0, visibleCount);
   const hasMore = visibleCount < combinedKegiatan.length;
+
+  const closeLightbox = useCallback(() => setLightboxIndex(null), []);
+  const showPrev = useCallback(
+    () => setLightboxIndex((i) => (i === null ? i : (i - 1 + combinedKegiatan.length) % combinedKegiatan.length)),
+    [combinedKegiatan.length]
+  );
+  const showNext = useCallback(
+    () => setLightboxIndex((i) => (i === null ? i : (i + 1) % combinedKegiatan.length)),
+    [combinedKegiatan.length]
+  );
+
+  useEffect(() => {
+    if (lightboxIndex === null) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeLightbox();
+      else if (e.key === "ArrowLeft") showPrev();
+      else if (e.key === "ArrowRight") showNext();
+    };
+    window.addEventListener("keydown", onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [lightboxIndex, closeLightbox, showPrev, showNext]);
+
 
   return (
     <div className="min-h-screen bg-background text-foreground">
