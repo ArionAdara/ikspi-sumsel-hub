@@ -445,25 +445,32 @@ export default function GaleriKegiatan() {
                 transition={{ duration: 0.25, delay: isNewBatch ? Math.min(index % ITEMS_PER_PAGE, 5) * 0.02 : 0 }}
                 className="group"
               >
-                <div className="relative rounded-lg md:rounded-xl overflow-hidden border border-border md:border-2 group-hover:border-gold/60 transition-all duration-300 shadow-sm md:shadow-md group-hover:shadow-[0_0_20px_hsla(45,90%,50%,0.15)]">
-                  <div className="aspect-square overflow-hidden bg-card">
-                    <img
-                      src={item.src}
-                      alt={item.alt}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      loading="lazy"
-                      decoding="async"
-                      fetchPriority={index < 4 ? "high" : "low"}
-                      sizes="(max-width: 640px) 45vw, (max-width: 1024px) 45vw, 30vw"
-                    />
+                <button
+                  type="button"
+                  onClick={() => setLightboxIndex(index)}
+                  aria-label={`Lihat foto: ${item.alt}`}
+                  className="block w-full text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-lg md:rounded-xl"
+                >
+                  <div className="relative rounded-lg md:rounded-xl overflow-hidden border border-border md:border-2 group-hover:border-gold/60 transition-all duration-300 shadow-sm md:shadow-md group-hover:shadow-[0_0_20px_hsla(45,90%,50%,0.15)] cursor-zoom-in">
+                    <div className="aspect-square overflow-hidden bg-card">
+                      <img
+                        src={item.src}
+                        alt={item.alt}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                        decoding="async"
+                        fetchPriority={index < 4 ? "high" : "low"}
+                        sizes="(max-width: 640px) 45vw, (max-width: 1024px) 45vw, 30vw"
+                      />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden md:block" />
+                    <div className="absolute bottom-0 left-0 right-0 p-2 md:p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 hidden md:block">
+                      <p className="font-heading text-xs md:text-sm text-foreground leading-snug line-clamp-3">
+                        {item.alt}
+                      </p>
+                    </div>
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden md:block" />
-                  <div className="absolute bottom-0 left-0 right-0 p-2 md:p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 hidden md:block">
-                    <p className="font-heading text-xs md:text-sm text-foreground leading-snug line-clamp-3">
-                      {item.alt}
-                    </p>
-                  </div>
-                </div>
+                </button>
               </motion.div>
             );
           })}
@@ -487,6 +494,73 @@ export default function GaleriKegiatan() {
           </p>
         )}
       </div>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {lightboxIndex !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4"
+            onClick={closeLightbox}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Pratinjau foto"
+          >
+            <button
+              type="button"
+              onClick={(e) => { e.stopPropagation(); closeLightbox(); }}
+              aria-label="Tutup"
+              className="absolute top-4 right-4 z-10 p-2 rounded-full bg-background/20 hover:bg-background/40 text-white transition-colors"
+            >
+              <X className="w-6 h-6" />
+            </button>
+
+            <button
+              type="button"
+              onClick={(e) => { e.stopPropagation(); showPrev(); }}
+              aria-label="Foto sebelumnya"
+              className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-10 p-2 md:p-3 rounded-full bg-background/20 hover:bg-background/40 text-white transition-colors"
+            >
+              <ChevronLeft className="w-6 h-6 md:w-8 md:h-8" />
+            </button>
+
+            <button
+              type="button"
+              onClick={(e) => { e.stopPropagation(); showNext(); }}
+              aria-label="Foto selanjutnya"
+              className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-10 p-2 md:p-3 rounded-full bg-background/20 hover:bg-background/40 text-white transition-colors"
+            >
+              <ChevronRight className="w-6 h-6 md:w-8 md:h-8" />
+            </button>
+
+            <motion.div
+              key={lightboxIndex}
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.2 }}
+              className="relative max-w-7xl w-full max-h-full flex flex-col items-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src={combinedKegiatan[lightboxIndex].src}
+                alt={combinedKegiatan[lightboxIndex].alt}
+                className="max-h-[80vh] w-auto max-w-full object-contain rounded-md shadow-2xl"
+              />
+              <div className="mt-4 max-w-3xl text-center px-4">
+                <p className="text-white/90 text-sm md:text-base font-heading leading-snug">
+                  {combinedKegiatan[lightboxIndex].alt}
+                </p>
+                <p className="text-white/50 text-xs mt-2 uppercase tracking-wider">
+                  {lightboxIndex + 1} / {combinedKegiatan.length}
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
