@@ -77,23 +77,45 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="mb-4"
+          className="mb-8"
         >
-          <p className="font-heading text-xl md:text-2xl text-gold mb-2 tracking-widest">
-            PERGURUAN
-          </p>
-        </motion.div>
+          {/* Overline with precision lines */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex items-center justify-center gap-4 mb-6"
+          >
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="h-[1px] w-16 md:w-28 bg-gradient-to-r from-transparent via-gold to-gold origin-right"
+            />
+            <span className="font-heading text-[10px] md:text-xs text-gold tracking-[0.4em] uppercase">
+              PERGURUAN
+            </span>
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="h-[1px] w-16 md:w-28 bg-gradient-to-l from-transparent via-gold to-gold origin-left"
+            />
+          </motion.div>
 
-        <motion.h1
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="font-heading font-bold text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-foreground mb-2 text-shadow-lg"
-        >
-          IKS PI{" "}
-          <span className="gradient-text-gold">KERA SAKTI</span>
-          {" "}— Pengurus Daerah Sumatera Selatan
-        </motion.h1>
+          <motion.h1
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.6 }}
+            className="font-heading font-bold text-6xl sm:text-7xl md:text-8xl lg:text-[9rem] leading-[0.85] tracking-tight text-center"
+          >
+            <span className="block text-foreground text-shadow-lg">IKS PI</span>
+            <span className="block gradient-text-gold text-shadow-gold shimmer-text">KERA SAKTI</span>
+            <span className="block font-display italic text-lg md:text-2xl text-gold/90 tracking-[0.15em] font-normal mt-4 md:mt-6">
+              Pengurus Daerah Sumatera Selatan
+            </span>
+          </motion.h1>
+        </motion.div>
 
         {/* Decorative line */}
         <motion.div
