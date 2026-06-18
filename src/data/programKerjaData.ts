@@ -167,6 +167,8 @@ export const programKerja = [
       "Menghadiri undangan bagi takjil dan buka puasa bersama sekaligus selamatan pengesahan warga angkatan 144.",
       "Melaksanakan Ujian Kenaikan Tingkat II IKS PI Kera Sakti Se Sumatera Selatan secara serentak di lapangan sekretariat Pengda IKS PI Kera Sakti Sumatera Selatan.",
       "Melaksanakan rapat terbatas sekaligus silaturahmi Pengda Sumsel bersama Cabang Palembang membahas persiapan Muscab Cabang Palembang.",
+      "Melaksanakan Ujian Kenaikan Tingkat II IKS PI Kera Sakti Tahap 2 di Cabang OKU Timur angkatan 131.",
+      "Menghadiri undangan cabang Palembang dalam rangka peringatan Tahun Baru Islam (1 Muharam 1448 H).",
     ],
   },
 ];

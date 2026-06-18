@@ -6,16 +6,16 @@ import { Link } from "react-router-dom";
 import { useStorageImages } from "@/hooks/useStorageImages";
 
 // Import activity images - 4 terbaru (nomor terbesar)
+import postingan150 from "@/assets/kegiatan/postingan-150.png";
+import postingan149 from "@/assets/kegiatan/postingan-149.png";
 import postingan148 from "@/assets/kegiatan/postingan-148.png";
 import postingan147 from "@/assets/kegiatan/postingan-147.png";
-import postingan146 from "@/assets/kegiatan/postingan-146.png";
-import postingan145 from "@/assets/kegiatan/postingan-145.png";
 
 const staticImages = [
+  { src: postingan150, alt: "Menjalin Kebersamaan Dalam Semangat Tahun Baru Islam, Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Hadiri Undangan Cabang Palembang" },
+  { src: postingan149, alt: "Semangat Meningkatkan Kualitas Pendekar, Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Laksanakan UKT Tingkat II Tahap 2 Di OKU Timur" },
   { src: postingan148, alt: "Rapat Terbatas Sekaligus Silaturahmi Pengda IKS PI Kera Sakti Sumsel Bersama Cabang Palembang Bahas Persiapan Muscab Palembang Tahun 2026" },
   { src: postingan147, alt: "Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Gelar Ujian Kenaikan Tingkat II Angkatan 131 Di Lapangan Sekretariat Sumatera Selatan" },
-  { src: postingan146, alt: "Ketua Pengda IKS Sumsel Apresiasi Kegiatan Pembagian Takjil Dan Buka Puasa Bersama Warga Dan Pendekar IKS PI Kera Sakti Cabang Ogan Ilir" },
-  { src: postingan145, alt: "Jalankan Tugas Pokok Dan Fungsi Pengda IKS PI Kera Sakti Sumatera Selatan Bantu Mediasi Penyelesaian Masalah Cabang Ogan Komering Ilir" },
 ];
 
 export function KegiatanSection() {
