@@ -111,7 +111,7 @@ export function HeroSection() {
           >
             <span className="block text-foreground text-shadow-lg">IKS PI</span>
             <span className="block gradient-text-gold text-shadow-gold shimmer-text">KERA SAKTI</span>
-            <span className="block font-display italic text-lg md:text-2xl text-gold/90 tracking-[0.15em] font-normal mt-4 md:mt-6">
+            <span className="block font-heading font-bold uppercase text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gold tracking-[0.25em] mt-4 md:mt-6 text-shadow-gold">
               Pengurus Daerah Sumatera Selatan
             </span>
           </motion.h1>
