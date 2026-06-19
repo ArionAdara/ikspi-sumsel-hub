@@ -309,6 +309,25 @@
   .overline-precision::after {
     background: linear-gradient(90deg, hsl(45 90% 50%), transparent);
   }
+
+  /* Gold 3D text with white glow - bold, pop-up, modern */
+  .text-gold-3d-white-glow {
+    color: hsl(45 95% 58%);
+    text-shadow:
+      0 1px 0 hsl(45 90% 48%),
+      0 2px 0 hsl(45 85% 42%),
+      0 3px 0 hsl(45 80% 36%),
+      0 4px 0 hsl(45 75% 30%),
+      0 5px 0 hsl(45 70% 24%),
+      0 6px 1px rgba(0,0,0,0.6),
+      0 0 5px rgba(0,0,0,0.3),
+      0 1px 3px rgba(0,0,0,0.5),
+      0 3px 5px rgba(0,0,0,0.4),
+      0 5px 10px rgba(0,0,0,0.5),
+      0 0 10px rgba(255,255,255,0.9),
+      0 0 20px rgba(255,255,255,0.7),
+      0 0 40px rgba(255,255,255,0.4);
+  }
 }
 
 @layer utilities {
