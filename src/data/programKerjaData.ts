@@ -169,6 +169,8 @@ export const programKerja = [
       "Melaksanakan rapat terbatas sekaligus silaturahmi Pengda Sumsel bersama Cabang Palembang membahas persiapan Muscab Cabang Palembang.",
       "Melaksanakan Ujian Kenaikan Tingkat II IKS PI Kera Sakti Tahap 2 di Cabang OKU Timur angkatan 131.",
       "Menghadiri undangan cabang Palembang dalam rangka peringatan Tahun Baru Islam (1 Muharam 1448 H).",
+      "Menghadiri undangan Musyawarah Cabang IKS PI Kera Sakti Ogan Ilir Tahun 2026.",
+      "Menghadiri undangan Selamatan Pengesahan angkatan 145 IKS PI Kera Sakti Cabang Banyuasin.",
     ],
   },
 ];

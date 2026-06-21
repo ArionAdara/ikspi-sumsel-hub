@@ -156,10 +156,14 @@ import postingan147 from "@/assets/kegiatan/postingan-147.png";
 import postingan148 from "@/assets/kegiatan/postingan-148.png";
 import postingan149 from "@/assets/kegiatan/postingan-149.png";
 import postingan150 from "@/assets/kegiatan/postingan-150.png";
+import postingan151 from "@/assets/kegiatan/postingan-151.png";
+import postingan152 from "@/assets/kegiatan/postingan-152.png";
 import postingan100v2 from "@/assets/kegiatan/postingan-100-2.png";
 
 // Ordered from highest number (top) to lowest (bottom)
 const allKegiatan = [
+  { src: postingan152, alt: "Pengesahan Angkatan 145 Banyuasin, Ketua Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Ajak Anggota Baru Jaga Soliditas Dan Raih Prestasi" },
+  { src: postingan151, alt: "Ketua Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Hadiri Rakercab Ogan Ilir, Dorong Penyusunan Program Kerja Yang Terarah Dan Akuntabel" },
   { src: postingan150, alt: "Menjalin Kebersamaan Dalam Semangat Tahun Baru Islam, Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Hadiri Undangan Cabang Palembang" },
   { src: postingan149, alt: "Semangat Meningkatkan Kualitas Pendekar, Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Laksanakan UKT Tingkat II Tahap 2 Di OKU Timur" },
   { src: postingan148, alt: "Rapat Terbatas Sekaligus Silaturahmi Pengda IKS PI Kera Sakti Sumsel Bersama Cabang Palembang Bahas Persiapan Muscab Palembang Tahun 2026" },
