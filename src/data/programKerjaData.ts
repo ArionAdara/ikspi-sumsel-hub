@@ -171,6 +171,8 @@ export const programKerja = [
       "Menghadiri undangan cabang Palembang dalam rangka peringatan Tahun Baru Islam (1 Muharam 1448 H).",
       "Menghadiri undangan Musyawarah Cabang IKS PI Kera Sakti Ogan Ilir Tahun 2026.",
       "Menghadiri undangan Selamatan Pengesahan angkatan 145 IKS PI Kera Sakti Cabang Banyuasin.",
+      "Membesuk warga senior Palembang (Istri Penasihat Pengda) yang sedang sakit.",
+      "Menghadiri dan mengikuti kegiatan MUSPROV IPSI Sumatera Selatan Tahun 2026 di Palembang.",
     ],
   },
 ];
