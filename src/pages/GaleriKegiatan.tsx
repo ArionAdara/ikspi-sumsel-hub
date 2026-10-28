@@ -1,8 +1,8 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, Camera, ChevronDown, ChevronLeft, ChevronRight, X } from "lucide-react";
+import { ArrowLeft, Calendar, Camera, ChevronDown, ChevronLeft, ChevronRight, Search, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import logoIkspi from "@/assets/logo-ikspi.png";
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useMemo, useState, useCallback } from "react";
 import { useStorageImages } from "@/hooks/useStorageImages";
 
 // Import all kegiatan images
@@ -320,11 +320,41 @@ const allKegiatan = [
   { src: postingan1, alt: "Melaksanakan Tupoksi, Pengda IKS PI Kera Sakti Sumsel Membantu Menyelesaikan Berbagai Masalah" },
 ];
 
+// Entri galeri dengan nomor postingan dan tahun untuk pencarian & filter
+type KegiatanItem = { src: string; alt: string; no: number | null; year: number | null };
+
+// Jangkar tahun: foto yang keterangannya menyebut tahun secara eksplisit
+const yearAnchors = allKegiatan
+  .map((item, index) => ({ no: allKegiatan.length - index, year: item.alt.match(/20\d{2}/)?.[0] }))
+  .filter((a): a is { no: number; year: string } => Boolean(a.year))
+  .map((a) => ({ no: a.no, year: Number(a.year) }));
+
+// Tahun tiap nomor postingan = tahun jangkar terdekat (jika imbang, ambil yang lebih baru)
+const yearForNo = (no: number): number => {
+  let best = yearAnchors[0];
+  for (const a of yearAnchors) {
+    const d = Math.abs(no - a.no);
+    const bd = Math.abs(no - best.no);
+    if (d < bd || (d === bd && a.no > best.no)) best = a;
+  }
+  return best.year;
+};
+
+const kegiatanEntries: KegiatanItem[] = allKegiatan.map((item, index) => ({
+  ...item,
+  no: allKegiatan.length - index,
+  year: yearForNo(allKegiatan.length - index),
+}));
+
+const availableYears = [...new Set(kegiatanEntries.map((e) => e.year as number))].sort((a, b) => b - a);
+
 const ITEMS_PER_PAGE = 12;
 
 export default function GaleriKegiatan() {
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [search, setSearch] = useState("");
+  const [yearFilter, setYearFilter] = useState<string>("all");
   const { images: storageImages } = useStorageImages("kegiatan");
 
   useEffect(() => {
@@ -333,24 +363,55 @@ export default function GaleriKegiatan() {
   }, []);
 
   // Merge storage images (newest first) with static images
-  const storageEntries = storageImages.map((img) => ({ src: img.url, alt: img.name.replace(/\.\w+$/, "").replace(/[-_]/g, " ") }));
-  const combinedKegiatan = [...storageEntries, ...allKegiatan];
+  const storageEntries: KegiatanItem[] = storageImages.map((img) => ({
+    src: img.url,
+    alt: img.name.replace(/\.\w+$/, "").replace(/[-_]/g, " "),
+    no: null,
+    year: null,
+  }));
+  const combinedKegiatan = [...storageEntries, ...kegiatanEntries];
+
+  const isFiltering = search.trim() !== "" || yearFilter !== "all";
+
+  const filteredKegiatan = useMemo(() => {
+    const q = search.trim().toLowerCase();
+    return combinedKegiatan.filter((item) => {
+      if (yearFilter !== "all") {
+        const matchYear =
+          yearFilter === "lainnya"
+            ? item.year === null
+            : item.year !== null && String(item.year) === yearFilter;
+        if (!matchYear) return false;
+      }
+      if (!q) return true;
+      if (/^\d+$/.test(q)) {
+        return (item.no !== null && String(item.no).includes(q)) || item.alt.toLowerCase().includes(q);
+      }
+      return item.alt.toLowerCase().includes(q);
+    });
+  }, [combinedKegiatan, search, yearFilter]);
+
+  // Reset tampilan saat filter berubah
+  useEffect(() => {
+    setVisibleCount(ITEMS_PER_PAGE);
+    setLightboxIndex(null);
+  }, [search, yearFilter]);
 
   const loadMore = useCallback(() => {
-    setVisibleCount((prev) => Math.min(prev + ITEMS_PER_PAGE, combinedKegiatan.length));
-  }, [combinedKegiatan.length]);
+    setVisibleCount((prev) => Math.min(prev + ITEMS_PER_PAGE, filteredKegiatan.length));
+  }, [filteredKegiatan.length]);
 
-  const visibleItems = combinedKegiatan.slice(0, visibleCount);
-  const hasMore = visibleCount < combinedKegiatan.length;
+  const visibleItems = filteredKegiatan.slice(0, visibleCount);
+  const hasMore = visibleCount < filteredKegiatan.length;
 
   const closeLightbox = useCallback(() => setLightboxIndex(null), []);
   const showPrev = useCallback(
-    () => setLightboxIndex((i) => (i === null ? i : (i - 1 + combinedKegiatan.length) % combinedKegiatan.length)),
-    [combinedKegiatan.length]
+    () => setLightboxIndex((i) => (i === null ? i : (i - 1 + filteredKegiatan.length) % filteredKegiatan.length)),
+    [filteredKegiatan.length]
   );
   const showNext = useCallback(
-    () => setLightboxIndex((i) => (i === null ? i : (i + 1) % combinedKegiatan.length)),
-    [combinedKegiatan.length]
+    () => setLightboxIndex((i) => (i === null ? i : (i + 1) % filteredKegiatan.length)),
+    [filteredKegiatan.length]
   );
 
   useEffect(() => {
@@ -438,7 +499,7 @@ export default function GaleriKegiatan() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex items-center justify-center gap-2 mb-10"
+          className="flex items-center justify-center gap-2 mb-6"
         >
           <Camera className="w-5 h-5 text-gold" />
           <h2 className="font-heading text-lg md:text-xl font-bold text-gold uppercase tracking-widest">
@@ -446,12 +507,62 @@ export default function GaleriKegiatan() {
           </h2>
         </motion.div>
 
+        {/* Pencarian & Filter */}
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 mb-6 max-w-3xl mx-auto">
+          <div className="relative flex-1">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+            <input
+              type="text"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="Cari nomor postingan atau kata kunci..."
+              aria-label="Cari dokumentasi kegiatan"
+              className="w-full pl-10 pr-4 py-2.5 rounded-lg bg-card border border-gold/40 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50 transition-colors"
+            />
+          </div>
+          <div className="relative sm:w-48">
+            <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gold pointer-events-none" />
+            <select
+              value={yearFilter}
+              onChange={(e) => setYearFilter(e.target.value)}
+              aria-label="Filter berdasarkan tahun"
+              className="w-full appearance-none pl-10 pr-8 py-2.5 rounded-lg bg-card border border-gold/40 text-sm text-foreground focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50 cursor-pointer transition-colors"
+            >
+              <option value="all">Semua Tahun</option>
+              {availableYears.map((y) => (
+                <option key={y} value={String(y)}>
+                  Tahun {y}
+                </option>
+              ))}
+              <option value="lainnya">Lainnya</option>
+            </select>
+            <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground pointer-events-none" />
+          </div>
+          {isFiltering && (
+            <button
+              type="button"
+              onClick={() => {
+                setSearch("");
+                setYearFilter("all");
+              }}
+              className="px-4 py-2.5 rounded-lg border border-gold/40 text-gold hover:bg-gold/10 text-sm uppercase tracking-wider transition-colors"
+            >
+              Reset
+            </button>
+          )}
+        </div>
+        {isFiltering && filteredKegiatan.length > 0 && (
+          <p className="text-center text-xs text-muted-foreground uppercase tracking-wider mb-6">
+            {filteredKegiatan.length} dokumentasi ditemukan
+          </p>
+        )}
+
         <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6">
           {visibleItems.map((item, index) => {
             const isNewBatch = index >= visibleCount - ITEMS_PER_PAGE;
             return (
               <motion.div
-                key={index}
+                key={item.no ?? `store-${index}`}
                 initial={isNewBatch ? { opacity: 0, y: 15 } : false}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.25, delay: isNewBatch ? Math.min(index % ITEMS_PER_PAGE, 5) * 0.02 : 0 }}
@@ -464,6 +575,11 @@ export default function GaleriKegiatan() {
                   className="block w-full text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-lg md:rounded-xl"
                 >
                   <div className="relative rounded-lg md:rounded-xl overflow-hidden border border-border md:border-2 group-hover:border-gold/60 transition-all duration-300 shadow-sm md:shadow-md group-hover:shadow-[0_0_20px_hsla(45,90%,50%,0.15)] cursor-zoom-in">
+                    {item.no !== null && (
+                      <span className="absolute top-2 left-2 z-10 px-2 py-0.5 rounded-full bg-background/80 border border-gold/40 text-gold text-[10px] font-heading tracking-wider">
+                        No. {item.no}
+                      </span>
+                    )}
                     <div className="aspect-square overflow-hidden bg-card">
                       <img
                         src={item.src}
@@ -488,6 +604,25 @@ export default function GaleriKegiatan() {
           })}
         </div>
 
+        {filteredKegiatan.length === 0 && combinedKegiatan.length > 0 && (
+          <div className="text-center py-16">
+            <Camera className="w-10 h-10 text-muted-foreground mx-auto mb-4" />
+            <p className="text-muted-foreground">
+              Tidak ada dokumentasi yang cocok dengan pencarian atau filter tahun.
+            </p>
+            <button
+              type="button"
+              onClick={() => {
+                setSearch("");
+                setYearFilter("all");
+              }}
+              className="mt-4 text-gold hover:text-gold/80 underline underline-offset-4 text-sm uppercase tracking-wider"
+            >
+              Hapus Filter
+            </button>
+          </div>
+        )}
+
         {hasMore && (
           <div className="flex justify-center mt-10">
             <button
@@ -500,9 +635,9 @@ export default function GaleriKegiatan() {
           </div>
         )}
 
-        {!hasMore && visibleCount > ITEMS_PER_PAGE && (
+        {!hasMore && !isFiltering && visibleCount > ITEMS_PER_PAGE && (
           <p className="text-center text-muted-foreground text-sm mt-10 uppercase tracking-wider">
-            Semua {allKegiatan.length} dokumentasi telah ditampilkan
+            Semua {combinedKegiatan.length} dokumentasi telah ditampilkan
           </p>
         )}
       </div>
@@ -557,16 +692,21 @@ export default function GaleriKegiatan() {
               onClick={(e) => e.stopPropagation()}
             >
               <img
-                src={combinedKegiatan[lightboxIndex].src}
-                alt={combinedKegiatan[lightboxIndex].alt}
+                src={filteredKegiatan[lightboxIndex].src}
+                alt={filteredKegiatan[lightboxIndex].alt}
                 className="max-h-[80vh] w-auto max-w-full object-contain rounded-md shadow-2xl"
               />
               <div className="mt-4 max-w-3xl text-center px-4">
+                {filteredKegiatan[lightboxIndex].no ? (
+                  <p className="text-gold text-xs uppercase tracking-wider mb-1">
+                    Postingan No. {filteredKegiatan[lightboxIndex].no}
+                  </p>
+                ) : null}
                 <p className="text-white/90 text-sm md:text-base font-heading leading-snug">
-                  {combinedKegiatan[lightboxIndex].alt}
+                  {filteredKegiatan[lightboxIndex].alt}
                 </p>
                 <p className="text-white/50 text-xs mt-2 uppercase tracking-wider">
-                  {lightboxIndex + 1} / {combinedKegiatan.length}
+                  {lightboxIndex + 1} / {filteredKegiatan.length}
                 </p>
               </div>
             </motion.div>
