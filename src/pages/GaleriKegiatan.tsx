@@ -562,7 +562,7 @@ export default function GaleriKegiatan() {
             const isNewBatch = index >= visibleCount - ITEMS_PER_PAGE;
             return (
               <motion.div
-                key={index}
+                key={item.no ?? `store-${index}`}
                 initial={isNewBatch ? { opacity: 0, y: 15 } : false}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.25, delay: isNewBatch ? Math.min(index % ITEMS_PER_PAGE, 5) * 0.02 : 0 }}
@@ -575,6 +575,11 @@ export default function GaleriKegiatan() {
                   className="block w-full text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-lg md:rounded-xl"
                 >
                   <div className="relative rounded-lg md:rounded-xl overflow-hidden border border-border md:border-2 group-hover:border-gold/60 transition-all duration-300 shadow-sm md:shadow-md group-hover:shadow-[0_0_20px_hsla(45,90%,50%,0.15)] cursor-zoom-in">
+                    {item.no !== null && (
+                      <span className="absolute top-2 left-2 z-10 px-2 py-0.5 rounded-full bg-background/80 border border-gold/40 text-gold text-[10px] font-heading tracking-wider">
+                        No. {item.no}
+                      </span>
+                    )}
                     <div className="aspect-square overflow-hidden bg-card">
                       <img
                         src={item.src}
