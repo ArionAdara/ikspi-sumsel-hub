@@ -353,6 +353,8 @@ const ITEMS_PER_PAGE = 12;
 export default function GaleriKegiatan() {
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [search, setSearch] = useState("");
+  const [yearFilter, setYearFilter] = useState<string>("all");
   const { images: storageImages } = useStorageImages("kegiatan");
 
   useEffect(() => {
@@ -361,24 +363,55 @@ export default function GaleriKegiatan() {
   }, []);
 
   // Merge storage images (newest first) with static images
-  const storageEntries = storageImages.map((img) => ({ src: img.url, alt: img.name.replace(/\.\w+$/, "").replace(/[-_]/g, " ") }));
-  const combinedKegiatan = [...storageEntries, ...allKegiatan];
+  const storageEntries: KegiatanItem[] = storageImages.map((img) => ({
+    src: img.url,
+    alt: img.name.replace(/\.\w+$/, "").replace(/[-_]/g, " "),
+    no: null,
+    year: null,
+  }));
+  const combinedKegiatan = [...storageEntries, ...kegiatanEntries];
+
+  const isFiltering = search.trim() !== "" || yearFilter !== "all";
+
+  const filteredKegiatan = useMemo(() => {
+    const q = search.trim().toLowerCase();
+    return combinedKegiatan.filter((item) => {
+      if (yearFilter !== "all") {
+        const matchYear =
+          yearFilter === "lainnya"
+            ? item.year === null
+            : item.year !== null && String(item.year) === yearFilter;
+        if (!matchYear) return false;
+      }
+      if (!q) return true;
+      if (/^\d+$/.test(q)) {
+        return (item.no !== null && String(item.no).includes(q)) || item.alt.toLowerCase().includes(q);
+      }
+      return item.alt.toLowerCase().includes(q);
+    });
+  }, [combinedKegiatan, search, yearFilter]);
+
+  // Reset tampilan saat filter berubah
+  useEffect(() => {
+    setVisibleCount(ITEMS_PER_PAGE);
+    setLightboxIndex(null);
+  }, [search, yearFilter]);
 
   const loadMore = useCallback(() => {
-    setVisibleCount((prev) => Math.min(prev + ITEMS_PER_PAGE, combinedKegiatan.length));
-  }, [combinedKegiatan.length]);
+    setVisibleCount((prev) => Math.min(prev + ITEMS_PER_PAGE, filteredKegiatan.length));
+  }, [filteredKegiatan.length]);
 
-  const visibleItems = combinedKegiatan.slice(0, visibleCount);
-  const hasMore = visibleCount < combinedKegiatan.length;
+  const visibleItems = filteredKegiatan.slice(0, visibleCount);
+  const hasMore = visibleCount < filteredKegiatan.length;
 
   const closeLightbox = useCallback(() => setLightboxIndex(null), []);
   const showPrev = useCallback(
-    () => setLightboxIndex((i) => (i === null ? i : (i - 1 + combinedKegiatan.length) % combinedKegiatan.length)),
-    [combinedKegiatan.length]
+    () => setLightboxIndex((i) => (i === null ? i : (i - 1 + filteredKegiatan.length) % filteredKegiatan.length)),
+    [filteredKegiatan.length]
   );
   const showNext = useCallback(
-    () => setLightboxIndex((i) => (i === null ? i : (i + 1) % combinedKegiatan.length)),
-    [combinedKegiatan.length]
+    () => setLightboxIndex((i) => (i === null ? i : (i + 1) % filteredKegiatan.length)),
+    [filteredKegiatan.length]
   );
 
   useEffect(() => {
