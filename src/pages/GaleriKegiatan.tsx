@@ -1,8 +1,8 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, Camera, ChevronDown, ChevronLeft, ChevronRight, X } from "lucide-react";
+import { ArrowLeft, Calendar, Camera, ChevronDown, ChevronLeft, ChevronRight, Search, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import logoIkspi from "@/assets/logo-ikspi.png";
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useMemo, useState, useCallback } from "react";
 import { useStorageImages } from "@/hooks/useStorageImages";
 
 // Import all kegiatan images
@@ -319,6 +319,34 @@ const allKegiatan = [
   { src: postingan2, alt: "Pengda IKS Sumsel Memberikan Bimbingan Kepada Pengcab Musi Banyuasin" },
   { src: postingan1, alt: "Melaksanakan Tupoksi, Pengda IKS PI Kera Sakti Sumsel Membantu Menyelesaikan Berbagai Masalah" },
 ];
+
+// Entri galeri dengan nomor postingan dan tahun untuk pencarian & filter
+type KegiatanItem = { src: string; alt: string; no: number | null; year: number | null };
+
+// Jangkar tahun: foto yang keterangannya menyebut tahun secara eksplisit
+const yearAnchors = allKegiatan
+  .map((item, index) => ({ no: allKegiatan.length - index, year: item.alt.match(/20\d{2}/)?.[0] }))
+  .filter((a): a is { no: number; year: string } => Boolean(a.year))
+  .map((a) => ({ no: a.no, year: Number(a.year) }));
+
+// Tahun tiap nomor postingan = tahun jangkar terdekat (jika imbang, ambil yang lebih baru)
+const yearForNo = (no: number): number => {
+  let best = yearAnchors[0];
+  for (const a of yearAnchors) {
+    const d = Math.abs(no - a.no);
+    const bd = Math.abs(no - best.no);
+    if (d < bd || (d === bd && a.no > best.no)) best = a;
+  }
+  return best.year;
+};
+
+const kegiatanEntries: KegiatanItem[] = allKegiatan.map((item, index) => ({
+  ...item,
+  no: allKegiatan.length - index,
+  year: yearForNo(allKegiatan.length - index),
+}));
+
+const availableYears = [...new Set(kegiatanEntries.map((e) => e.year as number))].sort((a, b) => b - a);
 
 const ITEMS_PER_PAGE = 12;
 
