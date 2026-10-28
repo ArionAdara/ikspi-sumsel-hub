@@ -499,13 +499,63 @@ export default function GaleriKegiatan() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex items-center justify-center gap-2 mb-10"
+          className="flex items-center justify-center gap-2 mb-6"
         >
           <Camera className="w-5 h-5 text-gold" />
           <h2 className="font-heading text-lg md:text-xl font-bold text-gold uppercase tracking-widest">
             Semua Kegiatan
           </h2>
         </motion.div>
+
+        {/* Pencarian & Filter */}
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 mb-6 max-w-3xl mx-auto">
+          <div className="relative flex-1">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+            <input
+              type="text"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="Cari nomor postingan atau kata kunci..."
+              aria-label="Cari dokumentasi kegiatan"
+              className="w-full pl-10 pr-4 py-2.5 rounded-lg bg-card border border-gold/40 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50 transition-colors"
+            />
+          </div>
+          <div className="relative sm:w-48">
+            <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gold pointer-events-none" />
+            <select
+              value={yearFilter}
+              onChange={(e) => setYearFilter(e.target.value)}
+              aria-label="Filter berdasarkan tahun"
+              className="w-full appearance-none pl-10 pr-8 py-2.5 rounded-lg bg-card border border-gold/40 text-sm text-foreground focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50 cursor-pointer transition-colors"
+            >
+              <option value="all">Semua Tahun</option>
+              {availableYears.map((y) => (
+                <option key={y} value={String(y)}>
+                  Tahun {y}
+                </option>
+              ))}
+              <option value="lainnya">Lainnya</option>
+            </select>
+            <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground pointer-events-none" />
+          </div>
+          {isFiltering && (
+            <button
+              type="button"
+              onClick={() => {
+                setSearch("");
+                setYearFilter("all");
+              }}
+              className="px-4 py-2.5 rounded-lg border border-gold/40 text-gold hover:bg-gold/10 text-sm uppercase tracking-wider transition-colors"
+            >
+              Reset
+            </button>
+          )}
+        </div>
+        {isFiltering && filteredKegiatan.length > 0 && (
+          <p className="text-center text-xs text-muted-foreground uppercase tracking-wider mb-6">
+            {filteredKegiatan.length} dokumentasi ditemukan
+          </p>
+        )}
 
         <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6">
           {visibleItems.map((item, index) => {
