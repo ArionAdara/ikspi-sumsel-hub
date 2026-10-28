@@ -604,6 +604,25 @@ export default function GaleriKegiatan() {
           })}
         </div>
 
+        {filteredKegiatan.length === 0 && combinedKegiatan.length > 0 && (
+          <div className="text-center py-16">
+            <Camera className="w-10 h-10 text-muted-foreground mx-auto mb-4" />
+            <p className="text-muted-foreground">
+              Tidak ada dokumentasi yang cocok dengan pencarian atau filter tahun.
+            </p>
+            <button
+              type="button"
+              onClick={() => {
+                setSearch("");
+                setYearFilter("all");
+              }}
+              className="mt-4 text-gold hover:text-gold/80 underline underline-offset-4 text-sm uppercase tracking-wider"
+            >
+              Hapus Filter
+            </button>
+          </div>
+        )}
+
         {hasMore && (
           <div className="flex justify-center mt-10">
             <button
@@ -616,9 +635,9 @@ export default function GaleriKegiatan() {
           </div>
         )}
 
-        {!hasMore && visibleCount > ITEMS_PER_PAGE && (
+        {!hasMore && !isFiltering && visibleCount > ITEMS_PER_PAGE && (
           <p className="text-center text-muted-foreground text-sm mt-10 uppercase tracking-wider">
-            Semua {allKegiatan.length} dokumentasi telah ditampilkan
+            Semua {combinedKegiatan.length} dokumentasi telah ditampilkan
           </p>
         )}
       </div>
@@ -673,16 +692,21 @@ export default function GaleriKegiatan() {
               onClick={(e) => e.stopPropagation()}
             >
               <img
-                src={combinedKegiatan[lightboxIndex].src}
-                alt={combinedKegiatan[lightboxIndex].alt}
+                src={filteredKegiatan[lightboxIndex].src}
+                alt={filteredKegiatan[lightboxIndex].alt}
                 className="max-h-[80vh] w-auto max-w-full object-contain rounded-md shadow-2xl"
               />
               <div className="mt-4 max-w-3xl text-center px-4">
+                {filteredKegiatan[lightboxIndex].no ? (
+                  <p className="text-gold text-xs uppercase tracking-wider mb-1">
+                    Postingan No. {filteredKegiatan[lightboxIndex].no}
+                  </p>
+                ) : null}
                 <p className="text-white/90 text-sm md:text-base font-heading leading-snug">
-                  {combinedKegiatan[lightboxIndex].alt}
+                  {filteredKegiatan[lightboxIndex].alt}
                 </p>
                 <p className="text-white/50 text-xs mt-2 uppercase tracking-wider">
-                  {lightboxIndex + 1} / {combinedKegiatan.length}
+                  {lightboxIndex + 1} / {filteredKegiatan.length}
                 </p>
               </div>
             </motion.div>
