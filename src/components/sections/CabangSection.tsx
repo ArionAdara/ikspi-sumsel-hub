@@ -12,7 +12,7 @@ const defaultCabangList: Cabang[] = [
   { wilayah: "Banyuasin", ketua: "Sudarmaji" },
   { wilayah: "Empat Lawang", ketua: "Ervansyah" },
   { wilayah: "Lahat", ketua: "Nur Cahyo" },
-  { wilayah: "Lubuk Linggau", ketua: "Wiwin Sumardi" },
+  { wilayah: "Lubuk Linggau", ketua: "Andriyan" },
   { wilayah: "Muara Enim", ketua: "Suwarno" },
   { wilayah: "Musi Rawas", ketua: "Alwi Fatoni" },
   { wilayah: "Musi Rawas Utara", ketua: "Agung Sumiarto" },
