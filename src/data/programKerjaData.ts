@@ -173,6 +173,8 @@ export const programKerja = [
       "Menghadiri undangan Selamatan Pengesahan angkatan 145 IKS PI Kera Sakti Cabang Banyuasin.",
       "Membesuk warga senior Palembang (Istri Penasihat Pengda) yang sedang sakit.",
       "Menghadiri dan mengikuti kegiatan MUSPROV IPSI Sumatera Selatan Tahun 2026 di Palembang.",
+      "Melaksanakan UKT Tingkat II angkatan 132 di di cabang Lubuklinggau.",
+      "Menghadiri undangan pelaksanaan tasyakuran pengesahan angkatan 146/132 di cabang Ogan Ilir.",
     ],
   },
 ];
