@@ -158,12 +158,16 @@ import postingan149 from "@/assets/kegiatan/postingan-149.png";
 import postingan150 from "@/assets/kegiatan/postingan-150.png";
 import postingan151 from "@/assets/kegiatan/postingan-151.png";
 import postingan152 from "@/assets/kegiatan/postingan-152.png";
+import postingan156Asset from "@/assets/kegiatan/postingan-156.png.asset.json";
+import postingan155Asset from "@/assets/kegiatan/postingan-155.png.asset.json";
 import postingan154Asset from "@/assets/kegiatan/postingan-154.png.asset.json";
 import postingan153Asset from "@/assets/kegiatan/postingan-153.png.asset.json";
 import postingan100v2 from "@/assets/kegiatan/postingan-100-2.png";
 
 // Ordered from highest number (top) to lowest (bottom)
 const allKegiatan = [
+  { src: postingan156Asset.url, alt: "Ketua Pengurus Daerah Sumatera Selatan Hadiri Undangan Tasyakuran Selamatan Pengesahan Warga Angkatan 146/132 Cabang Ogan Ilir Tahun 2026" },
+  { src: postingan155Asset.url, alt: "Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Tahun 2026 Gelar Ujian Kenaikan Tingkat II Di Lubuklinggau, Perkuat Kualitas Dan Soliditas Organisasi" },
   { src: postingan154Asset.url, alt: "Musprov IPSI Sumatera Selatan Tahun 2026 Tetapkan Drs. Darlis Secara Aklamasi, Ketua Pengurus Daerah IKS PI Kera Sakti Sumsel Sampaikan Ucapan Selamat" },
   { src: postingan153Asset.url, alt: "Soliditas Dan Kepedulian Terus Terjaga, Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Besuk Istri (Senior) Penasihat Pengda Yang Sedang Sakit" },
   { src: postingan152, alt: "Pengesahan Angkatan 145 Banyuasin, Ketua Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Ajak Anggota Baru Jaga Soliditas Dan Raih Prestasi" },
