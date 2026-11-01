@@ -20,7 +20,7 @@ const defaultCabangList: Cabang[] = [
   { wilayah: "Ogan Ilir", ketua: "Awalludin" },
   { wilayah: "Ogan Komering Ilir", ketua: "Slamet Wahyudi" },
   { wilayah: "Ogan Komering Ulu", ketua: "Gatot Santoso" },
-  { wilayah: "Ogan Komering Ulu Timur", ketua: "Agustinus Basuki" },
+  { wilayah: "Ogan Komering Ulu Timur", ketua: "Yohanes Sudiyanto" },
   { wilayah: "Ogan Komering Ulu Selatan", ketua: "Subhan Zen" },
   { wilayah: "Palembang", ketua: "Langgeng Suprapto" },
   { wilayah: "Pagaralam", ketua: "Suwarto" },
