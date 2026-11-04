@@ -16,7 +16,6 @@ const staticImages = [
   { src: postingan156Asset.url, alt: "Ketua Pengurus Daerah Sumatera Selatan Hadiri Undangan Tasyakuran Selamatan Pengesahan Warga Angkatan 146/132 Cabang Ogan Ilir Tahun 2026" },
   { src: postingan155Asset.url, alt: "Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Tahun 2026 Gelar Ujian Kenaikan Tingkat II Di Lubuklinggau, Perkuat Kualitas Dan Soliditas Organisasi" },
   { src: postingan154Asset.url, alt: "Musprov IPSI Sumatera Selatan Tahun 2026 Tetapkan Drs. Darlis Secara Aklamasi, Ketua Pengurus Daerah IKS PI Kera Sakti Sumsel Sampaikan Ucapan Selamat" },
-  { src: postingan153Asset.url, alt: "Soliditas Dan Kepedulian Terus Terjaga, Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Besuk Istri (Senior) Penasihat Pengda Yang Sedang Sakit" },
 ];
 
 export function KegiatanSection() {
