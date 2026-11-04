@@ -6,12 +6,13 @@ import { Link } from "react-router-dom";
 import { useStorageImages } from "@/hooks/useStorageImages";
 
 // Import activity images - 4 terbaru (nomor terbesar)
+import postingan157Asset from "@/assets/kegiatan/postingan-157.png.asset.json";
 import postingan156Asset from "@/assets/kegiatan/postingan-156.png.asset.json";
 import postingan155Asset from "@/assets/kegiatan/postingan-155.png.asset.json";
 import postingan154Asset from "@/assets/kegiatan/postingan-154.png.asset.json";
-import postingan153Asset from "@/assets/kegiatan/postingan-153.png.asset.json";
 
 const staticImages = [
+  { src: postingan157Asset.url, alt: "Pengda IKS PI Kera Sakti Sumsel Hadir Berikan Dukungan Langsung Kepada Atlet Di POPDA Sumatera Selatan 2026 Cabang Olahraga Pencak Silat" },
   { src: postingan156Asset.url, alt: "Ketua Pengurus Daerah Sumatera Selatan Hadiri Undangan Tasyakuran Selamatan Pengesahan Warga Angkatan 146/132 Cabang Ogan Ilir Tahun 2026" },
   { src: postingan155Asset.url, alt: "Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Tahun 2026 Gelar Ujian Kenaikan Tingkat II Di Lubuklinggau, Perkuat Kualitas Dan Soliditas Organisasi" },
   { src: postingan154Asset.url, alt: "Musprov IPSI Sumatera Selatan Tahun 2026 Tetapkan Drs. Darlis Secara Aklamasi, Ketua Pengurus Daerah IKS PI Kera Sakti Sumsel Sampaikan Ucapan Selamat" },
