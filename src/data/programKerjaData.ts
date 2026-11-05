@@ -175,6 +175,7 @@ export const programKerja = [
       "Menghadiri dan mengikuti kegiatan MUSPROV IPSI Sumatera Selatan Tahun 2026 di Palembang.",
       "Melaksanakan UKT Tingkat II angkatan 132 di di cabang Lubuklinggau.",
       "Menghadiri undangan pelaksanaan tasyakuran pengesahan angkatan 146/132 di cabang Ogan Ilir.",
+      "Pengda Sumsel hadir langsung untuk mendukung atlet IKS PI Kera Sakti pada kegiatan POPDA Sumatera Selatan Tahun 2026 cabor Pencak Silat di Palembang.",
     ],
   },
 ];
