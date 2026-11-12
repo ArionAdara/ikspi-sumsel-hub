@@ -165,13 +165,15 @@ import postingan154Asset from "@/assets/kegiatan/postingan-154.png.asset.json";
 import postingan153Asset from "@/assets/kegiatan/postingan-153.png.asset.json";
 import postingan100v2 from "@/assets/kegiatan/postingan-100-2.png";
 
+const assetHost = "https://ikspi-sumsel-hub.lovable.app";
+
 // Ordered from highest number (top) to lowest (bottom)
 const allKegiatan = [
-  { src: postingan157Asset.url, alt: "Pengda IKS PI Kera Sakti Sumsel Hadir Berikan Dukungan Langsung Kepada Atlet Di POPDA Sumatera Selatan 2026 Cabang Olahraga Pencak Silat" },
-  { src: postingan156Asset.url, alt: "Ketua Pengurus Daerah Sumatera Selatan Hadiri Undangan Tasyakuran Selamatan Pengesahan Warga Angkatan 146/132 Cabang Ogan Ilir Tahun 2026" },
-  { src: postingan155Asset.url, alt: "Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Tahun 2026 Gelar Ujian Kenaikan Tingkat II Di Lubuklinggau, Perkuat Kualitas Dan Soliditas Organisasi" },
-  { src: postingan154Asset.url, alt: "Musprov IPSI Sumatera Selatan Tahun 2026 Tetapkan Drs. Darlis Secara Aklamasi, Ketua Pengurus Daerah IKS PI Kera Sakti Sumsel Sampaikan Ucapan Selamat" },
-  { src: postingan153Asset.url, alt: "Soliditas Dan Kepedulian Terus Terjaga, Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Besuk Istri (Senior) Penasihat Pengda Yang Sedang Sakit" },
+  { src: new URL(postingan157Asset.url, assetHost).toString(), alt: "Pengda IKS PI Kera Sakti Sumsel Hadir Berikan Dukungan Langsung Kepada Atlet Di POPDA Sumatera Selatan 2026 Cabang Olahraga Pencak Silat" },
+  { src: new URL(postingan156Asset.url, assetHost).toString(), alt: "Ketua Pengurus Daerah Sumatera Selatan Hadiri Undangan Tasyakuran Selamatan Pengesahan Warga Angkatan 146/132 Cabang Ogan Ilir Tahun 2026" },
+  { src: new URL(postingan155Asset.url, assetHost).toString(), alt: "Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Tahun 2026 Gelar Ujian Kenaikan Tingkat II Di Lubuklinggau, Perkuat Kualitas Dan Soliditas Organisasi" },
+  { src: new URL(postingan154Asset.url, assetHost).toString(), alt: "Musprov IPSI Sumatera Selatan Tahun 2026 Tetapkan Drs. Darlis Secara Aklamasi, Ketua Pengurus Daerah IKS PI Kera Sakti Sumsel Sampaikan Ucapan Selamat" },
+  { src: new URL(postingan153Asset.url, assetHost).toString(), alt: "Soliditas Dan Kepedulian Terus Terjaga, Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Besuk Istri (Senior) Penasihat Pengda Yang Sedang Sakit" },
   { src: postingan152, alt: "Pengesahan Angkatan 145 Banyuasin, Ketua Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Ajak Anggota Baru Jaga Soliditas Dan Raih Prestasi" },
   { src: postingan151, alt: "Ketua Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Hadiri Rakercab Ogan Ilir, Dorong Penyusunan Program Kerja Yang Terarah Dan Akuntabel" },
   { src: postingan150, alt: "Menjalin Kebersamaan Dalam Semangat Tahun Baru Islam, Pengurus Daerah IKS PI Kera Sakti Sumatera Selatan Hadiri Undangan Cabang Palembang" },
